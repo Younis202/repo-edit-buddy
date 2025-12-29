@@ -522,10 +522,10 @@ const Index = () => {
                 >
                   <figure className="header_media position-relative overflow-hidden">
                     <video
-                      autoPlay="true"
-                      loop=""
-                      muted=""
-                      playsInline="true"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
                       poster="https://cdn.prod.website-files.com/679788a93b745e4c42cbb1c5/68e738b4941759e4f6bbd513_Screenshot%202025-10-09%20at%2012.22.24%E2%80%AFAM.avif"
                       className="cover-image"
                     >
@@ -1577,7 +1577,6 @@ const Index = () => {
                         width: "100%"
                       }}
                       className="cal-element-embed-light"
-                      loading="done"
                     >
                       <iframe
                         className="cal-embed"

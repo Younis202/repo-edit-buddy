@@ -2048,7 +2048,7 @@ const Contact = () => {
                                                         placeholder="Enter Email"
                                                         type="email"
                                                         id="email"
-                                                        required=""
+                                                        required
                                                     />
                                                 </div>
                                             </div>
@@ -2065,8 +2065,8 @@ const Contact = () => {
                                                         id="Interested-In"
                                                         name="Interested-In"
                                                         data-name="Interested In"
-                                                        required=""
-                                                        multiple=""
+                                                        required
+                                                        multiple
                                                         tf-custom-select-input=""
                                                         className="contact_form_hidden-input w-select"
                                                         tabIndex={-1}
@@ -2140,7 +2140,7 @@ const Contact = () => {
                                                         tf-custom-select-input=""
                                                         type="text"
                                                         id="Project-Budget"
-                                                        required=""
+                                                        required
                                                         tabIndex={-1}
                                                     />
                                                     <div className="contact_form_check-wrapper display-flex">

@@ -482,7 +482,6 @@ const BookACall = () => {
                                                 width: "100%"
                                             }}
                                             className="cal-element-embed-dark"
-                                            loading="done"
                                         >
                                             <iframe
                                                 className="cal-embed"
