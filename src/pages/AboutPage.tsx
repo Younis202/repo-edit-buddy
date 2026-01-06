@@ -1,6 +1,6 @@
-import Section1 from '@/components/about/Section1';
-import Section2 from '@/components/about/Section2';
-import Section3 from '@/components/about/Section3';
+import Section1 from '../components/about/Section1';
+import Section2 from '../components/about/Section2';
+import Section3 from '../components/about/Section3';
 
 function AboutPage() {
   return (
