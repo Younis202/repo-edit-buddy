@@ -1,36 +1,36 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Footer from './components/layout/Footer';
+import Header from './components/layout/Header';
+import AboutPage from './pages/AboutPage';
+import HomePage from './pages/HomePage';
+import HydrationPage from './pages/HydrationPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import ProductsPage from './pages/ProductsPage';
+import QualityPage from './pages/QualityPage';
+import ReviewsPage from './pages/ReviewsPage';
+import TechnologyPage from './pages/TechnologyPage';
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import LaureatesPage from "./pages/LaureatesPage";
-import CategoriesPage from "./pages/CategoriesPage";
-import ResourcesPage from "./pages/ResourcesPage";
-import AboutPage from "./pages/AboutPage";
-
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/laureates" element={<LaureatesPage />} />
-          <Route path="/categories" element={<CategoriesPage />} />
-          <Route path="/resources" element={<ResourcesPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/hydration" element={<HydrationPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/products/:id" element={<ProductDetailPage />} />
+            <Route path="/quality" element={<QualityPage />} />
+            <Route path="/reviews" element={<ReviewsPage />} />
+            <Route path="/technology" element={<TechnologyPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
+  );
+}
 
 export default App;
