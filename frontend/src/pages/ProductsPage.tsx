@@ -6,7 +6,7 @@ export default function ProductsPage() {
   <div className="zp-open-popup-button">
     <div className="x_R61yl zp-11-2-5-zp-fixed"><img alt="Apollo.io"
         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBmaWxsPSIjZWJmMjEyIiBkPSJtMjEuNDY2IDUuMDcxLjAwNCAxMC45MTVjLjAwMSAxLjcyNS0xLjgzNCAyLjgzLTMuMzU4IDIuMDI0TDcuMTcgMTIuMjIzYTE1LjEgMTUuMSAwIDAgMSAzLjEtMy42NGw4LjU4MiA3LjkzMmMuNDU1LjQyIDEuMTcyLS4wMzYuOTg1LS42MjZMMTYuNTA5IDUuNDFhMTUgMTUgMCAwIDEgNC45NTYtLjMzOE0xOC40OTYgMzQuOTI1bC0uMDA1LTEwLjg2YzAtMS43MjQgMS44MzQtMi44MyAzLjM1OS0yLjAyM2wxMC45NDYgNS43OWExNSAxNSAwIDAgMS0zLjExNiAzLjYyNmwtOC41Ny03LjkyMWMtLjQ1NS0uNDItMS4xNzIuMDM1LS45ODUuNjI1bDMuMzE2IDEwLjQ0MWExNSAxNSAwIDAgMS00Ljk0NS4zMjJNMjMuNDkyIDE4Ljg5OCAzMS40NCAxMC4zYTE1IDE1IDAgMCAwLTMuNjQtMy4xMTNsLTUuODA0IDEwLjk3MmMtLjgwNiAxLjUyNC4zIDMuMzU5IDIuMDI0IDMuMzU4bDEwLjkwNS0uMDA1YTE1LjIgMTUuMiAwIDAgMC0uMzI0LTQuOTU4bC0xMC40ODQgMy4zM2MtLjU5LjE4Ny0xLjA0NS0uNTMtLjYyNS0uOTg1TTUuMDcgMTguNTRsMTAuODcyLS4wMDRjMS43MjUgMCAyLjgzIDEuODM0IDIuMDI0IDMuMzU4TDEyLjE5MiAzMi44MWExNSAxNSAwIDAgMS0zLjYyNy0zLjEwM2w3LjkwNi04LjU1M2MuNDItLjQ1NS0uMDM2LTEuMTcyLS42MjYtLjk4NUw1LjQwOCAyMy40ODRhMTUgMTUgMCAwIDEtLjMzNy00Ljk0MyIvPjwvc3ZnPg=="
-        className="x_kJtSQ"></div>
+        className="x_kJtSQ" /></div>
   </div>
   <div id="__next" data-reactroot="">
     <section className="css-130va89 e11y9y9c0">
@@ -35,7 +35,7 @@ export default function ProductsPage() {
                 <div className="css-16unm68 e1r8pers0">
                   <div className="content_head"><img className="content_head_image"
                       src="https://res.cloudinary.com/larq/images/f_auto,q_auto/v1766144740/BoxingDay2025_SlideOut/BoxingDay2025_SlideOut.jpg?_i=AA"
-                      alt="LARQ promotion" decoding="async" loading="lazy"></div>
+                      alt="LARQ promotion" decoding="async" loading="lazy" /></div>
                   <div className="content_body">
                     <div className="content_bodyMain">
                       <div className="content_bodyMain_intro"><strong>Last chance of the year to shop brilliant hydration on
@@ -63,7 +63,7 @@ export default function ProductsPage() {
                       </div>
                     </div>
                     <div className="content_bodyActions"><a href="/shop"
-                        className="content_bodyActions_cta css-1xnmvko e10c7x3h0" tabindex="0"><span
+                        className="content_bodyActions_cta css-1xnmvko e10c7x3h0" tabIndex="0"><span
                           className="btn_element"><span className="btn_label">Shop now</span></span></a></div>
                     <div className="content_bodyDisclaimer">Offer valid for a limited time only. Discounts apply to
                       merchandise subtotal before taxes and shipping. Cannot be combined with other promotions, coupon
@@ -90,8 +90,8 @@ export default function ProductsPage() {
                   <nav className="main-navigation-links main-navigation-links-left" role="navigation"
                     aria-label="main navigation">
                     <ul>
-                      <li><button className="" aria-label="Bottles" tabindex="0" role="button">Bottles</button></li>
-                      <li><button className="" aria-label="Pitchers" tabindex="0" role="button">Pitchers</button></li>
+                      <li><button className="" aria-label="Bottles" tabIndex="0" role="button">Bottles</button></li>
+                      <li><button className="" aria-label="Pitchers" tabIndex="0" role="button">Pitchers</button></li>
                       <li><a className="" href="/shop/hydration-sets">Sets</a></li>
                       <li><a className="" href="/shop">Shop all</a></li>
                       <li><a className="isGiftGuide" href="/gift-guide">Gift guide</a></li>
@@ -206,17 +206,17 @@ export default function ProductsPage() {
                       <div className="cartProgress_inner">
                         <div className="css-1vzajjh e12j6rpn0">
                           <div className="cartProgressBar">
-                            <div tabindex="0" role="button" data-tooltip="Get $10 off on orders $60 or more!"
+                            <div tabIndex="0" role="button" data-tooltip="Get $10 off on orders $60 or more!"
                               className="css-1f8nz51 ez03c6k0">
                               <div className="cartProgressStep_label">$10 off</div>
                               <div className="cartProgressStep_bullet"></div>
                             </div>
-                            <div tabindex="0" role="button" data-tooltip="Get $20 off on orders $130 or more!"
+                            <div tabIndex="0" role="button" data-tooltip="Get $20 off on orders $130 or more!"
                               className="css-14hva5r ez03c6k0">
                               <div className="cartProgressStep_label">$20 off</div>
                               <div className="cartProgressStep_bullet"></div>
                             </div>
-                            <div tabindex="0" role="button"
+                            <div tabIndex="0" role="button"
                               data-tooltip="Get $40 off on orders over $200 plus receive 1000 bonus Hydro Points for your next purchase!"
                               className="css-15vy6r9 ez03c6k0">
                               <div className="cartProgressStep_label">$40 off + 1000 pts</div>
@@ -277,7 +277,7 @@ export default function ProductsPage() {
               <h2 className="titleBlock_head_title">Shop all</h2>
               <div className="titleBlock_head_cta">
                 <div className="titleBlock_head_ctaContainer"><button aria-label="Open filters" type="button"
-                    className="css-10mf1r3 e16l686e0" tabindex="0"><span className="btn_icon left"><span color="text.default"
+                    className="css-10mf1r3 e16l686e0" tabIndex="0"><span className="btn_icon left"><span color="text.default"
                         className="css-11qxqh7 e1dp28730"><svg className="css-82n8sf e11de7sb0" focusable="false"
                           viewBox="0 0 48 48" color="text.default" aria-hidden="true" fill="undefined">
                           <path fill="#153A5B" fill-rule="evenodd"
@@ -297,7 +297,7 @@ export default function ProductsPage() {
         <div className="filterStickyBar_inner">
           <div className="filterStickyBar_title">Shop all</div>
           <div className="filterStickyBar_cta"><button aria-label="Open filters" type="button" className="css-10mf1r3 e16l686e0"
-              tabindex="-1"><span className="btn_icon left"><span color="text.default" className="css-11qxqh7 e1dp28730"><svg
+              tabIndex="-1"><span className="btn_icon left"><span color="text.default" className="css-11qxqh7 e1dp28730"><svg
                     className="css-82n8sf e11de7sb0" focusable="false" viewBox="0 0 48 48" color="text.default"
                     aria-hidden="true" fill="undefined">
                     <path fill="#153A5B" fill-rule="evenodd"
@@ -308,7 +308,7 @@ export default function ProductsPage() {
       </div>
       <div className="ewbznty0 css-tzt42v">
         <div className="filterBar_controls"><button aria-label="Open filters" type="button" className="css-10mf1r3 e16l686e0"
-            tabindex="0"><span className="btn_icon left"><span color="text.default" className="css-11qxqh7 e1dp28730"><svg
+            tabIndex="0"><span className="btn_icon left"><span color="text.default" className="css-11qxqh7 e1dp28730"><svg
                   className="css-82n8sf e11de7sb0" focusable="false" viewBox="0 0 48 48" color="text.default"
                   aria-hidden="true" fill="undefined">
                   <path fill="#153A5B" fill-rule="evenodd"
@@ -316,15 +316,15 @@ export default function ProductsPage() {
                     clip-rule="evenodd"></path>
                 </svg></span></span><span className="btn_label">Filters</span></button></div>
         <div className="filterBar_filters">
-          <div className="filterBar_filters_inner"><button type="button" className="css-mvef19 e16l686e0" tabindex="-1"><span
+          <div className="filterBar_filters_inner"><button type="button" className="css-mvef19 e16l686e0" tabIndex="-1"><span
                 className="btn_label">All</span></button><button aria-label="Filter Bottles" type="button"
-              className="css-10mf1r3 e16l686e0" tabindex="0"><span className="btn_label">Bottles</span></button><button
-              aria-label="Filter Pitchers" type="button" className="css-10mf1r3 e16l686e0" tabindex="0"><span
+              className="css-10mf1r3 e16l686e0" tabIndex="0"><span className="btn_label">Bottles</span></button><button
+              aria-label="Filter Pitchers" type="button" className="css-10mf1r3 e16l686e0" tabIndex="0"><span
                 className="btn_label">Pitchers</span></button><button aria-label="Filter Accessories" type="button"
-              className="css-10mf1r3 e16l686e0" tabindex="0"><span className="btn_label">Accessories</span></button><button
-              aria-label="Filter Hydration sets" type="button" className="css-10mf1r3 e16l686e0" tabindex="0"><span
+              className="css-10mf1r3 e16l686e0" tabIndex="0"><span className="btn_label">Accessories</span></button><button
+              aria-label="Filter Hydration sets" type="button" className="css-10mf1r3 e16l686e0" tabIndex="0"><span
                 className="btn_label">Hydration sets</span></button><a href="/gift-guide" className="css-ie0unw e16l686e0"
-              tabindex="0"><span className="btn_label">Gift guide</span></a></div>
+              tabIndex="0"><span className="btn_label">Gift guide</span></a></div>
         </div>
         <div className="filterBar_controls"></div>
       </div>
@@ -344,7 +344,7 @@ export default function ProductsPage() {
                         </path>
                       </svg></span></button>
                 </div>
-                <div className="filterPanel_body" tabindex="-1">
+                <div className="filterPanel_body" tabIndex="-1">
                   <div className="css-1x8typ6 e1hf5xt30">
                     <div className="filterSection_head">
                       <div className="filterSection_headTitle">Collections</div>
@@ -353,22 +353,22 @@ export default function ProductsPage() {
                       <div><label className="css-1pb0al2 evpl4cw0" htmlFor="filter.p.m.custom.filter_collections.bottles"><span
                             className="checkbox"></span><input className="checkboxInput" type="checkbox"
                             id="filter.p.m.custom.filter_collections.bottles" name="Bottles" aria-label="Filter Bottles"
-                            tabindex="-1" value="bottles"><span className="checkboxLabel">Bottles</span></label></div>
+                            tabIndex="-1" value="bottles" /><span className="checkboxLabel">Bottles</span></label></div>
                       <div><label className="css-1pb0al2 evpl4cw0" htmlFor="filter.p.m.custom.filter_collections.pitchers"><span
                             className="checkbox"></span><input className="checkboxInput" type="checkbox"
                             id="filter.p.m.custom.filter_collections.pitchers" name="Pitchers"
-                            aria-label="Filter Pitchers" tabindex="-1" value="pitchers"><span
+                            aria-label="Filter Pitchers" tabIndex="-1" value="pitchers" /><span
                             className="checkboxLabel">Pitchers</span></label></div>
                       <div><label className="css-1pb0al2 evpl4cw0"
                           htmlFor="filter.p.m.custom.filter_collections.accessories"><span className="checkbox"></span><input
                             className="checkboxInput" type="checkbox" id="filter.p.m.custom.filter_collections.accessories"
-                            name="Accessories" aria-label="Filter Accessories" tabindex="-1" value="accessories"><span
+                            name="Accessories" aria-label="Filter Accessories" tabIndex="-1" value="accessories" /><span
                             className="checkboxLabel">Accessories</span></label></div>
                       <div><label className="css-1pb0al2 evpl4cw0"
                           htmlFor="filter.p.m.custom.filter_collections.hydration-sets"><span className="checkbox"></span><input
                             className="checkboxInput" type="checkbox"
                             id="filter.p.m.custom.filter_collections.hydration-sets" name="Hydration sets"
-                            aria-label="Filter Hydration sets" tabindex="-1" value="hydration-sets"><span
+                            aria-label="Filter Hydration sets" tabIndex="-1" value="hydration-sets" /><span
                             className="checkboxLabel">Hydration sets</span></label></div>
                     </div>
                   </div>
@@ -381,24 +381,24 @@ export default function ProductsPage() {
                           htmlFor="filter.p.m.custom.filter_features.everyday-drinkware"><span
                             className="checkbox"></span><input className="checkboxInput" type="checkbox"
                             id="filter.p.m.custom.filter_features.everyday-drinkware" name="Everyday drinkware"
-                            aria-label="Filter Everyday drinkware" tabindex="-1" value="everyday-drinkware"><span
+                            aria-label="Filter Everyday drinkware" tabIndex="-1" value="everyday-drinkware" /><span
                             className="checkboxLabel">Everyday drinkware</span></label></div>
                       <div><label className="css-1pb0al2 evpl4cw0" htmlFor="filter.p.m.custom.filter_features.filtration"><span
                             className="checkbox"></span><input className="checkboxInput" type="checkbox"
                             id="filter.p.m.custom.filter_features.filtration" name="Filtration"
-                            aria-label="Filter Filtration" tabindex="-1" value="filtration"><span
+                            aria-label="Filter Filtration" tabIndex="-1" value="filtration" /><span
                             className="checkboxLabel">Filtration</span></label></div>
                       <div><label className="css-1pb0al2 evpl4cw0"
                           htmlFor="filter.p.m.custom.filter_features.hydration-tracking"><span
                             className="checkbox"></span><input className="checkboxInput" type="checkbox"
                             id="filter.p.m.custom.filter_features.hydration-tracking" name="Hydration tracking"
-                            aria-label="Filter Hydration tracking" tabindex="-1" value="hydration-tracking"><span
+                            aria-label="Filter Hydration tracking" tabIndex="-1" value="hydration-tracking" /><span
                             className="checkboxLabel">Hydration tracking</span></label></div>
                       <div><label className="css-1pb0al2 evpl4cw0"
                           htmlFor="filter.p.m.custom.filter_features.self-cleaning"><span className="checkbox"></span><input
                             className="checkboxInput" type="checkbox" id="filter.p.m.custom.filter_features.self-cleaning"
-                            name="Self cleaning" aria-label="Filter Self-cleaning" tabindex="-1"
-                            value="self-cleaning"><span className="checkboxLabel">Self-cleaning</span></label></div>
+                            name="Self cleaning" aria-label="Filter Self-cleaning" tabIndex="-1"
+                            value="self-cleaning" /><span className="checkboxLabel">Self-cleaning</span></label></div>
                     </div>
                   </div>
                 </div>
@@ -419,7 +419,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/SET-BO071-FC.png"
-                            alt="Ho Ho H2O Black / Onyx" decoding="async" loading="lazy"></div>
+                            alt="Ho Ho H2O Black / Onyx" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -533,7 +533,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/SET-MB74-AL-TS.png"
-                            alt="Santa’s Little Sipper Monaco Blue" decoding="async" loading="lazy"></div>
+                            alt="Santa’s Little Sipper Monaco Blue" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -613,7 +613,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/SET-EG68-PL.png"
-                            alt="Hydration, Served Eucalyptus Green" decoding="async" loading="lazy"></div>
+                            alt="Hydration, Served Eucalyptus Green" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -763,7 +763,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/SET-OB50-FC.png"
-                            alt="Yule Be Sippin’ Obsidian Black" decoding="async" loading="lazy"></div>
+                            alt="Yule Be Sippin’ Obsidian Black" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -862,7 +862,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/SET-OB68-HN-OB.png"
-                            alt="Sleigh the Sip Obsidian Black" decoding="async" loading="lazy"></div>
+                            alt="Sleigh the Sip Obsidian Black" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -964,7 +964,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BWOB068A.png"
-                            alt="LARQ Bottle PureVis™ 2 Obsidian Black" decoding="async" loading="lazy"></div>
+                            alt="LARQ Bottle PureVis™ 2 Obsidian Black" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -1133,7 +1133,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BFBNWEG068ABFAW068A.png"
-                            alt="LARQ Bottle Filtered Swig Top Eucalyptus Green" decoding="async" loading="lazy"></div>
+                            alt="LARQ Bottle Filtered Swig Top Eucalyptus Green" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -1357,7 +1357,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BDMB074A.png"
-                            alt="LARQ Bottle PureVis™ Monaco Blue" decoding="async" loading="lazy"></div>
+                            alt="LARQ Bottle PureVis™ Monaco Blue" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -1473,7 +1473,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BSBO071A.png"
-                            alt="LARQ Bottle Movement PureVis™ Black / Onyx" decoding="async" loading="lazy"></div>
+                            alt="LARQ Bottle Movement PureVis™ Black / Onyx" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -1624,7 +1624,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/PAMB190A.png"
-                            alt="LARQ Pitcher PureVis™ Monaco Blue" decoding="async" loading="lazy"></div>
+                            alt="LARQ Pitcher PureVis™ Monaco Blue" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -1703,7 +1703,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BNWOB100A.png"
-                            alt="LARQ Bottle Swig Top Obsidian Black" decoding="async" loading="lazy"></div>
+                            alt="LARQ Bottle Swig Top Obsidian Black" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -1924,7 +1924,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/PNAMB190B.png"
-                            alt="LARQ Pitcher Monaco Blue" decoding="async" loading="lazy"></div>
+                            alt="LARQ Pitcher Monaco Blue" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -2005,7 +2005,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/SET-OB68-HN-OB-F.png"
-                            alt="Thirst Trap-mas Obsidian Black" decoding="async" loading="lazy"></div>
+                            alt="Thirst Trap-mas Obsidian Black" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -2107,7 +2107,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BFSWP095A.png"
-                            alt="LARQ Bottle Movement Filtered Flip Top White / Pebble" decoding="async" loading="lazy">
+                            alt="LARQ Bottle Movement Filtered Flip Top White / Pebble" decoding="async" loading="lazy" />
                         </div>
                       </div>
                     </a>
@@ -2193,7 +2193,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BFDGW050A.png"
-                            alt="LARQ Bottle Filtered Flip Top Granite White" decoding="async" loading="lazy"></div>
+                            alt="LARQ Bottle Filtered Flip Top Granite White" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -2276,7 +2276,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BNSOB050A.png"
-                            alt="LARQ Bottle Flip Top Obsidian Black" decoding="async" loading="lazy"></div>
+                            alt="LARQ Bottle Flip Top Obsidian Black" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -2375,7 +2375,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BNDMB050A.png"
-                            alt="LARQ Bottle Twist Top Monaco Blue" decoding="async" loading="lazy"></div>
+                            alt="LARQ Bottle Twist Top Monaco Blue" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -2523,7 +2523,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/PAFR190A.png"
-                            alt="Advanced Pitcher Filter " decoding="async" loading="lazy"></div>
+                            alt="Advanced Pitcher Filter " decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -2587,7 +2587,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/PEFR190A.png"
-                            alt="Essential Pitcher Filter " decoding="async" loading="lazy"></div>
+                            alt="Essential Pitcher Filter " decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -2651,7 +2651,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BFRF050A3.png"
-                            alt="Advanced Bottle Filter " decoding="async" loading="lazy"></div>
+                            alt="Advanced Bottle Filter " decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -2712,7 +2712,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BFEF050A-3.png"
-                            alt="Essential Bottle Filter " decoding="async" loading="lazy"></div>
+                            alt="Essential Bottle Filter " decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -2773,7 +2773,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BFAW068A.png"
-                            alt="LARQ Filter Straw Pure White" decoding="async" loading="lazy"></div>
+                            alt="LARQ Filter Straw Pure White" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -2837,7 +2837,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BFCOB050A.png"
-                            alt="LARQ Bottle Filtered Cap Obsidian Black" decoding="async" loading="lazy"></div>
+                            alt="LARQ Bottle Filtered Cap Obsidian Black" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -2933,7 +2933,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BCOB068A.png"
-                            alt="LARQ Bottle PureVis™ 2 Cap Obsidian Black" decoding="async" loading="lazy"></div>
+                            alt="LARQ Bottle PureVis™ 2 Cap Obsidian Black" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -3048,7 +3048,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BCMB050A.png"
-                            alt="LARQ Bottle PureVis™ Cap Monaco Blue" decoding="async" loading="lazy"></div>
+                            alt="LARQ Bottle PureVis™ Cap Monaco Blue" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -3211,7 +3211,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BASA068A.png"
-                            alt="Straws &amp; Adaptors Pack Pure White" decoding="async" loading="lazy"></div>
+                            alt="Straws &amp; Adaptors Pack Pure White" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -3272,7 +3272,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BACCBMBA.png"
-                            alt="Cap Cleaning Brush Monaco Blue" decoding="async" loading="lazy"></div>
+                            alt="Cap Cleaning Brush Monaco Blue" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -3331,7 +3331,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/SHG050A.png"
-                            alt="Travel Sleeve Granite White" decoding="async" loading="lazy"></div>
+                            alt="Travel Sleeve Granite White" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -3393,7 +3393,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/SBGW068A.png"
-                            alt="LARQ Silicone Boot Granite White" decoding="async" loading="lazy"></div>
+                            alt="LARQ Silicone Boot Granite White" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -3508,7 +3508,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/NVSL01-BLK-01.png"
-                            alt="Nomatic Navigator Sling 1L Black" decoding="async" loading="lazy"></div>
+                            alt="Nomatic Navigator Sling 1L Black" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -3568,7 +3568,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/SLOB050A.png"
-                            alt="Active Loop Black" decoding="async" loading="lazy"></div>
+                            alt="Active Loop Black" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -3643,7 +3643,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/SSC071A.png"
-                            alt="LARQ Bottle Movement Sleeve Coral" decoding="async" loading="lazy"></div>
+                            alt="LARQ Bottle Movement Sleeve Coral" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -3757,7 +3757,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/CMW091A.png"
-                            alt="LARQ Magnetic Charger Pure White" decoding="async" loading="lazy"></div>
+                            alt="LARQ Magnetic Charger Pure White" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -3814,7 +3814,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/USBC055W.png"
-                            alt="USB-C Cable Pure White" decoding="async" loading="lazy"></div>
+                            alt="USB-C Cable Pure White" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -3873,7 +3873,7 @@ export default function ProductsPage() {
                       <div className="productMedia">
                         <div className="productMedia_asset"><img className="productMedia_assetImage"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/USBM055W.png"
-                            alt="Micro-USB Cable Pure White" decoding="async" loading="lazy"></div>
+                            alt="Micro-USB Cable Pure White" decoding="async" loading="lazy" /></div>
                       </div>
                     </a>
                   </div>
@@ -3955,7 +3955,7 @@ export default function ProductsPage() {
                     <div className="inputContainer_inner">
                       <div className="inputWrap"><input type="email" name="email" aria-invalid="false"
                           id="footerNewsletter_subscribe" value="" placeholder="Enter your email" required=""
-                          aria-label="Enter your email address to subscribe to our Newsletter"></div>
+                          aria-label="Enter your email address to subscribe to our Newsletter" /></div>
                     </div>
                   </div>
                 </div><button type="submit" className="newsletter-submit-button"
@@ -4003,7 +4003,7 @@ export default function ProductsPage() {
               aria-label="Get a quote for corporate gifting" href="/corporate-gifting">
               <div className="mediaTextCard_media"><img className="mediaTextCard_media_asset css-0 e1nv8j4y1"
                   src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1671184346/assets/spa/v2/content/promo/corporate-gifting/products/bottle-filtered_spotify.png"
-                  alt="Man holding LARQ bottle with Spotify branding" decoding="async" loading="lazy"></div>
+                  alt="Man holding LARQ bottle with Spotify branding" decoding="async" loading="lazy" /></div>
               <div className="mediaTextCard_body">
                 <div className="mediaTextCard_content">
                   <div className="mediaTextCard_content_body">
@@ -4012,7 +4012,7 @@ export default function ProductsPage() {
                       <div className="mediaTextCard_content_body_main_text">Originality never goes out of style</div>
                     </div>
                     <div className="mediaTextCard_content_body_action"><button type="button"
-                        className="mediaTextCard_content_body_actionCta css-uumepb e10c7x3h0" tabindex="-1"
+                        className="mediaTextCard_content_body_actionCta css-uumepb e10c7x3h0" tabIndex="-1"
                         aria-hidden="true"><span className="btn_element"><span className="btn_label">Get a
                             quote</span></span></button></div>
                   </div>
@@ -4024,7 +4024,7 @@ export default function ProductsPage() {
           <section className="css-9nsxkx euussmz0"><button className="country-switcher-button"
               aria-label="Open language and country switcher modal"><span className="flag"><img
                   src="https://res.cloudinary.com/larq/image/upload/v1702649207/v3-images/flags/us.svg"
-                  alt="country flag us"></span>United States</button></section>
+                  alt="country flag us" /></span>United States</button></section>
           <nav className="css-4h1e11 eeqemrm0">
             <ul className="footer-legal-links">
               <li className="copyright">© LARQ, {/* */}2026</li>
@@ -4183,11 +4183,11 @@ export default function ProductsPage() {
   <div id="batBeacon387023643593" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img
       id="batBeacon473561188662" width="0" height="0" alt=""
       src="https://bat.bing.com/action/0?ti=26016814&amp;tm=gtm002&amp;Ver=2&amp;mid=markup-adapter&amp;bo=4&amp;sid=47c78630eb3811f0832b3f9b067cc81c&amp;vid=47c79620eb3811f0a6df174f6eba1918&amp;vids=0&amp;msclkid=N&amp;uach=pv%3D10.0.0&amp;pi=918639831&amp;lg=en-US&amp;sw=1366&amp;sh=768&amp;sc=24&amp;tl=LARQ%20%7C%20Not%20Found&amp;p=https%3A%2F%2Fwww.livelarq.com%2Fsitemap&amp;r=&amp;lt=352&amp;evt=pageLoad&amp;sv=2&amp;asc=G&amp;cdb=AQAS&amp;rn=29545"
-      style="width: 0px; height: 0px; display: none; visibility: hidden;"></div>
+      style="width: 0px; height: 0px; display: none; visibility: hidden;" /></div>
   <script id="ze-snippet" text="" charset="" type="text/javascript"
     src="https://static.zdassets.com/ekr/snippet.js?key=markup-adapter"></script>
   
-  <iframe data-product="web_widget" title="No content" role="presentation" tabindex="-1" allow="microphone *"
+  <iframe data-product="web_widget" title="No content" role="presentation" tabIndex="-1" allow="microphone *"
     aria-hidden="true" src="about:blank"
     style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;"></iframe>
   <div style="position: relative;" id="zp-11-2-5-licdn-root-apollo_everywhere">

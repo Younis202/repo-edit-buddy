@@ -6,7 +6,7 @@ export default function HydrationPage() {
   <div className="zp-open-popup-button">
     <div className="x_R61yl zp-11-2-5-zp-fixed"><img alt="Apollo.io"
         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBmaWxsPSIjZWJmMjEyIiBkPSJtMjEuNDY2IDUuMDcxLjAwNCAxMC45MTVjLjAwMSAxLjcyNS0xLjgzNCAyLjgzLTMuMzU4IDIuMDI0TDcuMTcgMTIuMjIzYTE1LjEgMTUuMSAwIDAgMSAzLjEtMy42NGw4LjU4MiA3LjkzMmMuNDU1LjQyIDEuMTcyLS4wMzYuOTg1LS42MjZMMTYuNTA5IDUuNDFhMTUgMTUgMCAwIDEgNC45NTYtLjMzOE0xOC40OTYgMzQuOTI1bC0uMDA1LTEwLjg2YzAtMS43MjQgMS44MzQtMi44MyAzLjM1OS0yLjAyM2wxMC45NDYgNS43OWExNSAxNSAwIDAgMS0zLjExNiAzLjYyNmwtOC41Ny03LjkyMWMtLjQ1NS0uNDItMS4xNzIuMDM1LS45ODUuNjI1bDMuMzE2IDEwLjQ0MWExNSAxNSAwIDAgMS00Ljk0NS4zMjJNMjMuNDkyIDE4Ljg5OCAzMS40NCAxMC4zYTE1IDE1IDAgMCAwLTMuNjQtMy4xMTNsLTUuODA0IDEwLjk3MmMtLjgwNiAxLjUyNC4zIDMuMzU5IDIuMDI0IDMuMzU4bDEwLjkwNS0uMDA1YTE1LjIgMTUuMiAwIDAgMC0uMzI0LTQuOTU4bC0xMC40ODQgMy4zM2MtLjU5LjE4Ny0xLjA0NS0uNTMtLjYyNS0uOTg1TTUuMDcgMTguNTRsMTAuODcyLS4wMDRjMS43MjUgMCAyLjgzIDEuODM0IDIuMDI0IDMuMzU4TDEyLjE5MiAzMi44MWExNSAxNSAwIDAgMS0zLjYyNy0zLjEwM2w3LjkwNi04LjU1M2MuNDItLjQ1NS0uMDM2LTEuMTcyLS42MjYtLjk4NUw1LjQwOCAyMy40ODRhMTUgMTUgMCAwIDEtLjMzNy00Ljk0MyIvPjwvc3ZnPg=="
-        className="x_kJtSQ"></div>
+        className="x_kJtSQ" /></div>
   </div>
   <div id="__next" data-reactroot="">
     <section className="css-130va89 e11y9y9c0">
@@ -35,7 +35,7 @@ export default function HydrationPage() {
                 <div className="css-16unm68 e1r8pers0">
                   <div className="content_head"><img className="content_head_image"
                       src="https://res.cloudinary.com/larq/images/f_auto,q_auto/v1766144740/BoxingDay2025_SlideOut/BoxingDay2025_SlideOut.jpg?_i=AA"
-                      alt="LARQ promotion" decoding="async" loading="lazy"></div>
+                      alt="LARQ promotion" decoding="async" loading="lazy" /></div>
                   <div className="content_body">
                     <div className="content_bodyMain">
                       <div className="content_bodyMain_intro"><strong>Last chance of the year to shop brilliant hydration on
@@ -63,7 +63,7 @@ export default function HydrationPage() {
                       </div>
                     </div>
                     <div className="content_bodyActions"><a href="/shop"
-                        className="content_bodyActions_cta css-1xnmvko e10c7x3h0" tabindex="0"><span
+                        className="content_bodyActions_cta css-1xnmvko e10c7x3h0" tabIndex="0"><span
                           className="btn_element"><span className="btn_label">Shop now</span></span></a></div>
                     <div className="content_bodyDisclaimer">Offer valid for a limited time only. Discounts apply to
                       merchandise subtotal before taxes and shipping. Cannot be combined with other promotions, coupon
@@ -90,8 +90,8 @@ export default function HydrationPage() {
                   <nav className="main-navigation-links main-navigation-links-left" role="navigation"
                     aria-label="main navigation">
                     <ul>
-                      <li><button className="" aria-label="Bottles" tabindex="0" role="button">Bottles</button></li>
-                      <li><button className="" aria-label="Pitchers" tabindex="0" role="button">Pitchers</button></li>
+                      <li><button className="" aria-label="Bottles" tabIndex="0" role="button">Bottles</button></li>
+                      <li><button className="" aria-label="Pitchers" tabIndex="0" role="button">Pitchers</button></li>
                       <li><a className="" href="/shop/hydration-sets">Sets</a></li>
                       <li><a className="" href="/shop">Shop all</a></li>
                       <li><a className="isGiftGuide" href="/gift-guide">Gift guide</a></li>
@@ -206,17 +206,17 @@ export default function HydrationPage() {
                       <div className="cartProgress_inner">
                         <div className="css-1vzajjh e12j6rpn0">
                           <div className="cartProgressBar">
-                            <div tabindex="0" role="button" data-tooltip="Get $10 off on orders $60 or more!"
+                            <div tabIndex="0" role="button" data-tooltip="Get $10 off on orders $60 or more!"
                               className="css-1f8nz51 ez03c6k0">
                               <div className="cartProgressStep_label">$10 off</div>
                               <div className="cartProgressStep_bullet"></div>
                             </div>
-                            <div tabindex="0" role="button" data-tooltip="Get $20 off on orders $130 or more!"
+                            <div tabIndex="0" role="button" data-tooltip="Get $20 off on orders $130 or more!"
                               className="css-14hva5r ez03c6k0">
                               <div className="cartProgressStep_label">$20 off</div>
                               <div className="cartProgressStep_bullet"></div>
                             </div>
-                            <div tabindex="0" role="button"
+                            <div tabIndex="0" role="button"
                               data-tooltip="Get $40 off on orders over $200 plus receive 1000 bonus Hydro Points for your next purchase!"
                               className="css-15vy6r9 ez03c6k0">
                               <div className="cartProgressStep_label">$40 off + 1000 pts</div>
@@ -261,9 +261,9 @@ export default function HydrationPage() {
                     </div>
                     <div className="mainHero_details_footer"><a aria-label="Click to Join LARQ"
                         href="/user/registration?next=points-and-rewards" className="css-n1be4c e10c7x3h0"
-                        tabindex="0"><span className="btn_element"><span className="btn_label">Join now</span></span></a><a
+                        tabIndex="0"><span className="btn_element"><span className="btn_label">Join now</span></span></a><a
                         aria-label="Log in to LARQ" href="/user/sign-in?next=points-and-rewards"
-                        className="css-15gjxb7 e10c7x3h0" tabindex="0"><span className="btn_element"><span className="btn_label">Log
+                        className="css-15gjxb7 e10c7x3h0" tabIndex="0"><span className="btn_element"><span className="btn_label">Log
                             in</span></span></a></div>
                   </div>
                 </div>
@@ -272,10 +272,10 @@ export default function HydrationPage() {
             <div className="mainHero_cover">
               <div className="mainImage"><img className="isMobile css-0 e1nv8j4y1"
                   src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1749201765/assets/spa/v3/loyalty/landing/hero_hydration_club_m.jpg"
-                  alt="LARQ Hydration Club Information" decoding="async" loading="eager"><img
+                  alt="LARQ Hydration Club Information" decoding="async" loading="eager" /><img
                   className="isDesktop css-0 e1nv8j4y1"
                   src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1749201765/assets/spa/v3/loyalty/landing/hero_hydration_club_d.jpg"
-                  alt="LARQ Hydration Club Information" decoding="async" loading="eager"></div>
+                  alt="LARQ Hydration Club Information" decoding="async" loading="eager" /></div>
             </div>
           </div>
         </div>
@@ -683,9 +683,9 @@ export default function HydrationPage() {
                 Hydration Club.</div>
             </div>
             <div className="loyaltyBanner_content_actions"><a aria-label="Click to Join LARQ"
-                href="/user/registration?next=points-and-rewards" className="css-107vzrv e10c7x3h0" tabindex="0"><span
+                href="/user/registration?next=points-and-rewards" className="css-107vzrv e10c7x3h0" tabIndex="0"><span
                   className="btn_element"><span className="btn_label">Join now</span></span></a><a aria-label="Log in to LARQ"
-                href="/user/sign-in?next=points-and-rewards" className="css-139p19l e10c7x3h0" tabindex="0"><span
+                href="/user/sign-in?next=points-and-rewards" className="css-139p19l e10c7x3h0" tabIndex="0"><span
                   className="btn_element"><span className="btn_label">Log in</span></span></a></div>
             <div className="loyaltyBanner_content_footer">By joining, you are agreeing to LARQ's <a
                 href="/hydration-club-terms-and-conditions">Hydration Club Terms &amp; Conditions</a>.</div>
@@ -721,7 +721,7 @@ export default function HydrationPage() {
                     <div className="inputContainer_inner">
                       <div className="inputWrap"><input type="email" name="email" aria-invalid="false"
                           id="footerNewsletter_subscribe" value="" placeholder="Enter your email" required=""
-                          aria-label="Enter your email address to subscribe to our Newsletter"></div>
+                          aria-label="Enter your email address to subscribe to our Newsletter" /></div>
                     </div>
                   </div>
                 </div><button type="submit" className="newsletter-submit-button"
@@ -769,7 +769,7 @@ export default function HydrationPage() {
               aria-label="Get a quote for corporate gifting" href="/corporate-gifting">
               <div className="mediaTextCard_media"><img className="mediaTextCard_media_asset css-0 e1nv8j4y1"
                   src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1671184346/assets/spa/v2/content/promo/corporate-gifting/products/bottle-filtered_spotify.png"
-                  alt="Man holding LARQ bottle with Spotify branding" decoding="async" loading="lazy"></div>
+                  alt="Man holding LARQ bottle with Spotify branding" decoding="async" loading="lazy" /></div>
               <div className="mediaTextCard_body">
                 <div className="mediaTextCard_content">
                   <div className="mediaTextCard_content_body">
@@ -778,7 +778,7 @@ export default function HydrationPage() {
                       <div className="mediaTextCard_content_body_main_text">Originality never goes out of style</div>
                     </div>
                     <div className="mediaTextCard_content_body_action"><button type="button"
-                        className="mediaTextCard_content_body_actionCta css-uumepb e10c7x3h0" tabindex="-1"
+                        className="mediaTextCard_content_body_actionCta css-uumepb e10c7x3h0" tabIndex="-1"
                         aria-hidden="true"><span className="btn_element"><span className="btn_label">Get a
                             quote</span></span></button></div>
                   </div>
@@ -790,7 +790,7 @@ export default function HydrationPage() {
           <section className="css-9nsxkx euussmz0"><button className="country-switcher-button"
               aria-label="Open language and country switcher modal"><span className="flag"><img
                   src="https://res.cloudinary.com/larq/image/upload/v1702649207/v3-images/flags/us.svg"
-                  alt="country flag us"></span>United States</button></section>
+                  alt="country flag us" /></span>United States</button></section>
           <nav className="css-4h1e11 eeqemrm0">
             <ul className="footer-legal-links">
               <li className="copyright">© LARQ, {/* */}2026</li>
@@ -935,7 +935,7 @@ export default function HydrationPage() {
   <div id="batBeacon704635778788" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img
       id="batBeacon525267499070" width="0" height="0" alt=""
       src="https://bat.bing.com/action/0?ti=26016814&amp;tm=gtm002&amp;Ver=2&amp;mid=markup-adapter&amp;bo=4&amp;sid=47c78630eb3811f0832b3f9b067cc81c&amp;vid=47c79620eb3811f0a6df174f6eba1918&amp;vids=0&amp;msclkid=N&amp;uach=pv%3D10.0.0&amp;pi=918639831&amp;lg=en-US&amp;sw=1366&amp;sh=768&amp;sc=24&amp;tl=Ensure%20Superior%20Water%20Quality%20with%20LARQ%20%7C%20Advanced%20Purification%20%26%20Filtration%20Technology&amp;p=https%3A%2F%2Fwww.livelarq.com%2Fwater-quality&amp;r=&amp;lt=699&amp;evt=pageLoad&amp;sv=2&amp;asc=G&amp;cdb=AQAS&amp;rn=652380"
-      style="width: 0px; height: 0px; display: none; visibility: hidden;"></div>
+      style="width: 0px; height: 0px; display: none; visibility: hidden;" /></div>
   <script type="text/javascript" id="" charset="">(function () {
       if (window.braze) {
         var c = google_tag_manager["rm"]["7594555"](32), d = google_tag_manager["rm"]["7594555"](33), m = google_tag_manager["rm"]["7594555"](34), b = window.braze.getUser(), a = google_tag_manager["rm"]["7594555"](35), q = google_tag_manager["rm"]["7594555"](36), e = google_tag_manager["rm"]["7594555"](37), f = void 0, n = window.braze.User.NotificationSubscriptionTypes.OPTED_IN, g = !1; c === "gtm.init" && ["eu", "ca", "uk", "us"].indexOf(d) > -1 && b.setCustomUserAttribute("store_location", d.toUpperCase()); c === "newsletterSubscription" && a.subType === "Footer" && (f = "footer", e = a.email, g = !0); c === "newsletterSubscription" && ["SOC-1",
@@ -953,7 +953,7 @@ export default function HydrationPage() {
   <script id="ze-snippet" text="" charset="" type="text/javascript"
     src="https://static.zdassets.com/ekr/snippet.js?key=markup-adapter"></script>
   
-  <iframe data-product="web_widget" title="No content" role="presentation" tabindex="-1" allow="microphone *"
+  <iframe data-product="web_widget" title="No content" role="presentation" tabIndex="-1" allow="microphone *"
     aria-hidden="true" src="about:blank"
     style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;"></iframe>
   <div style="position: relative;" id="zp-11-2-5-licdn-root-apollo_everywhere">

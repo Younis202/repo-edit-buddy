@@ -6,7 +6,7 @@ export default function ProductDetailPage() {
   <div className="zp-open-popup-button">
     <div className="x_R61yl zp-11-2-5-zp-fixed"><img alt="Apollo.io"
         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBmaWxsPSIjZWJmMjEyIiBkPSJtMjEuNDY2IDUuMDcxLjAwNCAxMC45MTVjLjAwMSAxLjcyNS0xLjgzNCAyLjgzLTMuMzU4IDIuMDI0TDcuMTcgMTIuMjIzYTE1LjEgMTUuMSAwIDAgMSAzLjEtMy42NGw4LjU4MiA3LjkzMmMuNDU1LjQyIDEuMTcyLS4wMzYuOTg1LS42MjZMMTYuNTA5IDUuNDFhMTUgMTUgMCAwIDEgNC45NTYtLjMzOE0xOC40OTYgMzQuOTI1bC0uMDA1LTEwLjg2YzAtMS43MjQgMS44MzQtMi44MyAzLjM1OS0yLjAyM2wxMC45NDYgNS43OWExNSAxNSAwIDAgMS0zLjExNiAzLjYyNmwtOC41Ny03LjkyMWMtLjQ1NS0uNDItMS4xNzIuMDM1LS45ODUuNjI1bDMuMzE2IDEwLjQ0MWExNSAxNSAwIDAgMS00Ljk0NS4zMjJNMjMuNDkyIDE4Ljg5OCAzMS40NCAxMC4zYTE1IDE1IDAgMCAwLTMuNjQtMy4xMTNsLTUuODA0IDEwLjk3MmMtLjgwNiAxLjUyNC4zIDMuMzU5IDIuMDI0IDMuMzU4bDEwLjkwNS0uMDA1YTE1LjIgMTUuMiAwIDAgMC0uMzI0LTQuOTU4bC0xMC40ODQgMy4zM2MtLjU5LjE4Ny0xLjA0NS0uNTMtLjYyNS0uOTg1TTUuMDcgMTguNTRsMTAuODcyLS4wMDRjMS43MjUgMCAyLjgzIDEuODM0IDIuMDI0IDMuMzU4TDEyLjE5MiAzMi44MWExNSAxNSAwIDAgMS0zLjYyNy0zLjEwM2w3LjkwNi04LjU1M2MuNDItLjQ1NS0uMDM2LTEuMTcyLS42MjYtLjk4NUw1LjQwOCAyMy40ODRhMTUgMTUgMCAwIDEtLjMzNy00Ljk0MyIvPjwvc3ZnPg=="
-        className="x_kJtSQ"></div>
+        className="x_kJtSQ" /></div>
   </div>
   <div id="__next" data-reactroot="">
     <section className="css-130va89 e11y9y9c0">
@@ -35,7 +35,7 @@ export default function ProductDetailPage() {
                 <div className="css-16unm68 e1r8pers0">
                   <div className="content_head"><img className="content_head_image"
                       src="https://res.cloudinary.com/larq/images/f_auto,q_auto/v1766144740/BoxingDay2025_SlideOut/BoxingDay2025_SlideOut.jpg?_i=AA"
-                      alt="LARQ promotion" decoding="async" loading="lazy"></div>
+                      alt="LARQ promotion" decoding="async" loading="lazy" /></div>
                   <div className="content_body">
                     <div className="content_bodyMain">
                       <div className="content_bodyMain_intro"><strong>Last chance of the year to shop brilliant hydration on
@@ -63,7 +63,7 @@ export default function ProductDetailPage() {
                       </div>
                     </div>
                     <div className="content_bodyActions"><a href="/shop"
-                        className="content_bodyActions_cta css-1xnmvko e10c7x3h0" tabindex="0"><span
+                        className="content_bodyActions_cta css-1xnmvko e10c7x3h0" tabIndex="0"><span
                           className="btn_element"><span className="btn_label">Shop now</span></span></a></div>
                     <div className="content_bodyDisclaimer">Offer valid for a limited time only. Discounts apply to
                       merchandise subtotal before taxes and shipping. Cannot be combined with other promotions, coupon
@@ -90,8 +90,8 @@ export default function ProductDetailPage() {
                   <nav className="main-navigation-links main-navigation-links-left" role="navigation"
                     aria-label="main navigation">
                     <ul>
-                      <li><button className="" aria-label="Bottles" tabindex="0" role="button">Bottles</button></li>
-                      <li><button className="" aria-label="Pitchers" tabindex="0" role="button">Pitchers</button></li>
+                      <li><button className="" aria-label="Bottles" tabIndex="0" role="button">Bottles</button></li>
+                      <li><button className="" aria-label="Pitchers" tabIndex="0" role="button">Pitchers</button></li>
                       <li><a className="" href="/shop/hydration-sets">Sets</a></li>
                       <li><a className="" href="/shop">Shop all</a></li>
                       <li><a className="isGiftGuide" href="/gift-guide">Gift guide</a></li>
@@ -206,17 +206,17 @@ export default function ProductDetailPage() {
                       <div className="cartProgress_inner">
                         <div className="css-1vzajjh e12j6rpn0">
                           <div className="cartProgressBar">
-                            <div tabindex="0" role="button" data-tooltip="Get $10 off on orders $60 or more!"
+                            <div tabIndex="0" role="button" data-tooltip="Get $10 off on orders $60 or more!"
                               className="css-1f8nz51 ez03c6k0">
                               <div className="cartProgressStep_label">$10 off</div>
                               <div className="cartProgressStep_bullet"></div>
                             </div>
-                            <div tabindex="0" role="button" data-tooltip="Get $20 off on orders $130 or more!"
+                            <div tabIndex="0" role="button" data-tooltip="Get $20 off on orders $130 or more!"
                               className="css-14hva5r ez03c6k0">
                               <div className="cartProgressStep_label">$20 off</div>
                               <div className="cartProgressStep_bullet"></div>
                             </div>
-                            <div tabindex="0" role="button"
+                            <div tabIndex="0" role="button"
                               data-tooltip="Get $40 off on orders over $200 plus receive 1000 bonus Hydro Points for your next purchase!"
                               className="css-15vy6r9 ez03c6k0">
                               <div className="cartProgressStep_label">$40 off + 1000 pts</div>
@@ -299,12 +299,12 @@ export default function ProductDetailPage() {
                 <div className="reviews_count"><span>217</span>&nbsp;<span>reviews</span></div>
               </div>
             </div>
-          </div><button type="button" className="stickyNavigation_cta  css-pwntma e10c7x3h0" tabindex="-1"><span
+          </div><button type="button" className="stickyNavigation_cta  css-pwntma e10c7x3h0" tabIndex="-1"><span
               className="btn_element"><span className="btn_label">Shop now</span></span></button>
         </div>
       </div>
       <div className="hidden css-gfc0py erx1ul91"><button type="button" className="stickyNavigation_cta  css-pwntma e10c7x3h0"
-          tabindex="-1"><span className="btn_element"><span className="btn_label">Shop now</span></span></button></div>
+          tabIndex="-1"><span className="btn_element"><span className="btn_label">Shop now</span></span></button></div>
       <div className="css-pszod3 e1w1ch260">
         <div className="css-1e742w7">
           <div className="css-1jg886h">
@@ -312,11 +312,11 @@ export default function ProductDetailPage() {
               <div className="sideOverlays"><span></span></div>
               <div className="productGallery">
                 <div className="productGallery_inner">
-                  <div className="productGallery_item" tabindex="-1" style="order: 2;">
+                  <div className="productGallery_item" tabIndex="-1" style="order: 2;">
                     <div className="css-ukb3ec e1v4pmz80">
                       <div className="itemImage_inner"><img className="itemImage_img css-0 e1nv8j4y1"
                           src="https://res.cloudinary.com/larq/image/fetch/q_auto,f_auto/https://res.cloudinary.com/larq/images/f_auto,q_auto/v1759139808/ST-BNWEG068A-PNAMB190B/ST-BNWEG068A-PNAMB190B.png?_i=AA"
-                          alt="Hydration, Served - Eucalyptus Green" decoding="async" loading="eager"></div>
+                          alt="Hydration, Served - Eucalyptus Green" decoding="async" loading="eager" /></div>
                     </div>
                   </div>
                 </div>
@@ -372,25 +372,25 @@ export default function ProductDetailPage() {
                       </div>
                     </div>
                   </div>
-                  <div className="productGallery_item" tabindex="0" style="order: 2; grid-column: span 2;">
+                  <div className="productGallery_item" tabIndex="0" style="order: 2; grid-column: span 2;">
                     <div className="css-wq5d4d e1v4pmz80">
                       <div className="itemImage_inner"><img className="itemImage_img css-0 e1nv8j4y1"
                           src="https://res.cloudinary.com/larq/image/fetch/q_auto,f_auto/https://res.cloudinary.com/larq/images/f_auto,q_auto/v1764088257/HydrationServed_Lifestyle-01/HydrationServed_Lifestyle-01.jpg?_i=AA"
-                          alt="Hydration, Served - Eucalyptus Green" decoding="async" loading="lazy"></div>
+                          alt="Hydration, Served - Eucalyptus Green" decoding="async" loading="lazy" /></div>
                     </div>
                   </div>
-                  <div className="productGallery_item" tabindex="0" style="order: 3;">
+                  <div className="productGallery_item" tabIndex="0" style="order: 3;">
                     <div className="css-3yl5zm e1v4pmz80">
                       <div className="itemImage_inner"><img className="itemImage_img css-0 e1nv8j4y1"
                           src="https://res.cloudinary.com/larq/image/fetch/q_auto,f_auto/https://res.cloudinary.com/larq/images/f_auto,q_auto/v1764088262/HydrationServed_Lifestyle-02/HydrationServed_Lifestyle-02.jpg?_i=AA"
-                          alt="Hydration, Served - Eucalyptus Green" decoding="async" loading="lazy"></div>
+                          alt="Hydration, Served - Eucalyptus Green" decoding="async" loading="lazy" /></div>
                     </div>
                   </div>
-                  <div className="productGallery_item" tabindex="0" style="order: 4;">
+                  <div className="productGallery_item" tabIndex="0" style="order: 4;">
                     <div className="css-3yl5zm e1v4pmz80">
                       <div className="itemImage_inner"><img className="itemImage_img css-0 e1nv8j4y1"
                           src="https://res.cloudinary.com/larq/image/fetch/q_auto,f_auto/https://res.cloudinary.com/larq/images/f_auto,q_auto/v1764088268/HydrationServed_Lifestyle-03/HydrationServed_Lifestyle-03.jpg?_i=AA"
-                          alt="Hydration, Served - Eucalyptus Green" decoding="async" loading="lazy"></div>
+                          alt="Hydration, Served - Eucalyptus Green" decoding="async" loading="lazy" /></div>
                     </div>
                   </div>
                 </div>
@@ -473,13 +473,13 @@ export default function ProductDetailPage() {
                       <div className="productSizes_listItem">
                         <div className="css-154ge8o exnujsp0"><label htmlFor="size_5901934133532">23 oz</label><input
                             type="radio" name="sizes" id="size_5901934133532" className="radioCard_check" value="23 oz"
-                            checked="">
+                            checked="" />
                           <div className="radioCard_label">23 oz</div>
                         </div>
                       </div>
                       <div className="productSizes_listItem">
                         <div className="css-1ogcs8d exnujsp0"><label htmlFor="size_5901934166300">34 oz</label><input
-                            type="radio" name="sizes" id="size_5901934166300" className="radioCard_check" value="34 oz">
+                            type="radio" name="sizes" id="size_5901934166300" className="radioCard_check" value="34 oz" />
                           <div className="radioCard_label">34 oz</div>
                         </div>
                       </div>
@@ -493,7 +493,7 @@ export default function ProductDetailPage() {
                         <div className="css-1u7yqan e1ycpnhy0"><label htmlFor="color_5901934199068">Color Obsidian
                             Black</label><input data-test-stock="radioColor_input_unavailable" type="radio"
                             name="Hydration, Served" id="color_5901934199068" className="radioColor_input"
-                            value="Obsidian Black"><span className="radioColor_color"><span
+                            value="Obsidian Black" /><span className="radioColor_color"><span
                               className="radioColor_colorDisplay"></span></span><span className="radioColor_strike"></span>
                         </div>
                       </div>
@@ -501,21 +501,21 @@ export default function ProductDetailPage() {
                         <div className="css-1kbm2kb e1ycpnhy0"><label htmlFor="color_5901934231836">Color Eucalyptus
                             Green</label><input data-test-stock="radioColor_input_available" type="radio"
                             name="Hydration, Served" id="color_5901934231836" className="radioColor_input"
-                            value="Eucalyptus Green" checked=""><span className="radioColor_color"><span
+                            value="Eucalyptus Green" checked="" /><span className="radioColor_color"><span
                               className="radioColor_colorDisplay"></span></span></div>
                       </div>
                       <div className="productColors_listItem">
                         <div className="css-1lr00pi e1ycpnhy0"><label htmlFor="color_5901934264604">Color Granite
                             White</label><input data-test-stock="radioColor_input_available" type="radio"
                             name="Hydration, Served" id="color_5901934264604" className="radioColor_input"
-                            value="Granite White"><span className="radioColor_color"><span
+                            value="Granite White" /><span className="radioColor_color"><span
                               className="radioColor_colorDisplay"></span></span></div>
                       </div>
                       <div className="productColors_listItem">
                         <div className="css-rnomfy e1ycpnhy0"><label htmlFor="color_5901934297372">Color Mojave
                             Dune</label><input data-test-stock="radioColor_input_unavailable" type="radio"
                             name="Hydration, Served" id="color_5901934297372" className="radioColor_input"
-                            value="Mojave Dune"><span className="radioColor_color"><span
+                            value="Mojave Dune" /><span className="radioColor_color"><span
                               className="radioColor_colorDisplay"></span></span><span className="radioColor_strike"></span>
                         </div>
                       </div>
@@ -523,7 +523,7 @@ export default function ProductDetailPage() {
                         <div className="css-k6fyr6 e1ycpnhy0"><label htmlFor="color_5901934330140">Color Luberon
                             Lavender</label><input data-test-stock="radioColor_input_unavailable" type="radio"
                             name="Hydration, Served" id="color_5901934330140" className="radioColor_input"
-                            value="Luberon Lavender"><span className="radioColor_color"><span
+                            value="Luberon Lavender" /><span className="radioColor_color"><span
                               className="radioColor_colorDisplay"></span></span><span className="radioColor_strike"></span>
                         </div>
                       </div>
@@ -531,7 +531,7 @@ export default function ProductDetailPage() {
                         <div className="css-z0daiw e1ycpnhy0"><label htmlFor="color_5901934362908">Color Amalfi
                             Blue</label><input data-test-stock="radioColor_input_available" type="radio"
                             name="Hydration, Served" id="color_5901934362908" className="radioColor_input"
-                            value="Amalfi Blue"><span className="radioColor_color"><span
+                            value="Amalfi Blue" /><span className="radioColor_color"><span
                               className="radioColor_colorDisplay"></span></span></div>
                       </div>
                     </fieldset>
@@ -569,7 +569,7 @@ export default function ProductDetailPage() {
                                 <div className="subscriptionDropdownProductOption_body">
                                   <div className="subscriptionDropdownProductOption_image"><img
                                       src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,w_100/v1738560778/SKU-v2/PAFR190A.png"
-                                      alt="Single / Advanced" decoding="async" loading="lazy"></div>
+                                      alt="Single / Advanced" decoding="async" loading="lazy" /></div>
                                   <div className="subscriptionDropdownProductOption_content">
                                     <div className="head">
                                       <div className="headTitle">Single / Advanced</div>
@@ -631,7 +631,7 @@ export default function ProductDetailPage() {
                               <div className="infoBar_content_graphic_icon css-3zvruv e1v4e4vu0">
                                 <div className="css-1dpbq7q e1nv8j4y0"><img className="css-0 e1nv8j4y1"
                                     src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1748860042/assets/spa/v3/loyalty/tier_icons/tier_1.png"
-                                    alt="Loyalty tier 1" decoding="async" loading="lazy"></div>
+                                    alt="Loyalty tier 1" decoding="async" loading="lazy" /></div>
                               </div>
                             </div>
                             <div className="infoBar_content_body">
@@ -873,7 +873,7 @@ export default function ProductDetailPage() {
               <div className="media">
                 <div className="media_inner"><img className="media_image"
                     src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1643307733/assets/spa/v2/content/slide_out/pitcher_filter_plan.png"
-                    alt="LARQ Pitcher PureVis™ Under faucet" decoding="async" loading="lazy"></div>
+                    alt="LARQ Pitcher PureVis™ Under faucet" decoding="async" loading="lazy" /></div>
               </div>
             </div>
           </div>
@@ -944,7 +944,7 @@ export default function ProductDetailPage() {
               <div className="media">
                 <div className="media_inner"><img className="media_image"
                     src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1643055726/assets/spa/v2/content/slide_out/larq_pitcher_advanced_filter.png"
-                    alt="LARQ Pitcher PureVis™ - Advanced Filter" decoding="async" loading="lazy"></div>
+                    alt="LARQ Pitcher PureVis™ - Advanced Filter" decoding="async" loading="lazy" /></div>
               </div>
             </div>
           </div>
@@ -997,7 +997,7 @@ export default function ProductDetailPage() {
               <div className="media">
                 <div className="media_inner"><img className="media_image"
                     src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1643055726/assets/spa/v2/content/slide_out/larq_pitcher_essential_filter.png"
-                    alt="LARQ Pitcher PureVis™ - Essential Filter" decoding="async" loading="lazy"></div>
+                    alt="LARQ Pitcher PureVis™ - Essential Filter" decoding="async" loading="lazy" /></div>
               </div>
             </div>
           </div>
@@ -1021,7 +1021,7 @@ export default function ProductDetailPage() {
                         <div className="cardHead"><a href="/drinkware/larq-bottle-swig-top?sku=BNWGW068A"
                             className="cardHead_imageLink" rel="noopener noreferrer" target="_blank"><img
                               src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1700730673/SKU/SPA/v3/BNWGW068A.png"
-                              alt="Granite White" decoding="async" loading="lazy"></a></div>
+                              alt="Granite White" decoding="async" loading="lazy" /></a></div>
                         <div className="cardBody">
                           <div className="cardBody_children"><small className="css-ivg32u e69xj4a0" opacity="0.64">LARQ Bottle
                               Swig Top</small>
@@ -1035,7 +1035,7 @@ export default function ProductDetailPage() {
                         <div className="cardHead"><a href="/home/larq-pitcher?sku=PNAMB190B" className="cardHead_imageLink"
                             rel="noopener noreferrer" target="_blank"><img
                               src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1700730673/SKU/SPA/v3/PNAMB190B.png"
-                              alt="LARQ Pitcher - Monaco Blue" decoding="async" loading="lazy"></a></div>
+                              alt="LARQ Pitcher - Monaco Blue" decoding="async" loading="lazy" /></a></div>
                         <div className="cardBody">
                           <div className="cardBody_children"><small className="css-ivg32u e69xj4a0" opacity="0.64">LARQ
                               Pitcher</small>
@@ -1049,7 +1049,7 @@ export default function ProductDetailPage() {
                         <div className="cardHead"><a href="/accessories/larq-pitcher-filter?sku=PAFR190A"
                             className="cardHead_imageLink" rel="noopener noreferrer" target="_blank"><img
                               src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1700730673/SKU/SPA/v3/PAFR190A.png"
-                              alt="LARQ Pitcher Filter - Advanced" decoding="async" loading="lazy"></a></div>
+                              alt="LARQ Pitcher Filter - Advanced" decoding="async" loading="lazy" /></a></div>
                         <div className="cardBody">
                           <div className="cardBody_children"><small className="css-ivg32u e69xj4a0" opacity="0.64">LARQ Pitcher
                               Filter</small>
@@ -1079,9 +1079,9 @@ export default function ProductDetailPage() {
                           standards to be effective against a wide range of contaminants.</p>
                       </div>
                       <div className="secondary-text"><small>See the difference:</small>
-                        <div className="actions"><button type="button" className="css-7j2e9i e10c7x3h0" tabindex="0"><span
+                        <div className="actions"><button type="button" className="css-7j2e9i e10c7x3h0" tabIndex="0"><span
                               className="btn_element"><span className="btn_label">Essential Filter</span></span></button><button
-                            type="button" className="css-1r9xzpi e10c7x3h0" tabindex="0"><span className="btn_element"><span
+                            type="button" className="css-1r9xzpi e10c7x3h0" tabIndex="0"><span className="btn_element"><span
                                 className="btn_label">Advanced Filter</span></span></button></div>
                       </div>
                     </div>
@@ -1098,7 +1098,7 @@ export default function ProductDetailPage() {
                           </div>
                           <div className="image"><img className="css-0 e1nv8j4y1"
                               src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,c_crop,w_800,h_615/v1738137667/SKU/SPA/v3/PEFR190A.png"
-                              alt="Essential Pitcher Filter" decoding="async" loading="lazy"></div>
+                              alt="Essential Pitcher Filter" decoding="async" loading="lazy" /></div>
                         </div>
                       </div>
                       <div className="protection">
@@ -1138,7 +1138,7 @@ export default function ProductDetailPage() {
                         </div>
                         <div className="image"><img className="css-0 e1nv8j4y1"
                             src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,c_crop,w_800,h_615/v1738137667/SKU/SPA/v3/PEFR190A.png"
-                            alt="Essential Pitcher Filter" decoding="async" loading="lazy"></div>
+                            alt="Essential Pitcher Filter" decoding="async" loading="lazy" /></div>
                       </div>
                     </div>
                   </div>
@@ -1167,7 +1167,7 @@ export default function ProductDetailPage() {
                             </div>
                             <div className="circleBlockMediaContainer"><img className="circleBlockMedia"
                                 src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,c_crop,w_800,h_615/v1738137667/SKU/SPA/v3/PEFR190A.png"
-                                alt="Nano Zero Filter" decoding="async" loading="lazy"></div>
+                                alt="Nano Zero Filter" decoding="async" loading="lazy" /></div>
                           </div>
                         </div>
                         <div className="css-1aqf688">
@@ -1186,7 +1186,7 @@ export default function ProductDetailPage() {
                                 <div className="centerCircle"></div>
                                 <div className="circleBlockMediaContainer"><img className="circleBlockMedia"
                                     src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,c_crop,w_800,h_615/v1738137667/SKU/SPA/v3/PEFR190A.png"
-                                    alt="Nano Zero Filter" decoding="async" loading="lazy"></div>
+                                    alt="Nano Zero Filter" decoding="async" loading="lazy" /></div>
                               </div>
                             </div>
                           </div>
@@ -1268,7 +1268,7 @@ export default function ProductDetailPage() {
                     <div className="css-5p2v6i e1hbbrqz0">
                       <div className="mediaCard_media"><img className="mediaCard_media_asset css-0 e1nv8j4y1"
                           src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,w_1440/v1759133612/v3-images/static/larq-pitcher-on-table.jpg"
-                          alt="Man drinking water from Larq bottle swig top" decoding="async" loading="lazy"></div>
+                          alt="Man drinking water from Larq bottle swig top" decoding="async" loading="lazy" /></div>
                     </div>
                   </div>
                   <div className="css-ovf5j">
@@ -1301,7 +1301,7 @@ export default function ProductDetailPage() {
                     <div className="css-5p2v6i e1hbbrqz0">
                       <div className="mediaCard_media"><img className="mediaCard_media_asset css-0 e1nv8j4y1"
                           src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,w_1440/v1759133610/v3-images/static/woman-drinking-from-bottle.jpg"
-                          alt="Man drinking water from Larq bottle swig top" decoding="async" loading="lazy"></div>
+                          alt="Man drinking water from Larq bottle swig top" decoding="async" loading="lazy" /></div>
                     </div>
                   </div>
                   <div className="css-1gsiclz">
@@ -1333,7 +1333,7 @@ export default function ProductDetailPage() {
                     <div className="css-5p2v6i e1hbbrqz0">
                       <div className="mediaCard_media"><img className="mediaCard_media_asset css-0 e1nv8j4y1"
                           src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,w_1440/v1749737033/v3-images/static/detachable-handle.jpg"
-                          alt="Larq bottle detachable handle detail" decoding="async" loading="lazy"></div>
+                          alt="Larq bottle detachable handle detail" decoding="async" loading="lazy" /></div>
                     </div>
                   </div>
                   <div className="css-ovf5j">
@@ -1414,34 +1414,34 @@ export default function ProductDetailPage() {
                       <div className="css-1wnrkqw e97nng80"><button type="button" className="gallerySummary_item"
                           title="View review"><img className="gallerySummary_itemImage"
                             src="https://cdn.stamped.io/uploads/photos/302815_9486032765212_60f05a04_7a28_44a5_92b6_d98deca2de3b.jpg?tr=w-160&amp;ts=06-01-2026"
-                            alt="Review photo by Johnson C." decoding="async" loading="lazy"></button><button
+                            alt="Review photo by Johnson C." decoding="async" loading="lazy" /></button><button
                           type="button" className="gallerySummary_item" title="View review"><img
                             className="gallerySummary_itemImage"
                             src="https://cdn.stamped.io/uploads/photos/302815_10191342993692_8892b5a7_4753_48ae_ae01_77ad019cfa9a.jpg?tr=w-160&amp;ts=06-01-2026"
-                            alt="Review photo by Rose C." decoding="async" loading="lazy"></button><button type="button"
+                            alt="Review photo by Rose C." decoding="async" loading="lazy" /></button><button type="button"
                           className="gallerySummary_item" title="View review"><img className="gallerySummary_itemImage"
                             src="https://cdn.stamped.io/uploads/photos/302815_10191342993692_3ef46bb0_935e_429c_a242_b72a4cd52817.jpg?tr=w-160&amp;ts=06-01-2026"
-                            alt="Review photo by Robin M." decoding="async" loading="lazy"></button><button
+                            alt="Review photo by Robin M." decoding="async" loading="lazy" /></button><button
                           type="button" className="gallerySummary_item" title="View review"><img
                             className="gallerySummary_itemImage"
                             src="https://cdn.stamped.io/uploads/photos/96246_213_caf07429_2beb_4c07_b835_f16e4d495b54.jpg?tr=w-160&amp;ts=06-01-2026"
-                            alt="Review photo by Anonymous" decoding="async" loading="lazy"></button><button
+                            alt="Review photo by Anonymous" decoding="async" loading="lazy" /></button><button
                           type="button" className="gallerySummary_item" title="View review"><img
                             className="gallerySummary_itemImage"
                             src="https://cdn.stamped.io/uploads/photos/108629_181_39be9618_29be_47ba_b5c2_592a1d4c97c7.jpg?tr=w-160&amp;ts=06-01-2026"
-                            alt="Review photo by Johannes R." decoding="async" loading="lazy"></button><button
+                            alt="Review photo by Johannes R." decoding="async" loading="lazy" /></button><button
                           type="button" className="gallerySummary_item" title="View review"><img
                             className="gallerySummary_itemImage"
                             src="https://cdn.stamped.io/uploads/photos/108629_181_79ab3203_6fde_4f1c_bb0a_25bf47a13e3e.jpg?tr=w-160&amp;ts=06-01-2026"
-                            alt="Review photo by Anonymous" decoding="async" loading="lazy"></button><button
+                            alt="Review photo by Anonymous" decoding="async" loading="lazy" /></button><button
                           type="button" className="gallerySummary_item" title="View review"><img
                             className="gallerySummary_itemImage"
                             src="https://cdn.stamped.io/uploads/photos/108629_181_05b4b5b6_2112_4c2a_abde_2db0a52c254c.jpg?tr=w-160&amp;ts=06-01-2026"
-                            alt="Review photo by Sandor S." decoding="async" loading="lazy"></button><button
+                            alt="Review photo by Sandor S." decoding="async" loading="lazy" /></button><button
                           type="button" className="gallerySummary_item" title="View review"><img
                             className="gallerySummary_itemImage"
                             src="https://cdn.stamped.io/uploads/photos/95151_189_2f4036c6_a0c6_432a_9f0f_2d18c5a45bdb.jpg?tr=w-160&amp;ts=06-01-2026"
-                            alt="Review photo by Anonymous" decoding="async" loading="lazy"></button></div>
+                            alt="Review photo by Anonymous" decoding="async" loading="lazy" /></button></div>
                     </div>
                   </div>
                   <div className="reviewsSingle_body">
@@ -1514,7 +1514,7 @@ export default function ProductDetailPage() {
                                   className="reviewsItem_infoItem isAuthor">Anonymous</span>
                                 <div className="location css-1m4909m"><img
                                     src="https://res.cloudinary.com/larq/image/upload/v1702649207/v3-images/flags/US.svg"
-                                    alt="country flag United States"><span className="location-text">United States</span>
+                                    alt="country flag United States" /><span className="location-text">United States</span>
                                 </div>
                               </div>
                             </div>
@@ -1587,7 +1587,7 @@ export default function ProductDetailPage() {
                                   className="reviewsItem_infoItem isAuthor">Victor</span>
                                 <div className="location css-1m4909m"><img
                                     src="https://res.cloudinary.com/larq/image/upload/v1702649207/v3-images/flags/US.svg"
-                                    alt="country flag United States"><span className="location-text">United States</span>
+                                    alt="country flag United States" /><span className="location-text">United States</span>
                                 </div>
                               </div>
                             </div>
@@ -1659,7 +1659,7 @@ export default function ProductDetailPage() {
                                   className="reviewsItem_infoItem isAuthor">Janette</span>
                                 <div className="location css-1m4909m"><img
                                     src="https://res.cloudinary.com/larq/image/upload/v1702649207/v3-images/flags/US.svg"
-                                    alt="country flag United States"><span className="location-text">United States</span>
+                                    alt="country flag United States" /><span className="location-text">United States</span>
                                 </div>
                               </div>
                             </div>
@@ -1732,7 +1732,7 @@ export default function ProductDetailPage() {
                                   className="reviewsItem_infoItem isAuthor">Jonathan</span>
                                 <div className="location css-1m4909m"><img
                                     src="https://res.cloudinary.com/larq/image/upload/v1702649207/v3-images/flags/US.svg"
-                                    alt="country flag United States"><span className="location-text">United States</span>
+                                    alt="country flag United States" /><span className="location-text">United States</span>
                                 </div>
                               </div>
                             </div>
@@ -1804,7 +1804,7 @@ export default function ProductDetailPage() {
                                   className="reviewsItem_infoItem isAuthor">Sullynette</span>
                                 <div className="location css-1m4909m"><img
                                     src="https://res.cloudinary.com/larq/image/upload/v1702649207/v3-images/flags/US.svg"
-                                    alt="country flag United States"><span className="location-text">United States</span>
+                                    alt="country flag United States" /><span className="location-text">United States</span>
                                 </div>
                               </div>
                             </div>
@@ -1856,7 +1856,7 @@ export default function ProductDetailPage() {
                             </div>
                             <p className="number-of-reviews">217 reviews</p><a aria-label="Opens all reviews page"
                               href="/drinkware/larq-bottle-swig-top/reviews" className="action-button css-7j2e9i e10c7x3h0"
-                              tabindex="0"><span className="btn_element"><span className="btn_label">Read all</span></span></a>
+                              tabIndex="0"><span className="btn_element"><span className="btn_label">Read all</span></span></a>
                           </div>
                         </li>
                       </ul>
@@ -1972,7 +1972,7 @@ export default function ProductDetailPage() {
                       </div>
                     </div>
                     <div className="css-eyw4eb"><a aria-label="Opens support page" href="/support" target="_blank"
-                        rel="noopener noreferrer" className="css-1r9xzpi e10c7x3h0" tabindex="0"><span
+                        rel="noopener noreferrer" className="css-1r9xzpi e10c7x3h0" tabIndex="0"><span
                           className="btn_element"><span className="btn_label">See all FAQs</span><span
                             className="btn_icon right"><span color="text.default" className="css-11qxqh7 e1dp28730"><svg
                                 className="css-82n8sf e11de7sb0" focusable="false" viewBox="0 0 32 32" color="text.default"
@@ -2017,7 +2017,7 @@ export default function ProductDetailPage() {
                     <div className="inputContainer_inner">
                       <div className="inputWrap"><input type="email" name="email" aria-invalid="false"
                           id="footerNewsletter_subscribe" value="" placeholder="Enter your email" required=""
-                          aria-label="Enter your email address to subscribe to our Newsletter"></div>
+                          aria-label="Enter your email address to subscribe to our Newsletter" /></div>
                     </div>
                   </div>
                 </div><button type="submit" className="newsletter-submit-button"
@@ -2065,7 +2065,7 @@ export default function ProductDetailPage() {
               aria-label="Get a quote for corporate gifting" href="/corporate-gifting">
               <div className="mediaTextCard_media"><img className="mediaTextCard_media_asset css-0 e1nv8j4y1"
                   src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1671184346/assets/spa/v2/content/promo/corporate-gifting/products/bottle-filtered_spotify.png"
-                  alt="Man holding LARQ bottle with Spotify branding" decoding="async" loading="lazy"></div>
+                  alt="Man holding LARQ bottle with Spotify branding" decoding="async" loading="lazy" /></div>
               <div className="mediaTextCard_body">
                 <div className="mediaTextCard_content">
                   <div className="mediaTextCard_content_body">
@@ -2074,7 +2074,7 @@ export default function ProductDetailPage() {
                       <div className="mediaTextCard_content_body_main_text">Originality never goes out of style</div>
                     </div>
                     <div className="mediaTextCard_content_body_action"><button type="button"
-                        className="mediaTextCard_content_body_actionCta css-uumepb e10c7x3h0" tabindex="-1"
+                        className="mediaTextCard_content_body_actionCta css-uumepb e10c7x3h0" tabIndex="-1"
                         aria-hidden="true"><span className="btn_element"><span className="btn_label">Get a
                             quote</span></span></button></div>
                   </div>
@@ -2086,7 +2086,7 @@ export default function ProductDetailPage() {
           <section className="css-9nsxkx euussmz0"><button className="country-switcher-button"
               aria-label="Open language and country switcher modal"><span className="flag"><img
                   src="https://res.cloudinary.com/larq/image/upload/v1702649207/v3-images/flags/us.svg"
-                  alt="country flag us"></span>United States</button></section>
+                  alt="country flag us" /></span>United States</button></section>
           <nav className="css-4h1e11 eeqemrm0">
             <ul className="footer-legal-links">
               <li className="copyright">© LARQ, {/* */}2026</li>
@@ -2231,7 +2231,7 @@ export default function ProductDetailPage() {
   <div id="batBeacon704635778788" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img
       id="batBeacon525267499070" width="0" height="0" alt=""
       src="https://bat.bing.com/action/0?ti=26016814&amp;tm=gtm002&amp;Ver=2&amp;mid=markup-adapter&amp;bo=4&amp;sid=47c78630eb3811f0832b3f9b067cc81c&amp;vid=47c79620eb3811f0a6df174f6eba1918&amp;vids=0&amp;msclkid=N&amp;uach=pv%3D10.0.0&amp;pi=918639831&amp;lg=en-US&amp;sw=1366&amp;sh=768&amp;sc=24&amp;tl=Ensure%20Superior%20Water%20Quality%20with%20LARQ%20%7C%20Advanced%20Purification%20%26%20Filtration%20Technology&amp;p=https%3A%2F%2Fwww.livelarq.com%2Fwater-quality&amp;r=&amp;lt=699&amp;evt=pageLoad&amp;sv=2&amp;asc=G&amp;cdb=AQAS&amp;rn=652380"
-      style="width: 0px; height: 0px; display: none; visibility: hidden;"></div>
+      style="width: 0px; height: 0px; display: none; visibility: hidden;" /></div>
   <script type="text/javascript" id="" charset="">(function () {
       if (window.braze) {
         var c = google_tag_manager["rm"]["7594555"](32), d = google_tag_manager["rm"]["7594555"](33), m = google_tag_manager["rm"]["7594555"](34), b = window.braze.getUser(), a = google_tag_manager["rm"]["7594555"](35), q = google_tag_manager["rm"]["7594555"](36), e = google_tag_manager["rm"]["7594555"](37), f = void 0, n = window.braze.User.NotificationSubscriptionTypes.OPTED_IN, g = !1; c === "gtm.init" && ["eu", "ca", "uk", "us"].indexOf(d) > -1 && b.setCustomUserAttribute("store_location", d.toUpperCase()); c === "newsletterSubscription" && a.subType === "Footer" && (f = "footer", e = a.email, g = !0); c === "newsletterSubscription" && ["SOC-1",
@@ -2249,7 +2249,7 @@ export default function ProductDetailPage() {
   <script id="ze-snippet" text="" charset="" type="text/javascript"
     src="https://static.zdassets.com/ekr/snippet.js?key=markup-adapter"></script>
   
-  <iframe data-product="web_widget" title="No content" role="presentation" tabindex="-1" allow="microphone *"
+  <iframe data-product="web_widget" title="No content" role="presentation" tabIndex="-1" allow="microphone *"
     aria-hidden="true" src="about:blank"
     style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;"></iframe>
   <div style="position: relative;" id="zp-11-2-5-licdn-root-apollo_everywhere">
@@ -2614,10 +2614,10 @@ export default function ProductDetailPage() {
     }(window, document, "ttq");</script>
   <script type="text/javascript" id=""
     charset="">(function (a, e, b, f, g, c, d) { a[b] = a[b] || function () { (a[b].q = a[b].q || []).push(arguments) }; c = e.createElement(f); c.async = 1; c.src = "https://www.clarity.ms/tag/" + g + "?ref\x3dgtm2"; d = e.getElementsByTagName(f)[0]; d.parentNode.insertBefore(c, d) })(window, document, "clarity", "script", "gtk1bbcusn");</script>
-  <div data-focus-guard="true" tabindex="0"
+  <div data-focus-guard="true" tabIndex="0"
     style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"></div>
   <div data-focus-lock-disabled="false"></div>
-  <div data-focus-guard="true" tabindex="0"
+  <div data-focus-guard="true" tabIndex="0"
     style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"></div>
   <div className="css-ikt23b e1brh6hh0">
     <div className="slideOut_dialog" role="dialog">
@@ -2632,7 +2632,7 @@ export default function ProductDetailPage() {
         <div className="css-1l2nyvg e9hmjub0">
           <div className="content_head"><img className="content_head_image css-0 e1nv8j4y1"
               src="https://res.cloudinary.com/larq/image/upload/q_auto/v1748933622/assets/spa/v3/loyalty/slide_out/head_1.jpg"
-              alt="Woman holding a LARQ Bottle" decoding="async" loading="lazy"></div>
+              alt="Woman holding a LARQ Bottle" decoding="async" loading="lazy" /></div>
           <div className="content_body">
             <div className="content_bodyMain">
               <div className="content_bodyMain_title">Hydration Club</div>
@@ -2668,7 +2668,7 @@ export default function ProductDetailPage() {
                           <div className="infoBar_content_graphic_icon css-3zvruv e1v4e4vu0">
                             <div className="css-1dpbq7q e1nv8j4y0"><img className="css-0 e1nv8j4y1"
                                 src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1748860042/assets/spa/v3/loyalty/tier_icons/tier_1.png"
-                                alt="Loyalty tier 1" decoding="async" loading="lazy"></div>
+                                alt="Loyalty tier 1" decoding="async" loading="lazy" /></div>
                           </div>
                         </div>
                         <div className="infoBar_content_body">
@@ -2688,7 +2688,7 @@ export default function ProductDetailPage() {
                           <div className="infoBar_content_graphic_icon css-3zvruv e1v4e4vu0">
                             <div className="css-1dpbq7q e1nv8j4y0"><img className="css-0 e1nv8j4y1"
                                 src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1748860042/assets/spa/v3/loyalty/tier_icons/tier_2.png"
-                                alt="Loyalty tier 2" decoding="async" loading="lazy"></div>
+                                alt="Loyalty tier 2" decoding="async" loading="lazy" /></div>
                           </div>
                         </div>
                         <div className="infoBar_content_body">

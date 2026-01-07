@@ -32,7 +32,7 @@ export default function HomePage() {
                                 <div className="css-16unm68 e1r8pers0">
                                     <div className="content_head"><img className="content_head_image"
                                             src="https://res.cloudinary.com/larq/images/f_auto,q_auto/v1766144740/BoxingDay2025_SlideOut/BoxingDay2025_SlideOut.jpg?_i=AA"
-                                            alt="LARQ promotion" decoding="async" loading="lazy"></div>
+                                            alt="LARQ promotion" decoding="async" loading="lazy" /></div>
                                     <div className="content_body">
                                         <div className="content_bodyMain">
                                             <div className="content_bodyMain_intro"><strong>Last chance of the year to shop
@@ -60,7 +60,7 @@ export default function HomePage() {
                                             </div>
                                         </div>
                                         <div className="content_bodyActions"><a href="/shop"
-                                                className="content_bodyActions_cta css-1xnmvko e10c7x3h0" tabindex="0"><span
+                                                className="content_bodyActions_cta css-1xnmvko e10c7x3h0" tabIndex="0"><span
                                                     className="btn_element"><span className="btn_label">Shop
                                                         now</span></span></a></div>
                                         <div className="content_bodyDisclaimer">Offer valid for a limited time only.
@@ -91,9 +91,9 @@ export default function HomePage() {
                                     <nav className="main-navigation-links main-navigation-links-left" role="navigation"
                                         aria-label="main navigation">
                                         <ul>
-                                            <li><button className="" aria-label="Bottles" tabindex="0"
+                                            <li><button className="" aria-label="Bottles" tabIndex="0"
                                                     role="button">Bottles</button></li>
-                                            <li><button className="" aria-label="Pitchers" tabindex="0"
+                                            <li><button className="" aria-label="Pitchers" tabIndex="0"
                                                     role="button">Pitchers</button></li>
                                             <li><a className="" href="/shop/hydration-sets">Sets</a></li>
                                             <li><a className="" href="/shop">Shop all</a></li>
@@ -220,19 +220,19 @@ export default function HomePage() {
                                             <div className="cartProgress_inner">
                                                 <div className="css-1vzajjh e12j6rpn0">
                                                     <div className="cartProgressBar">
-                                                        <div tabindex="0" role="button"
+                                                        <div tabIndex="0" role="button"
                                                             data-tooltip="Get $10 off on orders $60 or more!"
                                                             className="css-1f8nz51 ez03c6k0">
                                                             <div className="cartProgressStep_label">$10 off</div>
                                                             <div className="cartProgressStep_bullet"></div>
                                                         </div>
-                                                        <div tabindex="0" role="button"
+                                                        <div tabIndex="0" role="button"
                                                             data-tooltip="Get $20 off on orders $130 or more!"
                                                             className="css-14hva5r ez03c6k0">
                                                             <div className="cartProgressStep_label">$20 off</div>
                                                             <div className="cartProgressStep_bullet"></div>
                                                         </div>
-                                                        <div tabindex="0" role="button"
+                                                        <div tabIndex="0" role="button"
                                                             data-tooltip="Get $40 off on orders over $200 plus receive 1000 bonus Hydro Points for your next purchase!"
                                                             className="css-15vy6r9 ez03c6k0">
                                                             <div className="cartProgressStep_label">$40 off + 1000 pts</div>
@@ -276,7 +276,7 @@ export default function HomePage() {
                                                 miss the final sale of the year.</div>
                                         </div>
                                         <div className="mainHero_details_footer"><a aria-label="" href="/shop"
-                                                className="css-fnfzpo e10c7x3h0" tabindex="0"><span
+                                                className="css-fnfzpo e10c7x3h0" tabIndex="0"><span
                                                     className="btn_element"><span className="btn_label">Shop
                                                         now</span></span></a></div>
                                     </div>
@@ -289,10 +289,10 @@ export default function HomePage() {
                         <div className="mainHero_cover">
                             <div className="mainImage"><img className="isMobile css-0 e1nv8j4y1"
                                     src="https://res.cloudinary.com/larq/image/fetch/q_auto,f_auto/https://res.cloudinary.com/larq/images/f_auto,q_auto/v1766144751/BoxingDay2025_Hero-Mobile/BoxingDay2025_Hero-Mobile.jpg?_i=AA"
-                                    alt="Up to $40 off Sitewide" decoding="async" loading="eager"><img
+                                    alt="Up to $40 off Sitewide" decoding="async" loading="eager" /><img
                                     className="isDesktop css-0 e1nv8j4y1"
                                     src="https://res.cloudinary.com/larq/image/fetch/q_auto,f_auto/https://res.cloudinary.com/larq/images/f_auto,q_auto/v1766144744/BoxingDay2025_Hero-Desktop/BoxingDay2025_Hero-Desktop.jpg?_i=AA"
-                                    alt="Up to $40 off Sitewide" decoding="async" loading="eager"></div>
+                                    alt="Up to $40 off Sitewide" decoding="async" loading="eager" /></div>
                         </div>
                     </div>
                 </div>
@@ -309,28 +309,28 @@ export default function HomePage() {
                                             <h2 className="pageSectionHead_head_title">LARQ Products</h2>
                                             <div className="pageSectionHead_head_addendum">
                                                 <div className="exmyjcv0 css-1t50len"><button type="button"
-                                                        className="css-16k3ijo e10c7x3h0" disabled="" tabindex="0"><span
+                                                        className="css-16k3ijo e10c7x3h0" disabled="" tabIndex="0"><span
                                                             className="btn_element"><span
                                                                 className="btn_label">Featured</span></span></button><button
                                                         aria-label="Show Smart Bottles" type="button"
-                                                        className="css-139p19l e10c7x3h0" tabindex="0"><span
+                                                        className="css-139p19l e10c7x3h0" tabIndex="0"><span
                                                             className="btn_element"><span className="btn_label">Smart
                                                                 Bottles</span></span></button><button
                                                         aria-label="Show Filtration Bottles" type="button"
-                                                        className="css-139p19l e10c7x3h0" tabindex="0"><span
+                                                        className="css-139p19l e10c7x3h0" tabIndex="0"><span
                                                             className="btn_element"><span className="btn_label">Filtration
                                                                 Bottles</span></span></button><button
                                                         aria-label="Show Everyday Drinkware" type="button"
-                                                        className="css-139p19l e10c7x3h0" tabindex="0"><span
+                                                        className="css-139p19l e10c7x3h0" tabIndex="0"><span
                                                             className="btn_element"><span className="btn_label">Everyday
                                                                 Drinkware</span></span></button><button
                                                         aria-label="Show Pitchers" type="button"
-                                                        className="css-139p19l e10c7x3h0" tabindex="0"><span
+                                                        className="css-139p19l e10c7x3h0" tabIndex="0"><span
                                                             className="btn_element"><span
                                                                 className="btn_label">Pitchers</span></span></button></div>
                                             </div>
                                             <div className="pageSectionHead_head_action"><a aria-label="View all products"
-                                                    href="/shop" className="css-139p19l e10c7x3h0" tabindex="0"><span
+                                                    href="/shop" className="css-139p19l e10c7x3h0" tabIndex="0"><span
                                                         className="btn_element"><span className="btn_label">Shop
                                                             all</span></span></a></div>
                                         </div>
@@ -354,7 +354,7 @@ export default function HomePage() {
                                                                                 className="productMedia_assetImage"
                                                                                 src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BWOB068A.png"
                                                                                 alt="LARQ Bottle PureVis™ 2 Obsidian Black"
-                                                                                decoding="async" loading="lazy"></div>
+                                                                                decoding="async" loading="lazy" /></div>
                                                                     </div>
                                                                 </a>
                                                             </div>
@@ -665,7 +665,7 @@ export default function HomePage() {
                                                                                 className="productMedia_assetImage"
                                                                                 src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/PAMB190A.png"
                                                                                 alt="LARQ Pitcher PureVis™ Monaco Blue"
-                                                                                decoding="async" loading="lazy"></div>
+                                                                                decoding="async" loading="lazy" /></div>
                                                                     </div>
                                                                 </a>
                                                             </div>
@@ -791,7 +791,7 @@ export default function HomePage() {
                                                                                 className="productMedia_assetImage"
                                                                                 src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BNWOB100A.png"
                                                                                 alt="LARQ Bottle Swig Top Obsidian Black"
-                                                                                decoding="async" loading="lazy"></div>
+                                                                                decoding="async" loading="lazy" /></div>
                                                                     </div>
                                                                 </a>
                                                             </div>
@@ -1202,7 +1202,7 @@ export default function HomePage() {
                                                                                 className="productMedia_assetImage"
                                                                                 src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BFBNWEG068ABFAW068A.png"
                                                                                 alt="LARQ Bottle Filtered Swig Top Eucalyptus Green"
-                                                                                decoding="async" loading="lazy"></div>
+                                                                                decoding="async" loading="lazy" /></div>
                                                                     </div>
                                                                 </a>
                                                             </div>
@@ -1623,7 +1623,7 @@ export default function HomePage() {
                                                                                 className="productMedia_assetImage"
                                                                                 src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BDMB074A.png"
                                                                                 alt="LARQ Bottle PureVis™ Monaco Blue"
-                                                                                decoding="async" loading="lazy"></div>
+                                                                                decoding="async" loading="lazy" /></div>
                                                                     </div>
                                                                 </a>
                                                             </div>
@@ -1827,7 +1827,7 @@ export default function HomePage() {
                                                                                 className="productMedia_assetImage"
                                                                                 src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BFDGW050A.png"
                                                                                 alt="LARQ Bottle Filtered Flip Top Granite White"
-                                                                                decoding="async" loading="lazy"></div>
+                                                                                decoding="async" loading="lazy" /></div>
                                                                     </div>
                                                                 </a>
                                                             </div>
@@ -1963,7 +1963,7 @@ export default function HomePage() {
                                                                                 className="productMedia_assetImage"
                                                                                 src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BNSOB050A.png"
                                                                                 alt="LARQ Bottle Flip Top Obsidian Black"
-                                                                                decoding="async" loading="lazy"></div>
+                                                                                decoding="async" loading="lazy" /></div>
                                                                     </div>
                                                                 </a>
                                                             </div>
@@ -2132,7 +2132,7 @@ export default function HomePage() {
                                                                                 className="productMedia_assetImage"
                                                                                 src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_900/v1738137667/SKU/SPA/v3/BNDMB050A.png"
                                                                                 alt="LARQ Bottle Twist Top Monaco Blue"
-                                                                                decoding="async" loading="lazy"></div>
+                                                                                decoding="async" loading="lazy" /></div>
                                                                     </div>
                                                                 </a>
                                                             </div>
@@ -2362,7 +2362,7 @@ export default function HomePage() {
                                                                         className="mediaTextCard_media_asset css-0 e1nv8j4y1"
                                                                         src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1738327334/assets/spa/v3/shop/content/collections/bottles.jpg"
                                                                         alt="Athlete holding LARQ Bottle PureVis 2 Obsidian Black in hand"
-                                                                        decoding="async" loading="lazy"></div>
+                                                                        decoding="async" loading="lazy" /></div>
                                                                 <div className="mediaTextCard_body">
                                                                     <div className="mediaTextCard_content">
                                                                         <div className="mediaTextCard_content_body">
@@ -2380,7 +2380,7 @@ export default function HomePage() {
                                                                                 className="mediaTextCard_content_body_action">
                                                                                 <button type="button"
                                                                                     className="mediaTextCard_content_body_actionCta css-uumepb e10c7x3h0"
-                                                                                    tabindex="-1"
+                                                                                    tabIndex="-1"
                                                                                     aria-hidden="true"><span
                                                                                         className="btn_element"><span
                                                                                             className="btn_label">Shop
@@ -2392,7 +2392,7 @@ export default function HomePage() {
                                                             </a></div><span className="u-inView"></span>
                                                     </div>
                                                 </div>
-                                                <div className="cardsSwiper_navigation"><button tabindex="-1"
+                                                <div className="cardsSwiper_navigation"><button tabIndex="-1"
                                                         title="Previous product" type="button"
                                                         className="cardsSwiper_navigation_arrow isPrevious"><span
                                                             color="text.default" className="css-11qxqh7 e1dp28730"><svg
@@ -2517,7 +2517,7 @@ export default function HomePage() {
                                         <div className="pageSectionHead_head css-vurnku">
                                             <h2 className="pageSectionHead_head_title">Shop LARQ</h2>
                                             <div className="pageSectionHead_head_action"><a aria-label="View all products"
-                                                    href="/shop" className="css-139p19l e10c7x3h0" tabindex="0"><span
+                                                    href="/shop" className="css-139p19l e10c7x3h0" tabIndex="0"><span
                                                         className="btn_element"><span className="btn_label">Shop
                                                             all</span></span></a></div>
                                         </div>
@@ -2534,7 +2534,7 @@ export default function HomePage() {
                                                                     className="mediaTextCard_media_asset css-0 e1nv8j4y1"
                                                                     src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1738327334/assets/spa/v3/shop/content/collections/bottles.jpg"
                                                                     alt="Athlete holding LARQ Bottle PureVis 2 Obsidian Black in hand"
-                                                                    decoding="async" loading="lazy"></div>
+                                                                    decoding="async" loading="lazy" /></div>
                                                             <div className="mediaTextCard_body">
                                                                 <div className="mediaTextCard_content">
                                                                     <div className="mediaTextCard_content_body">
@@ -2550,7 +2550,7 @@ export default function HomePage() {
                                                                         <div className="mediaTextCard_content_body_action">
                                                                             <button type="button"
                                                                                 className="mediaTextCard_content_body_actionCta css-uumepb e10c7x3h0"
-                                                                                tabindex="-1" aria-hidden="true"><span
+                                                                                tabIndex="-1" aria-hidden="true"><span
                                                                                     className="btn_element"><span
                                                                                         className="btn_label">Shop
                                                                                         now</span></span></button>
@@ -2567,7 +2567,7 @@ export default function HomePage() {
                                                                     className="mediaTextCard_media_asset css-0 e1nv8j4y1"
                                                                     src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1738327334/assets/spa/v3/shop/content/collections/pitchers.jpg"
                                                                     alt="Woman holding LARQ Pitcher Pure White"
-                                                                    decoding="async" loading="lazy"></div>
+                                                                    decoding="async" loading="lazy" /></div>
                                                             <div className="mediaTextCard_body">
                                                                 <div className="mediaTextCard_content">
                                                                     <div className="mediaTextCard_content_body">
@@ -2583,7 +2583,7 @@ export default function HomePage() {
                                                                         <div className="mediaTextCard_content_body_action">
                                                                             <button type="button"
                                                                                 className="mediaTextCard_content_body_actionCta css-uumepb e10c7x3h0"
-                                                                                tabindex="-1" aria-hidden="true"><span
+                                                                                tabIndex="-1" aria-hidden="true"><span
                                                                                     className="btn_element"><span
                                                                                         className="btn_label">Shop
                                                                                         now</span></span></button>
@@ -2600,7 +2600,7 @@ export default function HomePage() {
                                                                     className="mediaTextCard_media_asset css-0 e1nv8j4y1"
                                                                     src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1738327334/assets/spa/v3/shop/content/collections/accessories.jpg"
                                                                     alt="Tennis player drinking water from a LARQ Bottle"
-                                                                    decoding="async" loading="lazy"></div>
+                                                                    decoding="async" loading="lazy" /></div>
                                                             <div className="mediaTextCard_body">
                                                                 <div className="mediaTextCard_content">
                                                                     <div className="mediaTextCard_content_body">
@@ -2616,7 +2616,7 @@ export default function HomePage() {
                                                                         <div className="mediaTextCard_content_body_action">
                                                                             <button type="button"
                                                                                 className="mediaTextCard_content_body_actionCta css-uumepb e10c7x3h0"
-                                                                                tabindex="-1" aria-hidden="true"><span
+                                                                                tabIndex="-1" aria-hidden="true"><span
                                                                                     className="btn_element"><span
                                                                                         className="btn_label">Shop
                                                                                         now</span></span></button>
@@ -2627,7 +2627,7 @@ export default function HomePage() {
                                                         </a></div><span className="u-inView"></span>
                                                 </div>
                                             </div>
-                                            <div className="cardsSwiper_navigation"><button tabindex="-1"
+                                            <div className="cardsSwiper_navigation"><button tabIndex="-1"
                                                     title="Previous product" type="button"
                                                     className="cardsSwiper_navigation_arrow isPrevious"><span
                                                         color="text.default" className="css-11qxqh7 e1dp28730"><svg
@@ -2732,7 +2732,7 @@ export default function HomePage() {
                                                                         <path fill-rule="evenodd" clip-rule="evenodd"
                                                                             d="M48.8204 82.2042C48.0075 81.7691 47.5 80.922 47.5 80L47.5 40C47.5 39.078 48.0075 38.2309 48.8204 37.7958C49.6333 37.3608 50.6196 37.4084 51.3868 37.9199L81.3868 57.9199C82.0823 58.3835 82.5 59.1641 82.5 60C82.5 60.8359 82.0823 61.6165 81.3868 62.0801L51.3868 82.0801C50.6196 82.5916 49.6333 82.6392 48.8204 82.2042ZM52.5 75.3287L75.4931 60L52.5 44.6713L52.5 75.3287Z"
                                                                             fill="white"></path>
-                                                                    </svg></span></button><video tabindex="-1"
+                                                                    </svg></span></button><video tabIndex="-1"
                                                                 className="productMediaCard_media_asset" playsinline=""
                                                                 loop=""
                                                                 src="https://res.cloudinary.com/larq/video/upload/v1743173385/selected-reviews-videos/bottle-filtered-flip-top/optimized/640/bottle-filtered-flip-top-07.mp4"></video>
@@ -2747,7 +2747,7 @@ export default function HomePage() {
                                                                     <img className="css-0 e1nv8j4y1"
                                                                         src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_400/v1738137667/SKU/SPA/v3/BFDGW074A.png"
                                                                         alt="LARQ Bottle Filtered Flip Top - Granite White image"
-                                                                        decoding="async" loading="lazy">
+                                                                        decoding="async" loading="lazy" />
                                                                 </div>
                                                                 <div className="product-info-body">
                                                                     <h4 className="title">LARQ Bottle Filtered Flip Top</h4>
@@ -2806,7 +2806,7 @@ export default function HomePage() {
                                                     water tastes crisp and fresh.</div>
                                                 <div className="feedbackCard_logo"><img className="css-0 e1nv8j4y1"
                                                         src="https://res.cloudinary.com/larq/image/upload/v1743228143/selected-reviews-logo/the-oprah-magazine.png"
-                                                        alt="The Oprah Magazine logo" decoding="async" loading="lazy">
+                                                        alt="The Oprah Magazine logo" decoding="async" loading="lazy" />
                                                 </div>
                                             </div>
                                         </div>
@@ -2816,7 +2816,7 @@ export default function HomePage() {
                                                     Three of our experts named the LARQ bottle as one to watch.</div>
                                                 <div className="feedbackCard_logo"><img className="css-0 e1nv8j4y1"
                                                         src="https://res.cloudinary.com/larq/image/upload/v1743228143/selected-reviews-logo/the-strategist.png"
-                                                        alt="The Strategist logo" decoding="async" loading="lazy"></div>
+                                                        alt="The Strategist logo" decoding="async" loading="lazy" /></div>
                                             </div>
                                             <div className="css-t7h8wa evwaukm0">
                                                 <div className="wrap">
@@ -2830,7 +2830,7 @@ export default function HomePage() {
                                                                         <path fill-rule="evenodd" clip-rule="evenodd"
                                                                             d="M48.8204 82.2042C48.0075 81.7691 47.5 80.922 47.5 80L47.5 40C47.5 39.078 48.0075 38.2309 48.8204 37.7958C49.6333 37.3608 50.6196 37.4084 51.3868 37.9199L81.3868 57.9199C82.0823 58.3835 82.5 59.1641 82.5 60C82.5 60.8359 82.0823 61.6165 81.3868 62.0801L51.3868 82.0801C50.6196 82.5916 49.6333 82.6392 48.8204 82.2042ZM52.5 75.3287L75.4931 60L52.5 44.6713L52.5 75.3287Z"
                                                                             fill="white"></path>
-                                                                    </svg></span></button><video tabindex="-1"
+                                                                    </svg></span></button><video tabIndex="-1"
                                                                 className="productMediaCard_media_asset" playsinline=""
                                                                 loop=""
                                                                 src="https://res.cloudinary.com/larq/video/upload/v1744961145/selected-reviews-videos/pitcher-pure-vis/optimized/640/pitcher-02_opt.mp4"></video>
@@ -2845,7 +2845,7 @@ export default function HomePage() {
                                                                     <img className="css-0 e1nv8j4y1"
                                                                         src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_400/v1738137667/SKU/SPA/v3/PAPW190A.png"
                                                                         alt="LARQ Pitcher PureVis™ - Pure White image"
-                                                                        decoding="async" loading="lazy">
+                                                                        decoding="async" loading="lazy" />
                                                                 </div>
                                                                 <div className="product-info-body">
                                                                     <h4 className="title">LARQ Pitcher PureVis™</h4>
@@ -2870,7 +2870,7 @@ export default function HomePage() {
                                                                         <path fill-rule="evenodd" clip-rule="evenodd"
                                                                             d="M48.8204 82.2042C48.0075 81.7691 47.5 80.922 47.5 80L47.5 40C47.5 39.078 48.0075 38.2309 48.8204 37.7958C49.6333 37.3608 50.6196 37.4084 51.3868 37.9199L81.3868 57.9199C82.0823 58.3835 82.5 59.1641 82.5 60C82.5 60.8359 82.0823 61.6165 81.3868 62.0801L51.3868 82.0801C50.6196 82.5916 49.6333 82.6392 48.8204 82.2042ZM52.5 75.3287L75.4931 60L52.5 44.6713L52.5 75.3287Z"
                                                                             fill="white"></path>
-                                                                    </svg></span></button><video tabindex="-1"
+                                                                    </svg></span></button><video tabIndex="-1"
                                                                 className="productMediaCard_media_asset" playsinline=""
                                                                 loop=""
                                                                 src="https://res.cloudinary.com/larq/video/upload/v1744961145/selected-reviews-videos/pitcher-pure-vis/optimized/640/pitcher-01_opt.mp4"></video>
@@ -2885,7 +2885,7 @@ export default function HomePage() {
                                                                     <img className="css-0 e1nv8j4y1"
                                                                         src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_400/v1738137667/SKU/SPA/v3/PAMB190A.png"
                                                                         alt="LARQ Pitcher PureVis™ - Monaco Blue image"
-                                                                        decoding="async" loading="lazy">
+                                                                        decoding="async" loading="lazy" />
                                                                 </div>
                                                                 <div className="product-info-body">
                                                                     <h4 className="title">LARQ Pitcher PureVis™</h4>
@@ -2901,7 +2901,7 @@ export default function HomePage() {
                                                     Dispenser For The High-Tech LARQ Pitcher PureVis™.</div>
                                                 <div className="feedbackCard_logo"><img className="css-0 e1nv8j4y1"
                                                         src="https://res.cloudinary.com/larq/image/upload/v1743228143/selected-reviews-logo/best-products.png"
-                                                        alt="Best Products logo" decoding="async" loading="lazy"></div>
+                                                        alt="Best Products logo" decoding="async" loading="lazy" /></div>
                                             </div>
                                         </div>
                                     </div>
@@ -2918,7 +2918,7 @@ export default function HomePage() {
                             <div className="anim-reveal" style="opacity:0;transform:translateY(50px) translateZ(0)">
                                 <section className="css-mmakay eu0hz6r0">
                                     <div className="content-wrap">
-                                        <div className="media"><video tabindex="-1"
+                                        <div className="media"><video tabIndex="-1"
                                                 src="https://res.cloudinary.com/larq/video/upload/v1751905034/assets/spa/v3/content/video/WQ-Loop-Short-v2_1280_opt.mp4"
                                                 playsinline="" muted="" loop="" autoplay=""
                                                 title="Water quality presentation video" className="media-asset"></video>
@@ -2937,7 +2937,7 @@ export default function HomePage() {
                                                                     <div className="inputWrap"><input type="text"
                                                                             name="zipCode" aria-invalid="false"
                                                                             id="zipCode" value=""
-                                                                            placeholder="Enter ZIP"></div>
+                                                                            placeholder="Enter ZIP" /></div>
                                                                 </div>
                                                             </div>
                                                         </div><button type="submit" className="action-button"
@@ -2971,7 +2971,7 @@ export default function HomePage() {
                                 <div className="contentInner">
                                     <div className="content_head">
                                         <h3 className="content_headTitle"><strong>What Contaminants Are Lurking in Your Tap
-                                                Water?</strong><br>And how the right filter can help you breathe easy.
+                                                Water?</strong><br />And how the right filter can help you breathe easy.
                                         </h3>
                                     </div>
                                     <div className="content_body">
@@ -3066,7 +3066,7 @@ export default function HomePage() {
                                             <div className="inputWrap"><input type="email" name="email" aria-invalid="false"
                                                     id="footerNewsletter_subscribe" value=""
                                                     placeholder="Enter your email" required=""
-                                                    aria-label="Enter your email address to subscribe to our Newsletter">
+                                                    aria-label="Enter your email address to subscribe to our Newsletter" />
                                             </div>
                                         </div>
                                     </div>
@@ -3119,7 +3119,7 @@ export default function HomePage() {
                             aria-label="Get a quote for corporate gifting" href="/corporate-gifting">
                             <div className="mediaTextCard_media"><img className="mediaTextCard_media_asset css-0 e1nv8j4y1"
                                     src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1671184346/assets/spa/v2/content/promo/corporate-gifting/products/bottle-filtered_spotify.png"
-                                    alt="Man holding LARQ bottle with Spotify branding" decoding="async" loading="lazy">
+                                    alt="Man holding LARQ bottle with Spotify branding" decoding="async" loading="lazy" />
                             </div>
                             <div className="mediaTextCard_body">
                                 <div className="mediaTextCard_content">
@@ -3131,7 +3131,7 @@ export default function HomePage() {
                                         </div>
                                         <div className="mediaTextCard_content_body_action"><button type="button"
                                                 className="mediaTextCard_content_body_actionCta css-uumepb e10c7x3h0"
-                                                tabindex="-1" aria-hidden="true"><span className="btn_element"><span
+                                                tabIndex="-1" aria-hidden="true"><span className="btn_element"><span
                                                         className="btn_label">Get a quote</span></span></button></div>
                                     </div>
                                 </div>
@@ -3142,7 +3142,7 @@ export default function HomePage() {
                     <section className="css-9nsxkx euussmz0"><button className="country-switcher-button"
                             aria-label="Open language and country switcher modal"><span className="flag"><img
                                     src="https://res.cloudinary.com/larq/image/upload/v1702649207/v3-images/flags/us.svg"
-                                    alt="country flag us"></span>United States</button></section>
+                                    alt="country flag us" /></span>United States</button></section>
                     <nav className="css-4h1e11 eeqemrm0">
                         <ul className="footer-legal-links">
                             <li className="copyright">© LARQ, {/* */}2026</li>
@@ -3286,7 +3286,7 @@ export default function HomePage() {
     <div id="batBeacon934189192692" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img
             id="batBeacon469091610205" width="0" height="0" alt=""
             src="https://bat.bing.com/action/0?ti=26016814&amp;tm=gtm002&amp;Ver=2&amp;mid=markup-adapter&amp;bo=4&amp;sid=47c78630eb3811f0832b3f9b067cc81c&amp;vid=47c79620eb3811f0a6df174f6eba1918&amp;vids=0&amp;msclkid=N&amp;uach=pv%3D10.0.0&amp;pi=918639831&amp;lg=en-US&amp;sw=1366&amp;sh=768&amp;sc=24&amp;tl=LARQ%20%7C%20Self-cleaning%20Water%20Bottle%20%7C%20As%20Seen%20on%20Shark%20Tank&amp;p=https%3A%2F%2Fwww.livelarq.com%2F&amp;r=https%3A%2F%2Fwww.livelarq.com%2F&amp;lt=5789&amp;evt=pageLoad&amp;sv=2&amp;asc=G&amp;cdb=AQAS&amp;rn=478650"
-            style="width: 0px; height: 0px; display: none; visibility: hidden;"></div><iframe height="0" width="0"
+            style="width: 0px; height: 0px; display: none; visibility: hidden;" /></div><iframe height="0" width="0"
         style="display: none; visibility: hidden;"></iframe>
     <script type="text/javascript" id="" charset="">(function () {
             if (window.braze) {

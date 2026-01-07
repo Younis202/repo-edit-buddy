@@ -6,7 +6,7 @@ export default function TechnologyPage() {
   <div className="zp-open-popup-button">
     <div className="x_R61yl zp-11-2-5-zp-fixed"><img alt="Apollo.io"
         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBmaWxsPSIjZWJmMjEyIiBkPSJtMjEuNDY2IDUuMDcxLjAwNCAxMC45MTVjLjAwMSAxLjcyNS0xLjgzNCAyLjgzLTMuMzU4IDIuMDI0TDcuMTcgMTIuMjIzYTE1LjEgMTUuMSAwIDAgMSAzLjEtMy42NGw4LjU4MiA3LjkzMmMuNDU1LjQyIDEuMTcyLS4wMzYuOTg1LS42MjZMMTYuNTA5IDUuNDFhMTUgMTUgMCAwIDEgNC45NTYtLjMzOE0xOC40OTYgMzQuOTI1bC0uMDA1LTEwLjg2YzAtMS43MjQgMS44MzQtMi44MyAzLjM1OS0yLjAyM2wxMC45NDYgNS43OWExNSAxNSAwIDAgMS0zLjExNiAzLjYyNmwtOC41Ny03LjkyMWMtLjQ1NS0uNDItMS4xNzIuMDM1LS45ODUuNjI1bDMuMzE2IDEwLjQ0MWExNSAxNSAwIDAgMS00Ljk0NS4zMjJNMjMuNDkyIDE4Ljg5OCAzMS40NCAxMC4zYTE1IDE1IDAgMCAwLTMuNjQtMy4xMTNsLTUuODA0IDEwLjk3MmMtLjgwNiAxLjUyNC4zIDMuMzU5IDIuMDI0IDMuMzU4bDEwLjkwNS0uMDA1YTE1LjIgMTUuMiAwIDAgMC0uMzI0LTQuOTU4bC0xMC40ODQgMy4zM2MtLjU5LjE4Ny0xLjA0NS0uNTMtLjYyNS0uOTg1TTUuMDcgMTguNTRsMTAuODcyLS4wMDRjMS43MjUgMCAyLjgzIDEuODM0IDIuMDI0IDMuMzU4TDEyLjE5MiAzMi44MWExNSAxNSAwIDAgMS0zLjYyNy0zLjEwM2w3LjkwNi04LjU1M2MuNDItLjQ1NS0uMDM2LTEuMTcyLS42MjYtLjk4NUw1LjQwOCAyMy40ODRhMTUgMTUgMCAwIDEtLjMzNy00Ljk0MyIvPjwvc3ZnPg=="
-        className="x_kJtSQ"></div>
+        className="x_kJtSQ" /></div>
   </div>
   <div id="__next" data-reactroot="">
     <section className="css-130va89 e11y9y9c0">
@@ -35,7 +35,7 @@ export default function TechnologyPage() {
                 <div className="css-16unm68 e1r8pers0">
                   <div className="content_head"><img className="content_head_image"
                       src="https://res.cloudinary.com/larq/images/f_auto,q_auto/v1766144740/BoxingDay2025_SlideOut/BoxingDay2025_SlideOut.jpg?_i=AA"
-                      alt="LARQ promotion" decoding="async" loading="lazy"></div>
+                      alt="LARQ promotion" decoding="async" loading="lazy" /></div>
                   <div className="content_body">
                     <div className="content_bodyMain">
                       <div className="content_bodyMain_intro"><strong>Last chance of the year to shop brilliant hydration on
@@ -63,7 +63,7 @@ export default function TechnologyPage() {
                       </div>
                     </div>
                     <div className="content_bodyActions"><a href="/shop"
-                        className="content_bodyActions_cta css-1xnmvko e10c7x3h0" tabindex="0"><span
+                        className="content_bodyActions_cta css-1xnmvko e10c7x3h0" tabIndex="0"><span
                           className="btn_element"><span className="btn_label">Shop now</span></span></a></div>
                     <div className="content_bodyDisclaimer">Offer valid for a limited time only. Discounts apply to
                       merchandise subtotal before taxes and shipping. Cannot be combined with other promotions, coupon
@@ -90,8 +90,8 @@ export default function TechnologyPage() {
                   <nav className="main-navigation-links main-navigation-links-left" role="navigation"
                     aria-label="main navigation">
                     <ul>
-                      <li><button className="" aria-label="Bottles" tabindex="0" role="button">Bottles</button></li>
-                      <li><button className="" aria-label="Pitchers" tabindex="0" role="button">Pitchers</button></li>
+                      <li><button className="" aria-label="Bottles" tabIndex="0" role="button">Bottles</button></li>
+                      <li><button className="" aria-label="Pitchers" tabIndex="0" role="button">Pitchers</button></li>
                       <li><a className="" href="/shop/hydration-sets">Sets</a></li>
                       <li><a className="" href="/shop">Shop all</a></li>
                       <li><a className="isGiftGuide" href="/gift-guide">Gift guide</a></li>
@@ -206,17 +206,17 @@ export default function TechnologyPage() {
                       <div className="cartProgress_inner">
                         <div className="css-1vzajjh e12j6rpn0">
                           <div className="cartProgressBar">
-                            <div tabindex="0" role="button" data-tooltip="Get $10 off on orders $60 or more!"
+                            <div tabIndex="0" role="button" data-tooltip="Get $10 off on orders $60 or more!"
                               className="css-1f8nz51 ez03c6k0">
                               <div className="cartProgressStep_label">$10 off</div>
                               <div className="cartProgressStep_bullet"></div>
                             </div>
-                            <div tabindex="0" role="button" data-tooltip="Get $20 off on orders $130 or more!"
+                            <div tabIndex="0" role="button" data-tooltip="Get $20 off on orders $130 or more!"
                               className="css-14hva5r ez03c6k0">
                               <div className="cartProgressStep_label">$20 off</div>
                               <div className="cartProgressStep_bullet"></div>
                             </div>
-                            <div tabindex="0" role="button"
+                            <div tabIndex="0" role="button"
                               data-tooltip="Get $40 off on orders over $200 plus receive 1000 bonus Hydro Points for your next purchase!"
                               className="css-15vy6r9 ez03c6k0">
                               <div className="cartProgressStep_label">$40 off + 1000 pts</div>
@@ -318,7 +318,7 @@ export default function TechnologyPage() {
               <div className="media">
                 <div className="media_inner"><img className="media_image"
                     src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1642978248/assets/spa/v2/content/slide_out/nano_zero_filter_technology.png"
-                    alt="Nano Zero filter technology image" decoding="async" loading="lazy"></div>
+                    alt="Nano Zero filter technology image" decoding="async" loading="lazy" /></div>
               </div>
             </div>
           </div>
@@ -335,15 +335,15 @@ export default function TechnologyPage() {
         <div className="stickyNavigation_inner">
           <div className="stickyNavigation_menuContainer">
             <ul className="stickyNavigation_menuList">
-              <li className="stickyNavigation_menuListItem"><button tabindex="0" type="button" className=""
+              <li className="stickyNavigation_menuListItem"><button tabIndex="0" type="button" className=""
                   aria-label="Go to Discover section">Discover</button></li>
-              <li className="stickyNavigation_menuListItem"><button tabindex="0" type="button" className="isActive"
+              <li className="stickyNavigation_menuListItem"><button tabIndex="0" type="button" className="isActive"
                   aria-label="Go to Nano Zero section">Nano Zero</button></li>
-              <li className="stickyNavigation_menuListItem"><button tabindex="0" type="button" className=""
+              <li className="stickyNavigation_menuListItem"><button tabIndex="0" type="button" className=""
                   aria-label="Go to PureVis™ section">PureVis™</button></li>
-              <li className="stickyNavigation_menuListItem"><button tabindex="0" type="button" className=""
+              <li className="stickyNavigation_menuListItem"><button tabIndex="0" type="button" className=""
                   aria-label="Go to Smart hydration section">Smart hydration</button></li>
-              <li className="stickyNavigation_menuListItem"><button tabindex="0" type="button" className=""
+              <li className="stickyNavigation_menuListItem"><button tabIndex="0" type="button" className=""
                   aria-label="Go to References section">References</button></li>
             </ul>
             <div className="stickyNavigation_reviewsContainer"></div>
@@ -366,7 +366,7 @@ export default function TechnologyPage() {
                         <div className="css-tw913e eiq6j7c0">
                           <div className="card_media"><img className="card_mediaImage"
                               src="https://res.cloudinary.com/larq/image/upload/q_auto,w_400/v1744959679/assets/spa/v2/tech-page/pure-vis-tech-image-v2.png"
-                              alt="PureVis™" decoding="async" loading="lazy"></div>
+                              alt="PureVis™" decoding="async" loading="lazy" /></div>
                           <div className="card_body">
                             <h2 className="card_title">PureVis™</h2>
                             <div className="card_content" style="opacity:0;height:0px;visibility:hidden">
@@ -415,7 +415,7 @@ export default function TechnologyPage() {
                                   </div>
                                 </div>
                                 <div className="card_actions"><button type="button"
-                                    className="card_actionsCta css-556991 edzyefi0" tabindex="0">Learn more</button></div>
+                                    className="card_actionsCta css-556991 edzyefi0" tabIndex="0">Learn more</button></div>
                               </div>
                             </div>
                           </div>
@@ -425,7 +425,7 @@ export default function TechnologyPage() {
                         <div className="css-u36tdf eiq6j7c0">
                           <div className="card_media"><img className="card_mediaImage"
                               src="https://res.cloudinary.com/larq/image/upload/q_auto/v1657116048/assets/spa/v2/tech-page/filters-tech-image.png"
-                              alt="Nano Zero" decoding="async" loading="lazy"></div>
+                              alt="Nano Zero" decoding="async" loading="lazy" /></div>
                           <div className="card_body">
                             <h2 className="card_title">Nano Zero</h2>
                             <div className="card_content" style="opacity:1;height:auto;visibility:visible">
@@ -477,7 +477,7 @@ export default function TechnologyPage() {
                                   </div>
                                 </div>
                                 <div className="card_actions"><button type="button"
-                                    className="card_actionsCta css-556991 edzyefi0" tabindex="0">Learn more</button></div>
+                                    className="card_actionsCta css-556991 edzyefi0" tabIndex="0">Learn more</button></div>
                               </div>
                             </div>
                           </div>
@@ -487,7 +487,7 @@ export default function TechnologyPage() {
                         <div className="css-tw913e eiq6j7c0">
                           <div className="card_media"><img className="card_mediaImage"
                               src="https://res.cloudinary.com/larq/image/upload/q_auto/v1744959916/assets/spa/v2/tech-page/app-screen-v2.png"
-                              alt="Smart Hydration" decoding="async" loading="lazy"></div>
+                              alt="Smart Hydration" decoding="async" loading="lazy" /></div>
                           <div className="card_body">
                             <h2 className="card_title">Smart Hydration</h2>
                             <div className="card_content" style="opacity:0;height:0px;visibility:hidden">
@@ -530,7 +530,7 @@ export default function TechnologyPage() {
                                   </div>
                                 </div>
                                 <div className="card_actions"><button type="button"
-                                    className="card_actionsCta css-556991 edzyefi0" tabindex="0">Learn more</button></div>
+                                    className="card_actionsCta css-556991 edzyefi0" tabIndex="0">Learn more</button></div>
                               </div>
                             </div>
                           </div>
@@ -574,7 +574,7 @@ export default function TechnologyPage() {
               </div>
               <div className="featureBlockMedia"><img
                   src="https://res.cloudinary.com/larq/image/upload/q_auto/v1657116048/assets/spa/v2/tech-page/filters-tech-image.png"
-                  alt="Nano Zero filter technology" decoding="async" loading="lazy"></div>
+                  alt="Nano Zero filter technology" decoding="async" loading="lazy" /></div>
               <ul className="featureBlockFeatureset">
                 <li className="featureBlockFeatureset_item">
                   <div className="featureBlockFeatureset_item_icon"><svg className="css-82n8sf e1x3lr430" focusable="false"
@@ -621,13 +621,13 @@ export default function TechnologyPage() {
                       className="videoBoxVideo" autoplay="" muted="" loop="" playsinline="">
                       <source
                         src="https://res.cloudinary.com/larq/video/upload/v1668511147/assets/spa/v2/content/product/bottle-filtered/filter_720_opt.mp4"
-                        type="video/webm">
+                        type="video/webm" />
                       <source
                         src="https://res.cloudinary.com/larq/video/upload/v1668511147/assets/spa/v2/content/product/bottle-filtered/filter_720_opt.mp4"
-                        type="video/mp4">
+                        type="video/mp4" />
                       <source
                         src="https://res.cloudinary.com/larq/video/upload/v1668511147/assets/spa/v2/content/product/bottle-filtered/filter_720_opt.mp4"
-                        type="video/ogg">
+                        type="video/ogg" />
                     </video>
                     <div className="cta-footer"><span> {/* */}How it works</span><span color="text.default"
                         className="css-11qxqh7 e13u1hot0"><svg className="css-82n8sf e1x3lr430" focusable="false"
@@ -670,7 +670,7 @@ export default function TechnologyPage() {
                 <div className="center">
                   <div className="featureBlockMedia"><img
                       src="https://res.cloudinary.com/larq/image/upload/q_auto/v1657116048/assets/spa/v2/tech-page/filters-tech-image.png"
-                      alt="Nano Zero filter technology" decoding="async" loading="lazy"></div>
+                      alt="Nano Zero filter technology" decoding="async" loading="lazy" /></div>
                 </div>
                 <div className="right">
                   <ul className="featureBlockFeatureset">
@@ -699,13 +699,13 @@ export default function TechnologyPage() {
                         className="videoBoxVideo" autoplay="" muted="" loop="" playsinline="">
                         <source
                           src="https://res.cloudinary.com/larq/video/upload/v1668511147/assets/spa/v2/content/product/bottle-filtered/filter_720_opt.mp4"
-                          type="video/webm">
+                          type="video/webm" />
                         <source
                           src="https://res.cloudinary.com/larq/video/upload/v1668511147/assets/spa/v2/content/product/bottle-filtered/filter_720_opt.mp4"
-                          type="video/mp4">
+                          type="video/mp4" />
                         <source
                           src="https://res.cloudinary.com/larq/video/upload/v1668511147/assets/spa/v2/content/product/bottle-filtered/filter_720_opt.mp4"
-                          type="video/ogg">
+                          type="video/ogg" />
                       </video>
                       <div className="cta-footer"><span> {/* */}How it works</span><span color="text.default"
                           className="css-11qxqh7 e13u1hot0"><svg className="css-82n8sf e1x3lr430" focusable="false"
@@ -809,7 +809,7 @@ export default function TechnologyPage() {
                       </svg></div>
                     <div className="certImageContainer"><img
                         src="https://res.cloudinary.com/larq/image/upload/v1745581029/assets/spa/v2/content/certificate/nsf-4x.png"
-                        alt="certificate" decoding="async" loading="lazy"></div>
+                        alt="certificate" decoding="async" loading="lazy" /></div>
                   </div>
                   <div className="css-1ooijdp"><button className="css-1ek1vjw e9qplf81">LARQ Bottle Filter</button><button
                       className="css-6sghas e9qplf81">LARQ Pitcher Filter</button></div>
@@ -977,7 +977,7 @@ export default function TechnologyPage() {
                     </svg></div>
                   <div className="certImageContainer"><img
                       src="https://res.cloudinary.com/larq/image/upload/v1745581029/assets/spa/v2/content/certificate/nsf-4x.png"
-                      alt="certificate" decoding="async" loading="lazy"></div>
+                      alt="certificate" decoding="async" loading="lazy" /></div>
                 </div>
               </article>
             </div>
@@ -1010,13 +1010,13 @@ export default function TechnologyPage() {
                     className="techCardVideo" muted="" loop="" playsinline="" title="LARQ vs. other water bottles">
                     <source
                       src="https://res.cloudinary.com/larq/video/upload/v1656352240/assets/spa/v2/tech-page/LARQ_Bottle_Filtered_Blue_Water_Demo_FINAL"
-                      type="video/webm">
+                      type="video/webm" />
                     <source
                       src="https://res.cloudinary.com/larq/video/upload/v1656352240/assets/spa/v2/tech-page/LARQ_Bottle_Filtered_Blue_Water_Demo_FINAL"
-                      type="video/mp4">
+                      type="video/mp4" />
                     <source
                       src="https://res.cloudinary.com/larq/video/upload/v1656352240/assets/spa/v2/tech-page/LARQ_Bottle_Filtered_Blue_Water_Demo_FINAL"
-                      type="video/ogg">
+                      type="video/ogg" />
                   </video></div>
               </article>
               <article direction="column" className="css-1f2dhny ege3nin0">
@@ -1036,13 +1036,13 @@ export default function TechnologyPage() {
                     className="techCardVideo" muted="" loop="" playsinline="" title="LARQ vs. other water pitchers">
                     <source
                       src="https://res.cloudinary.com/larq/video/upload/v1668513159/assets/spa/v2/tech-page/LARQ_Pitcher_Demo_3_1920_opt"
-                      type="video/webm">
+                      type="video/webm" />
                     <source
                       src="https://res.cloudinary.com/larq/video/upload/v1668513159/assets/spa/v2/tech-page/LARQ_Pitcher_Demo_3_1920_opt"
-                      type="video/mp4">
+                      type="video/mp4" />
                     <source
                       src="https://res.cloudinary.com/larq/video/upload/v1668513159/assets/spa/v2/tech-page/LARQ_Pitcher_Demo_3_1920_opt"
-                      type="video/ogg">
+                      type="video/ogg" />
                   </video></div>
               </article>
             </div>
@@ -1061,47 +1061,47 @@ export default function TechnologyPage() {
                 className="css-hjzbw0 ezx21z70">
                 <div className="techProductMedia"><img
                     src="https://res.cloudinary.com/larq/image/upload/q_auto/f_auto,w_800/v1701177839/SKU/SPA/v3/BWOB068A.png"
-                    alt="LARQ Bottle PureVis™ 2" decoding="async" loading="lazy"></div>
+                    alt="LARQ Bottle PureVis™ 2" decoding="async" loading="lazy" /></div>
                 <p className="techProductContent">LARQ Bottle PureVis™ 2</p>
               </a><a href="/home/larq-pitcher-purevis" className="css-hjzbw0 ezx21z70">
                 <div className="techProductMedia"><img
                     src="https://res.cloudinary.com/larq/image/upload/q_auto/f_auto,w_800/v1701177839/SKU/SPA/v3/PAMB190A.png"
-                    alt="LARQ Pitcher PureVis™" decoding="async" loading="lazy"></div>
+                    alt="LARQ Pitcher PureVis™" decoding="async" loading="lazy" /></div>
                 <p className="techProductContent">LARQ Pitcher PureVis™</p>
               </a><a href="/home/larq-pitcher" className="css-hjzbw0 ezx21z70">
                 <div className="techProductMedia"><img
                     src="https://res.cloudinary.com/larq/image/upload/q_auto/f_auto,w_800/v1701177839/SKU/SPA/v3/PNAMB190B.png"
-                    alt="LARQ Pitcher" decoding="async" loading="lazy"></div>
+                    alt="LARQ Pitcher" decoding="async" loading="lazy" /></div>
                 <p className="techProductContent">LARQ Pitcher</p>
               </a><a href="/drinkware/larq-bottle-swig-top" className="css-hjzbw0 ezx21z70">
                 <div className="techProductMedia"><img
                     src="https://res.cloudinary.com/larq/image/upload/q_auto/f_auto,w_800/v1698557167/swig-top.png"
-                    alt="LARQ Bottle Filtered Swig Top" decoding="async" loading="lazy"></div>
+                    alt="LARQ Bottle Filtered Swig Top" decoding="async" loading="lazy" /></div>
                 <p className="techProductContent">LARQ Bottle Filtered Swig Top</p>
               </a><a href="/purification/larq-bottle-filtered-flip-top?sku=BFDOB050A" className="css-hjzbw0 ezx21z70">
                 <div className="techProductMedia"><img
                     src="https://res.cloudinary.com/larq/image/upload/q_auto/f_auto,w_800/v1701177839/SKU/SPA/v3/BFDOB050A.png"
-                    alt="LARQ Bottle Filtered Flip Top" decoding="async" loading="lazy"></div>
+                    alt="LARQ Bottle Filtered Flip Top" decoding="async" loading="lazy" /></div>
                 <p className="techProductContent">LARQ Bottle Filtered Flip Top</p>
               </a><a href="/accessories/larq-filter-straw" className="css-hjzbw0 ezx21z70">
                 <div className="techProductMedia"><img
                     src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_800/v1701177839/SKU/SPA/v3/BFAW068A.png"
-                    alt="LARQ Filter Straw" decoding="async" loading="lazy"></div>
+                    alt="LARQ Filter Straw" decoding="async" loading="lazy" /></div>
                 <p className="techProductContent">LARQ Filter Straw</p>
               </a><a href="/accessories/larq-bottle-filtered-cap" className="css-hjzbw0 ezx21z70">
                 <div className="techProductMedia"><img
                     src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/w_800/v1701177839/SKU/SPA/v3/BFCOB050A.png"
-                    alt="LARQ Bottle Filtered Cap" decoding="async" loading="lazy"></div>
+                    alt="LARQ Bottle Filtered Cap" decoding="async" loading="lazy" /></div>
                 <p className="techProductContent">LARQ Bottle Filtered Cap</p>
               </a><a href="/accessories/larq-pitcher-filter" className="css-hjzbw0 ezx21z70">
                 <div className="techProductMedia"><img
                     src="https://res.cloudinary.com/larq/image/upload/q_auto/f_auto,w_800/v1701177839/SKU/SPA/v3/PAFR190A.png"
-                    alt="LARQ Pitcher Filters" decoding="async" loading="lazy"></div>
+                    alt="LARQ Pitcher Filters" decoding="async" loading="lazy" /></div>
                 <p className="techProductContent">LARQ Pitcher Filters</p>
               </a><a href="/accessories/bottle-filter" className="css-hjzbw0 ezx21z70">
                 <div className="techProductMedia"><img
                     src="https://res.cloudinary.com/larq/image/upload/q_auto/f_auto,w_800/v1701177839/SKU/SPA/v3/BFRF050A.png"
-                    alt="LARQ Advanced Bottle Filter" decoding="async" loading="lazy"></div>
+                    alt="LARQ Advanced Bottle Filter" decoding="async" loading="lazy" /></div>
                 <p className="techProductContent">LARQ Bottle Filters</p>
               </a></div>
           </div>
@@ -1118,7 +1118,7 @@ export default function TechnologyPage() {
               </div>
               <div className="featureBlockMedia"><img
                   src="https://res.cloudinary.com/larq/image/upload/q_auto/v1744959679/assets/spa/v2/tech-page/pure-vis-tech-image-v2.png"
-                  alt="PureVis™ technology" decoding="async" loading="lazy"></div>
+                  alt="PureVis™ technology" decoding="async" loading="lazy" /></div>
               <ul className="featureBlockFeatureset">
                 <li className="featureBlockFeatureset_item">
                   <div className="featureBlockFeatureset_item_icon"><svg className="css-82n8sf e1x3lr430" focusable="false"
@@ -1155,13 +1155,13 @@ export default function TechnologyPage() {
                       className="videoBoxVideo" autoplay="" muted="" loop="" playsinline="">
                       <source
                         src="https://res.cloudinary.com/larq/video/upload/v1668510520/assets/spa/v2/tech-page/LARQ_Pitcher_Animation_720_opt.mp4"
-                        type="video/webm">
+                        type="video/webm" />
                       <source
                         src="https://res.cloudinary.com/larq/video/upload/v1668510520/assets/spa/v2/tech-page/LARQ_Pitcher_Animation_720_opt.mp4"
-                        type="video/mp4">
+                        type="video/mp4" />
                       <source
                         src="https://res.cloudinary.com/larq/video/upload/v1668510520/assets/spa/v2/tech-page/LARQ_Pitcher_Animation_720_opt.mp4"
-                        type="video/ogg">
+                        type="video/ogg" />
                     </video>
                     <div className="cta-footer"><span> {/* */}How it works</span><span color="text.default"
                         className="css-11qxqh7 e13u1hot0"><svg className="css-82n8sf e1x3lr430" focusable="false"
@@ -1197,7 +1197,7 @@ export default function TechnologyPage() {
                 <div className="center">
                   <div className="featureBlockMedia"><img
                       src="https://res.cloudinary.com/larq/image/upload/q_auto/v1744959679/assets/spa/v2/tech-page/pure-vis-tech-image-v2.png"
-                      alt="PureVis™ technology" decoding="async" loading="lazy"></div>
+                      alt="PureVis™ technology" decoding="async" loading="lazy" /></div>
                 </div>
                 <div className="right">
                   <ul className="featureBlockFeatureset">
@@ -1223,13 +1223,13 @@ export default function TechnologyPage() {
                         className="videoBoxVideo" autoplay="" muted="" loop="" playsinline="">
                         <source
                           src="https://res.cloudinary.com/larq/video/upload/v1668510520/assets/spa/v2/tech-page/LARQ_Pitcher_Animation_720_opt.mp4"
-                          type="video/webm">
+                          type="video/webm" />
                         <source
                           src="https://res.cloudinary.com/larq/video/upload/v1668510520/assets/spa/v2/tech-page/LARQ_Pitcher_Animation_720_opt.mp4"
-                          type="video/mp4">
+                          type="video/mp4" />
                         <source
                           src="https://res.cloudinary.com/larq/video/upload/v1668510520/assets/spa/v2/tech-page/LARQ_Pitcher_Animation_720_opt.mp4"
-                          type="video/ogg">
+                          type="video/ogg" />
                       </video>
                       <div className="cta-footer"><span> {/* */}How it works</span><span color="text.default"
                           className="css-11qxqh7 e13u1hot0"><svg className="css-82n8sf e1x3lr430" focusable="false"
@@ -1341,13 +1341,13 @@ export default function TechnologyPage() {
                       </svg></div>
                     <div className="certImageContainer isMultipleLogos"><img
                         src="https://res.cloudinary.com/larq/image/upload/v1745566057/assets/spa/v2/content/certificate/fcc-x4.png"
-                        alt="FCC logo" decoding="async" loading="lazy"><img
+                        alt="FCC logo" decoding="async" loading="lazy" /><img
                         src="https://res.cloudinary.com/larq/image/upload/v1745565934/assets/spa/v2/content/certificate/ce-x4.png"
-                        alt="CE logo" decoding="async" loading="lazy"><img
+                        alt="CE logo" decoding="async" loading="lazy" /><img
                         src="https://res.cloudinary.com/larq/image/upload/v1745566057/assets/spa/v2/content/certificate/harrens-x4.png"
-                        alt="Harrens logo" decoding="async" loading="lazy"><img
+                        alt="Harrens logo" decoding="async" loading="lazy" /><img
                         src="https://res.cloudinary.com/larq/image/upload/v1745566057/assets/spa/v2/content/certificate/rohs-x4.png"
-                        alt="RoHS logo" decoding="async" loading="lazy"></div>
+                        alt="RoHS logo" decoding="async" loading="lazy" /></div>
                   </div>
                   <div className="css-1ooijdp"><button className="css-1ek1vjw e9qplf81">LARQ Bottle PureVis™ 2</button><button
                       className="css-6sghas e9qplf81">LARQ Bottle PureVis™</button><button className="css-6sghas e9qplf81">LARQ
@@ -1531,13 +1531,13 @@ export default function TechnologyPage() {
                     </svg></div>
                   <div className="certImageContainer isMultipleLogos"><img
                       src="https://res.cloudinary.com/larq/image/upload/v1745566057/assets/spa/v2/content/certificate/fcc-x4.png"
-                      alt="FCC logo" decoding="async" loading="lazy"><img
+                      alt="FCC logo" decoding="async" loading="lazy" /><img
                       src="https://res.cloudinary.com/larq/image/upload/v1745565934/assets/spa/v2/content/certificate/ce-x4.png"
-                      alt="CE logo" decoding="async" loading="lazy"><img
+                      alt="CE logo" decoding="async" loading="lazy" /><img
                       src="https://res.cloudinary.com/larq/image/upload/v1745566057/assets/spa/v2/content/certificate/harrens-x4.png"
-                      alt="Harrens logo" decoding="async" loading="lazy"><img
+                      alt="Harrens logo" decoding="async" loading="lazy" /><img
                       src="https://res.cloudinary.com/larq/image/upload/v1745566057/assets/spa/v2/content/certificate/rohs-x4.png"
-                      alt="RoHS logo" decoding="async" loading="lazy"></div>
+                      alt="RoHS logo" decoding="async" loading="lazy" /></div>
                 </div>
               </article>
             </div>
@@ -1573,13 +1573,13 @@ export default function TechnologyPage() {
                     muted="" loop="" playsinline="" title="Self-cleaning &amp; worry-free">
                     <source
                       src="https://res.cloudinary.com/larq/video/upload/v1656352253/assets/spa/v2/tech-page/LARQ_Bottle_Mold_Growth_Video"
-                      type="video/webm">
+                      type="video/webm" />
                     <source
                       src="https://res.cloudinary.com/larq/video/upload/v1656352253/assets/spa/v2/tech-page/LARQ_Bottle_Mold_Growth_Video"
-                      type="video/mp4">
+                      type="video/mp4" />
                     <source
                       src="https://res.cloudinary.com/larq/video/upload/v1656352253/assets/spa/v2/tech-page/LARQ_Bottle_Mold_Growth_Video"
-                      type="video/ogg">
+                      type="video/ogg" />
                   </video></div>
               </article>
             </div>
@@ -1598,33 +1598,33 @@ export default function TechnologyPage() {
                 className="css-hjzbw0 ezx21z70">
                 <div className="techProductMedia"><img
                     src="https://res.cloudinary.com/larq/image/upload/q_auto/f_auto,w_800/v1701177839/SKU/SPA/v3/BWOB068A.png"
-                    alt="LARQ Bottle PureVis™ 2" decoding="async" loading="lazy"></div>
+                    alt="LARQ Bottle PureVis™ 2" decoding="async" loading="lazy" /></div>
                 <p className="techProductContent">LARQ Bottle PureVis™ 2</p>
               </a><a href="/home/larq-pitcher-purevis" className="css-hjzbw0 ezx21z70">
                 <div className="techProductMedia"><img
                     src="https://res.cloudinary.com/larq/image/upload/q_auto/f_auto,w_800/v1701177839/SKU/SPA/v3/PAMB190A.png"
-                    alt="LARQ Pitcher PureVis™" decoding="async" loading="lazy"></div>
+                    alt="LARQ Pitcher PureVis™" decoding="async" loading="lazy" /></div>
                 <p className="techProductContent">LARQ Pitcher PureVis™</p>
               </a><a href="/purification/larq-bottle-purevis?sku=BDMB050A" className="css-hjzbw0 ezx21z70">
                 <div className="techProductMedia"><img
                     src="https://res.cloudinary.com/larq/image/upload/q_auto/f_auto,w_800/v1701177839/SKU/SPA/v3/BDMB050A.png"
-                    alt="LARQ Bottle PureVis™ insulated Monaco Blue" decoding="async" loading="lazy"></div>
+                    alt="LARQ Bottle PureVis™ insulated Monaco Blue" decoding="async" loading="lazy" /></div>
                 <p className="techProductContent">LARQ Bottle PureVis™</p><span className="techProductLabel">insulated</span>
               </a><a href="/purification/larq-bottle-purevis?sku=BSBO071A" className="css-hjzbw0 ezx21z70">
                 <div className="techProductMedia"><img
                     src="https://res.cloudinary.com/larq/image/upload/q_auto/f_auto,w_800/v1701177839/SKU/SPA/v3/BSBO071A.png"
-                    alt="LARQ Bottle PureVis™ non insulated Obsidian Black" decoding="async" loading="lazy"></div>
+                    alt="LARQ Bottle PureVis™ non insulated Obsidian Black" decoding="async" loading="lazy" /></div>
                 <p className="techProductContent">LARQ Bottle PureVis™</p><span
                   className="techProductLabel">non-insulated</span>
               </a><a href="/accessories/larq-bottle-purevis-2-cap" className="css-hjzbw0 ezx21z70">
                 <div className="techProductMedia"><img
                     src="https://res.cloudinary.com/larq/image/upload/q_auto/f_auto,w_800/v1734534469/SKU/SPA/BCOB068A-1.jpg"
-                    alt="LARQ PureVis™ 2 Cap" decoding="async" loading="lazy"></div>
+                    alt="LARQ PureVis™ 2 Cap" decoding="async" loading="lazy" /></div>
                 <p className="techProductContent">LARQ Bottle PureVis™ 2 Cap</p>
               </a><a href="/accessories/larq-bottle-purevis-cap" className="css-hjzbw0 ezx21z70">
                 <div className="techProductMedia"><img
                     src="https://res.cloudinary.com/larq/image/upload/q_auto/f_auto,w_800/v1701177839/SKU/SPA/v3/BCMB050A.png"
-                    alt="LARQ PureVis™ Cap" decoding="async" loading="lazy"></div>
+                    alt="LARQ PureVis™ Cap" decoding="async" loading="lazy" /></div>
                 <p className="techProductContent">LARQ PureVis™ Cap</p>
               </a></div>
           </div>
@@ -1641,7 +1641,7 @@ export default function TechnologyPage() {
               </div>
               <div className="featureBlockMedia"><img
                   src="https://res.cloudinary.com/larq/image/upload/v1745565006/assets/spa/v2/tech-page/mockup.png"
-                  alt="Smart Hydration" decoding="async" loading="lazy"></div>
+                  alt="Smart Hydration" decoding="async" loading="lazy" /></div>
               <ul className="featureBlockFeatureset">
                 <li className="featureBlockFeatureset_item">
                   <div className="featureBlockFeatureset_item_icon"><svg className="css-82n8sf e1x3lr430" focusable="false"
@@ -1736,11 +1736,11 @@ export default function TechnologyPage() {
                     className="css-blt7gw etvdcwj3"><a href="https://apple.co/3qxuuNz" target="_blank"
                       rel="noopener noreferrer"><img
                         src="https://res.cloudinary.com/larq/image/upload/v1642105474/assets/spa/v2/static/images/buttons/app_store_blue.png"
-                        alt="Download on the App Store" decoding="async" loading="lazy"></a><a
+                        alt="Download on the App Store" decoding="async" loading="lazy" /></a><a
                       href="https://play.google.com/store/apps/details?id=com.larq.live" target="_blank"
                       rel="noopener noreferrer"><img
                         src="https://res.cloudinary.com/larq/image/upload/w_500/v1735323768/auto-mapping-folder/2024/12/play-store-blue-x2.png"
-                        alt="Download on Google Play Store" decoding="async" loading="lazy"></a></div>
+                        alt="Download on Google Play Store" decoding="async" loading="lazy" /></a></div>
                 </div>
               </div>
               <div className="featureBlockDesktop">
@@ -1768,7 +1768,7 @@ export default function TechnologyPage() {
                 <div className="center">
                   <div className="featureBlockMedia"><img
                       src="https://res.cloudinary.com/larq/image/upload/v1745565006/assets/spa/v2/tech-page/mockup.png"
-                      alt="Smart Hydration" decoding="async" loading="lazy"></div>
+                      alt="Smart Hydration" decoding="async" loading="lazy" /></div>
                 </div>
                 <div className="right">
                   <ul className="featureBlockFeatureset">
@@ -1852,11 +1852,11 @@ export default function TechnologyPage() {
                       className="css-blt7gw etvdcwj3"><a href="https://apple.co/3qxuuNz" target="_blank"
                         rel="noopener noreferrer"><img
                           src="https://res.cloudinary.com/larq/image/upload/v1642105474/assets/spa/v2/static/images/buttons/app_store_blue.png"
-                          alt="Download on the App Store" decoding="async" loading="lazy"></a><a
+                          alt="Download on the App Store" decoding="async" loading="lazy" /></a><a
                         href="https://play.google.com/store/apps/details?id=com.larq.live" target="_blank"
                         rel="noopener noreferrer"><img
                           src="https://res.cloudinary.com/larq/image/upload/w_500/v1735323768/auto-mapping-folder/2024/12/play-store-blue-x2.png"
-                          alt="Download on Google Play Store" decoding="async" loading="lazy"></a></div>
+                          alt="Download on Google Play Store" decoding="async" loading="lazy" /></a></div>
                   </div>
                 </div>
               </div>
@@ -1883,10 +1883,10 @@ export default function TechnologyPage() {
                             average water intake was 33 oz (1 liter) per day over the last 7 days.</span>
                           <div className="css-17vbkxe eyvhft60"><img
                               src="https://res.cloudinary.com/larq/image/upload/v1676274542/tech-page/chart-mobile-info-card-imperial.png"
-                              alt="alt" decoding="async" loading="lazy"></div>
+                              alt="alt" decoding="async" loading="lazy" /></div>
                           <div className="css-1g026t2 eyvhft60"><img
                               src="https://res.cloudinary.com/larq/image/upload/v1676275104/tech-page/chart-mobile-info-card-imperial__mobile.png"
-                              alt="alt" decoding="async" loading="lazy"></div>
+                              alt="alt" decoding="async" loading="lazy" /></div>
                         </div>
                       </div>
                     </div>
@@ -1909,7 +1909,7 @@ export default function TechnologyPage() {
                                 <path
                                   d="M20.7812 9.25C20.5 8.8125 20.0312 8.5 19.5 8.5H12.5C11.9375 8.5 11.4688 8.8125 11.1875 9.25L7.6875 15.25C7.40625 15.7188 7.40625 16.3125 7.6875 16.7812L11.1875 22.7812C11.4688 23.2188 11.9375 23.5 12.5 23.5H19.5C20.0312 23.5 20.5 23.2188 20.7812 22.7812L24.2812 16.7812C24.5625 16.3125 24.5625 15.7188 24.2812 15.25L20.7812 9.25ZM19.5 22H12.5L9 16L12.5 10H19.5L23 16L19.5 22ZM12.375 16.875H19.625C19.8125 16.875 20 16.7188 20 16.5V15.5C20 15.3125 19.8125 15.125 19.625 15.125H12.375C12.1562 15.125 12 15.3125 12 15.5V16.5C12 16.7188 12.1562 16.875 12.375 16.875Z"
                                   fill="white"></path>
-                              </svg></span><span className="title--big">Reduced carbon footprint{/* */} <br>
+                              </svg></span><span className="title--big">Reduced carbon footprint{/* */} <br />
                               <div className="css-wrfo9z">126.3<p>&nbsp;{/* */}lbs</p>
                               </div>
                             </span></div>
@@ -1922,7 +1922,7 @@ export default function TechnologyPage() {
                                 <path
                                   d="M24.0625 8.3125C23.9688 8.125 23.7812 8 23.5938 8C23.4375 8 23.2812 8.09375 23.1562 8.28125C22.1875 9.96875 20.4688 11 18.5 11H16C12.6875 11 10 13.6875 10 17C10 17.5625 10.0625 18.0938 10.2188 18.625C7.90625 20.625 7.03125 22.9688 7.03125 23.0312C6.90625 23.4062 7.09375 23.8438 7.5 23.9688C7.9375 24.125 8.3125 23.8438 8.4375 23.5C8.46875 23.4688 9.09375 21.7188 10.8125 20.0625C12 22.0312 14.2188 23.2188 16.625 22.9688C21.5312 22.625 25 18.2188 25 12.8438C25 11.2812 24.6562 9.65625 24.0625 8.3125ZM16.4688 21.5C13.7812 21.7812 12.375 19.7812 12.0312 19.0938C13.5 18.0625 15.5312 17.25 18.25 17.25C18.6562 17.25 19 16.9375 19 16.5C19 16.0938 18.6562 15.75 18.25 15.75C15.375 15.75 13.2188 16.5625 11.5625 17.625C11.5312 17.4062 11.5 17.2188 11.5 17C11.5 14.5312 13.5 12.5 16 12.5H18.5C20.3125 12.5 21.9688 11.8125 23.25 10.625C23.4062 11.3438 23.5 12.0938 23.5 12.8438C23.5 17.5625 20.5625 21.1875 16.4688 21.5Z"
                                   fill="white"></path>
-                              </svg></span><span className="title--big">Reduced plastic waste{/* */} <br>
+                              </svg></span><span className="title--big">Reduced plastic waste{/* */} <br />
                               <div className="css-wrfo9z">28.8<p>&nbsp;{/* */}lbs</p>
                               </div>
                             </span></div>
@@ -1989,10 +1989,10 @@ export default function TechnologyPage() {
                           <div className="css-ted9wu">
                             <div className="css-17vbkxe eyvhft60"><img
                                 src="https://res.cloudinary.com/larq/image/upload/v1675835020/tech-page/power-settings-slider1x.png"
-                                alt="price-slider" decoding="async" loading="lazy"></div>
+                                alt="price-slider" decoding="async" loading="lazy" /></div>
                             <div className="css-1g026t2 eyvhft60"><img
                                 src="  https://res.cloudinary.com/larq/image/upload/v1675833780/tech-page/power-settings-slider__mobile.png"
-                                alt="price-slider" decoding="async" loading="lazy"></div>
+                                alt="price-slider" decoding="async" loading="lazy" /></div>
                           </div>
                           <div className="css-tn1ny1"><span className="title--extra-small">
                               <p>Power Saving</p>
@@ -2022,10 +2022,10 @@ export default function TechnologyPage() {
                             average water intake was 33 oz (1 liter) per day over the last 7 days.</span>
                           <div className="css-17vbkxe eyvhft60"><img
                               src="https://res.cloudinary.com/larq/image/upload/v1676274542/tech-page/chart-mobile-info-card-imperial.png"
-                              alt="alt" decoding="async" loading="lazy"></div>
+                              alt="alt" decoding="async" loading="lazy" /></div>
                           <div className="css-1g026t2 eyvhft60"><img
                               src="https://res.cloudinary.com/larq/image/upload/v1676275104/tech-page/chart-mobile-info-card-imperial__mobile.png"
-                              alt="alt" decoding="async" loading="lazy"></div>
+                              alt="alt" decoding="async" loading="lazy" /></div>
                         </div>
                       </div>
                     </div>
@@ -2048,7 +2048,7 @@ export default function TechnologyPage() {
                                 <path
                                   d="M20.7812 9.25C20.5 8.8125 20.0312 8.5 19.5 8.5H12.5C11.9375 8.5 11.4688 8.8125 11.1875 9.25L7.6875 15.25C7.40625 15.7188 7.40625 16.3125 7.6875 16.7812L11.1875 22.7812C11.4688 23.2188 11.9375 23.5 12.5 23.5H19.5C20.0312 23.5 20.5 23.2188 20.7812 22.7812L24.2812 16.7812C24.5625 16.3125 24.5625 15.7188 24.2812 15.25L20.7812 9.25ZM19.5 22H12.5L9 16L12.5 10H19.5L23 16L19.5 22ZM12.375 16.875H19.625C19.8125 16.875 20 16.7188 20 16.5V15.5C20 15.3125 19.8125 15.125 19.625 15.125H12.375C12.1562 15.125 12 15.3125 12 15.5V16.5C12 16.7188 12.1562 16.875 12.375 16.875Z"
                                   fill="white"></path>
-                              </svg></span><span className="title--big">Reduced carbon footprint <br>
+                              </svg></span><span className="title--big">Reduced carbon footprint <br />
                               <div className="css-wrfo9z">126.3<p>&nbsp;lbs</p>
                               </div>
                             </span></div>
@@ -2061,7 +2061,7 @@ export default function TechnologyPage() {
                                 <path
                                   d="M24.0625 8.3125C23.9688 8.125 23.7812 8 23.5938 8C23.4375 8 23.2812 8.09375 23.1562 8.28125C22.1875 9.96875 20.4688 11 18.5 11H16C12.6875 11 10 13.6875 10 17C10 17.5625 10.0625 18.0938 10.2188 18.625C7.90625 20.625 7.03125 22.9688 7.03125 23.0312C6.90625 23.4062 7.09375 23.8438 7.5 23.9688C7.9375 24.125 8.3125 23.8438 8.4375 23.5C8.46875 23.4688 9.09375 21.7188 10.8125 20.0625C12 22.0312 14.2188 23.2188 16.625 22.9688C21.5312 22.625 25 18.2188 25 12.8438C25 11.2812 24.6562 9.65625 24.0625 8.3125ZM16.4688 21.5C13.7812 21.7812 12.375 19.7812 12.0312 19.0938C13.5 18.0625 15.5312 17.25 18.25 17.25C18.6562 17.25 19 16.9375 19 16.5C19 16.0938 18.6562 15.75 18.25 15.75C15.375 15.75 13.2188 16.5625 11.5625 17.625C11.5312 17.4062 11.5 17.2188 11.5 17C11.5 14.5312 13.5 12.5 16 12.5H18.5C20.3125 12.5 21.9688 11.8125 23.25 10.625C23.4062 11.3438 23.5 12.0938 23.5 12.8438C23.5 17.5625 20.5625 21.1875 16.4688 21.5Z"
                                   fill="white"></path>
-                              </svg></span><span className="title--big">Reduced plastic waste <br>
+                              </svg></span><span className="title--big">Reduced plastic waste <br />
                               <div className="css-wrfo9z">28.8<p>&nbsp;lbs</p>
                               </div>
                             </span></div>
@@ -2125,10 +2125,10 @@ export default function TechnologyPage() {
                           <div className="css-ted9wu">
                             <div className="css-17vbkxe eyvhft60"><img
                                 src="https://res.cloudinary.com/larq/image/upload/v1675835020/tech-page/power-settings-slider1x.png"
-                                alt="price-slider" decoding="async" loading="lazy"></div>
+                                alt="price-slider" decoding="async" loading="lazy" /></div>
                             <div className="css-1g026t2 eyvhft60"><img
                                 src="  https://res.cloudinary.com/larq/image/upload/v1675833780/tech-page/power-settings-slider__mobile.png"
-                                alt="price-slider" decoding="async" loading="lazy"></div>
+                                alt="price-slider" decoding="async" loading="lazy" /></div>
                           </div>
                           <div className="css-tn1ny1"><span className="title--extra-small">
                               <p>Power Saving</p>
@@ -2351,7 +2351,7 @@ export default function TechnologyPage() {
                     <div className="inputContainer_inner">
                       <div className="inputWrap"><input type="email" name="email" aria-invalid="false"
                           id="footerNewsletter_subscribe" value="" placeholder="Enter your email" required=""
-                          aria-label="Enter your email address to subscribe to our Newsletter"></div>
+                          aria-label="Enter your email address to subscribe to our Newsletter" /></div>
                     </div>
                   </div>
                 </div><button type="submit" className="newsletter-submit-button"
@@ -2399,7 +2399,7 @@ export default function TechnologyPage() {
               aria-label="Get a quote for corporate gifting" href="/corporate-gifting">
               <div className="mediaTextCard_media"><img className="mediaTextCard_media_asset css-0 e1nv8j4y1"
                   src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1671184346/assets/spa/v2/content/promo/corporate-gifting/products/bottle-filtered_spotify.png"
-                  alt="Man holding LARQ bottle with Spotify branding" decoding="async" loading="lazy"></div>
+                  alt="Man holding LARQ bottle with Spotify branding" decoding="async" loading="lazy" /></div>
               <div className="mediaTextCard_body">
                 <div className="mediaTextCard_content">
                   <div className="mediaTextCard_content_body">
@@ -2408,7 +2408,7 @@ export default function TechnologyPage() {
                       <div className="mediaTextCard_content_body_main_text">Originality never goes out of style</div>
                     </div>
                     <div className="mediaTextCard_content_body_action"><button type="button"
-                        className="mediaTextCard_content_body_actionCta css-uumepb e10c7x3h0" tabindex="-1"
+                        className="mediaTextCard_content_body_actionCta css-uumepb e10c7x3h0" tabIndex="-1"
                         aria-hidden="true"><span className="btn_element"><span className="btn_label">Get a
                             quote</span></span></button></div>
                   </div>
@@ -2420,7 +2420,7 @@ export default function TechnologyPage() {
           <section className="css-9nsxkx euussmz0"><button className="country-switcher-button"
               aria-label="Open language and country switcher modal"><span className="flag"><img
                   src="https://res.cloudinary.com/larq/image/upload/v1702649207/v3-images/flags/us.svg"
-                  alt="country flag us"></span>United States</button></section>
+                  alt="country flag us" /></span>United States</button></section>
           <nav className="css-4h1e11 eeqemrm0">
             <ul className="footer-legal-links">
               <li className="copyright">© LARQ, {/* */}2026</li>
@@ -2565,7 +2565,7 @@ export default function TechnologyPage() {
   <div id="batBeacon483769821478" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img
       id="batBeacon943470085741" width="0" height="0" alt=""
       src="https://bat.bing.com/action/0?ti=26016814&amp;tm=gtm002&amp;Ver=2&amp;mid=markup-adapter&amp;bo=4&amp;sid=47c78630eb3811f0832b3f9b067cc81c&amp;vid=47c79620eb3811f0a6df174f6eba1918&amp;vids=0&amp;msclkid=N&amp;uach=pv%3D10.0.0&amp;pi=918639831&amp;lg=en-US&amp;sw=1366&amp;sh=768&amp;sc=24&amp;tl=How%20The%20Technology%20Works%20%7C%20LARQ&amp;p=https%3A%2F%2Fwww.livelarq.com%2Ftechnology&amp;r=&amp;lt=899&amp;evt=pageLoad&amp;sv=2&amp;asc=G&amp;cdb=AQAS&amp;rn=460763"
-      style="width: 0px; height: 0px; display: none; visibility: hidden;"></div>
+      style="width: 0px; height: 0px; display: none; visibility: hidden;" /></div>
   <script type="text/javascript" id="" charset="">(function () {
       if (window.braze) {
         var c = google_tag_manager["rm"]["7594555"](30), d = google_tag_manager["rm"]["7594555"](31), m = google_tag_manager["rm"]["7594555"](32), b = window.braze.getUser(), a = google_tag_manager["rm"]["7594555"](33), q = google_tag_manager["rm"]["7594555"](34), e = google_tag_manager["rm"]["7594555"](35), f = void 0, n = window.braze.User.NotificationSubscriptionTypes.OPTED_IN, g = !1; c === "gtm.init" && ["eu", "ca", "uk", "us"].indexOf(d) > -1 && b.setCustomUserAttribute("store_location", d.toUpperCase()); c === "newsletterSubscription" && a.subType === "Footer" && (f = "footer", e = a.email, g = !0); c === "newsletterSubscription" && ["SOC-1",
@@ -2583,7 +2583,7 @@ export default function TechnologyPage() {
   <script id="ze-snippet" text="" charset="" type="text/javascript"
     src="https://static.zdassets.com/ekr/snippet.js?key=markup-adapter"></script>
   
-  <iframe data-product="web_widget" title="No content" role="presentation" tabindex="-1" allow="microphone *"
+  <iframe data-product="web_widget" title="No content" role="presentation" tabIndex="-1" allow="microphone *"
     aria-hidden="true" src="about:blank"
     style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;"></iframe>
   <div style="position: relative;" id="zp-11-2-5-licdn-root-apollo_everywhere">

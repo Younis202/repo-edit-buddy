@@ -6,7 +6,7 @@ export default function ReviewsPage() {
   <div className="zp-open-popup-button">
     <div className="x_R61yl zp-11-2-5-zp-fixed"><img alt="Apollo.io"
         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDQwIDQwIj48cGF0aCBmaWxsPSIjZWJmMjEyIiBkPSJtMjEuNDY2IDUuMDcxLjAwNCAxMC45MTVjLjAwMSAxLjcyNS0xLjgzNCAyLjgzLTMuMzU4IDIuMDI0TDcuMTcgMTIuMjIzYTE1LjEgMTUuMSAwIDAgMSAzLjEtMy42NGw4LjU4MiA3LjkzMmMuNDU1LjQyIDEuMTcyLS4wMzYuOTg1LS42MjZMMTYuNTA5IDUuNDFhMTUgMTUgMCAwIDEgNC45NTYtLjMzOE0xOC40OTYgMzQuOTI1bC0uMDA1LTEwLjg2YzAtMS43MjQgMS44MzQtMi44MyAzLjM1OS0yLjAyM2wxMC45NDYgNS43OWExNSAxNSAwIDAgMS0zLjExNiAzLjYyNmwtOC41Ny03LjkyMWMtLjQ1NS0uNDItMS4xNzIuMDM1LS45ODUuNjI1bDMuMzE2IDEwLjQ0MWExNSAxNSAwIDAgMS00Ljk0NS4zMjJNMjMuNDkyIDE4Ljg5OCAzMS40NCAxMC4zYTE1IDE1IDAgMCAwLTMuNjQtMy4xMTNsLTUuODA0IDEwLjk3MmMtLjgwNiAxLjUyNC4zIDMuMzU5IDIuMDI0IDMuMzU4bDEwLjkwNS0uMDA1YTE1LjIgMTUuMiAwIDAgMC0uMzI0LTQuOTU4bC0xMC40ODQgMy4zM2MtLjU5LjE4Ny0xLjA0NS0uNTMtLjYyNS0uOTg1TTUuMDcgMTguNTRsMTAuODcyLS4wMDRjMS43MjUgMCAyLjgzIDEuODM0IDIuMDI0IDMuMzU4TDEyLjE5MiAzMi44MWExNSAxNSAwIDAgMS0zLjYyNy0zLjEwM2w3LjkwNi04LjU1M2MuNDItLjQ1NS0uMDM2LTEuMTcyLS42MjYtLjk4NUw1LjQwOCAyMy40ODRhMTUgMTUgMCAwIDEtLjMzNy00Ljk0MyIvPjwvc3ZnPg=="
-        className="x_kJtSQ"></div>
+        className="x_kJtSQ" /></div>
   </div>
   <div id="__next" data-reactroot="">
     <section className="css-130va89 e11y9y9c0">
@@ -35,7 +35,7 @@ export default function ReviewsPage() {
                 <div className="css-16unm68 e1r8pers0">
                   <div className="content_head"><img className="content_head_image"
                       src="https://res.cloudinary.com/larq/images/f_auto,q_auto/v1766144740/BoxingDay2025_SlideOut/BoxingDay2025_SlideOut.jpg?_i=AA"
-                      alt="LARQ promotion" decoding="async" loading="lazy"></div>
+                      alt="LARQ promotion" decoding="async" loading="lazy" /></div>
                   <div className="content_body">
                     <div className="content_bodyMain">
                       <div className="content_bodyMain_intro"><strong>Last chance of the year to shop brilliant hydration on
@@ -63,7 +63,7 @@ export default function ReviewsPage() {
                       </div>
                     </div>
                     <div className="content_bodyActions"><a href="/shop"
-                        className="content_bodyActions_cta css-1xnmvko e10c7x3h0" tabindex="0"><span
+                        className="content_bodyActions_cta css-1xnmvko e10c7x3h0" tabIndex="0"><span
                           className="btn_element"><span className="btn_label">Shop now</span></span></a></div>
                     <div className="content_bodyDisclaimer">Offer valid for a limited time only. Discounts apply to
                       merchandise subtotal before taxes and shipping. Cannot be combined with other promotions, coupon
@@ -90,8 +90,8 @@ export default function ReviewsPage() {
                   <nav className="main-navigation-links main-navigation-links-left" role="navigation"
                     aria-label="main navigation">
                     <ul>
-                      <li><button className="" aria-label="Bottles" tabindex="0" role="button">Bottles</button></li>
-                      <li><button className="" aria-label="Pitchers" tabindex="0" role="button">Pitchers</button></li>
+                      <li><button className="" aria-label="Bottles" tabIndex="0" role="button">Bottles</button></li>
+                      <li><button className="" aria-label="Pitchers" tabIndex="0" role="button">Pitchers</button></li>
                       <li><a className="" href="/shop/hydration-sets">Sets</a></li>
                       <li><a className="" href="/shop">Shop all</a></li>
                       <li><a className="isGiftGuide" href="/gift-guide">Gift guide</a></li>
@@ -206,17 +206,17 @@ export default function ReviewsPage() {
                       <div className="cartProgress_inner">
                         <div className="css-1vzajjh e12j6rpn0">
                           <div className="cartProgressBar">
-                            <div tabindex="0" role="button" data-tooltip="Get $10 off on orders $60 or more!"
+                            <div tabIndex="0" role="button" data-tooltip="Get $10 off on orders $60 or more!"
                               className="css-1f8nz51 ez03c6k0">
                               <div className="cartProgressStep_label">$10 off</div>
                               <div className="cartProgressStep_bullet"></div>
                             </div>
-                            <div tabindex="0" role="button" data-tooltip="Get $20 off on orders $130 or more!"
+                            <div tabIndex="0" role="button" data-tooltip="Get $20 off on orders $130 or more!"
                               className="css-14hva5r ez03c6k0">
                               <div className="cartProgressStep_label">$20 off</div>
                               <div className="cartProgressStep_bullet"></div>
                             </div>
-                            <div tabindex="0" role="button"
+                            <div tabIndex="0" role="button"
                               data-tooltip="Get $40 off on orders over $200 plus receive 1000 bonus Hydro Points for your next purchase!"
                               className="css-15vy6r9 ez03c6k0">
                               <div className="cartProgressStep_label">$40 off + 1000 pts</div>
@@ -249,7 +249,7 @@ export default function ReviewsPage() {
       <div className="css-38s40v exuf6kk0">
         <div className="css-qv2xql">
           <div className="css-19mcf2j">
-            <div className="css-1woag1x e193uqbj0"><button className="dropdownSummary" type="button" tabindex="-1"><span
+            <div className="css-1woag1x e193uqbj0"><button className="dropdownSummary" type="button" tabIndex="-1"><span
                   className="dropdownSummaryLabel">Select a LARQ product</span><span className="dropdownSummaryIcon"><span
                     color="text.default" className="css-11qxqh7 e13u1hot0"><svg
                       className="dropdownSummaryIcon-icon active css-82n8sf e1x3lr430" focusable="false" viewBox="0 0 14 8"
@@ -260,11 +260,11 @@ export default function ReviewsPage() {
                     </svg></span></span></button>
               <div className="dropdownDetails" aria-hidden="false">
                 <div className="dropdownDetails-inner">
-                  <div className="dropdownDetails-cards"><a className="dropdownDetailsCard " tabindex="0"
+                  <div className="dropdownDetails-cards"><a className="dropdownDetailsCard " tabIndex="0"
                       href="/purification/larq-bottle-purevis-2/reviews">
                       <div className="dropdownDetailsCard-imageContainer"><img className="dropdownDetailsCard-image"
                           src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,w_200/v1685379790/SKU/SPA/v3/BWOB068A.jpg"
-                          alt="LARQ Bottle PureVis™ 2" decoding="async" loading="lazy"></div>
+                          alt="LARQ Bottle PureVis™ 2" decoding="async" loading="lazy" /></div>
                       <div className="dropdownDetailsCard-content">
                         <div className="dropdownDetailsCard-title">LARQ Bottle PureVis™ 2</div>
                         <div className="dropdownDetailsCard-reviewStats"><span
@@ -313,11 +313,11 @@ export default function ReviewsPage() {
                           </div>
                         </div>
                       </div>
-                    </a><a className="dropdownDetailsCard active" tabindex="0"
+                    </a><a className="dropdownDetailsCard active" tabIndex="0"
                       href="/purification/larq-bottle-purevis/reviews">
                       <div className="dropdownDetailsCard-imageContainer"><img className="dropdownDetailsCard-image"
                           src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,w_200/v1685379790/SKU/SPA/v3/BDMB050A.jpg"
-                          alt="LARQ Bottle PureVis™" decoding="async" loading="lazy"></div>
+                          alt="LARQ Bottle PureVis™" decoding="async" loading="lazy" /></div>
                       <div className="dropdownDetailsCard-content">
                         <div className="dropdownDetailsCard-title">LARQ Bottle PureVis™</div>
                         <div className="dropdownDetailsCard-reviewStats"><span
@@ -363,10 +363,10 @@ export default function ReviewsPage() {
                           </div>
                         </div>
                       </div>
-                    </a><a className="dropdownDetailsCard " tabindex="0" href="/drinkware/larq-bottle-swig-top/reviews">
+                    </a><a className="dropdownDetailsCard " tabIndex="0" href="/drinkware/larq-bottle-swig-top/reviews">
                       <div className="dropdownDetailsCard-imageContainer"><img className="dropdownDetailsCard-image"
                           src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,w_200/v1685379790/SKU/SPA/v3/BNWOB068A.jpg"
-                          alt="LARQ Bottle Swig Top" decoding="async" loading="lazy"></div>
+                          alt="LARQ Bottle Swig Top" decoding="async" loading="lazy" /></div>
                       <div className="dropdownDetailsCard-content">
                         <div className="dropdownDetailsCard-title">LARQ Bottle Swig Top</div>
                         <div className="dropdownDetailsCard-reviewStats"><span
@@ -415,11 +415,11 @@ export default function ReviewsPage() {
                           </div>
                         </div>
                       </div>
-                    </a><a className="dropdownDetailsCard " tabindex="0"
+                    </a><a className="dropdownDetailsCard " tabIndex="0"
                       href="/purification/larq-bottle-filtered-swig-top/reviews">
                       <div className="dropdownDetailsCard-imageContainer"><img className="dropdownDetailsCard-image"
                           src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,w_200/v1685379790/SKU/SPA/v3/BFBNWOB068ABFAW068A.jpg"
-                          alt="LARQ Bottle Filtered Swig Top" decoding="async" loading="lazy"></div>
+                          alt="LARQ Bottle Filtered Swig Top" decoding="async" loading="lazy" /></div>
                       <div className="dropdownDetailsCard-content">
                         <div className="dropdownDetailsCard-title">LARQ Bottle Filtered Swig Top</div>
                         <div className="dropdownDetailsCard-reviewStats"><span
@@ -465,11 +465,11 @@ export default function ReviewsPage() {
                           </div>
                         </div>
                       </div>
-                    </a><a className="dropdownDetailsCard " tabindex="0"
+                    </a><a className="dropdownDetailsCard " tabIndex="0"
                       href="/purification/larq-bottle-filtered-flip-top/reviews">
                       <div className="dropdownDetailsCard-imageContainer"><img className="dropdownDetailsCard-image"
                           src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,w_200/v1685379790/SKU/SPA/v3/BFDGW050A.jpg"
-                          alt="LARQ Bottle Filtered Flip Top" decoding="async" loading="lazy"></div>
+                          alt="LARQ Bottle Filtered Flip Top" decoding="async" loading="lazy" /></div>
                       <div className="dropdownDetailsCard-content">
                         <div className="dropdownDetailsCard-title">LARQ Bottle Filtered Flip Top</div>
                         <div className="dropdownDetailsCard-reviewStats"><span
@@ -518,10 +518,10 @@ export default function ReviewsPage() {
                           </div>
                         </div>
                       </div>
-                    </a><a className="dropdownDetailsCard " tabindex="0" href="/drinkware/larq-bottle-flip-top/reviews">
+                    </a><a className="dropdownDetailsCard " tabIndex="0" href="/drinkware/larq-bottle-flip-top/reviews">
                       <div className="dropdownDetailsCard-imageContainer"><img className="dropdownDetailsCard-image"
                           src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,w_200/v1685379790/SKU/SPA/v3/BNSOB050A.jpg"
-                          alt="LARQ Bottle Flip Top" decoding="async" loading="lazy"></div>
+                          alt="LARQ Bottle Flip Top" decoding="async" loading="lazy" /></div>
                       <div className="dropdownDetailsCard-content">
                         <div className="dropdownDetailsCard-title">LARQ Bottle Flip Top</div>
                         <div className="dropdownDetailsCard-reviewStats"><span
@@ -570,10 +570,10 @@ export default function ReviewsPage() {
                           </div>
                         </div>
                       </div>
-                    </a><a className="dropdownDetailsCard " tabindex="0" href="/drinkware/larq-bottle-twist-top/reviews">
+                    </a><a className="dropdownDetailsCard " tabIndex="0" href="/drinkware/larq-bottle-twist-top/reviews">
                       <div className="dropdownDetailsCard-imageContainer"><img className="dropdownDetailsCard-image"
                           src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,w_200/v1685379790/SKU/SPA/v3/BNDMB050A.jpg"
-                          alt="LARQ Bottle Twist Top" decoding="async" loading="lazy"></div>
+                          alt="LARQ Bottle Twist Top" decoding="async" loading="lazy" /></div>
                       <div className="dropdownDetailsCard-content">
                         <div className="dropdownDetailsCard-title">LARQ Bottle Twist Top</div>
                         <div className="dropdownDetailsCard-reviewStats"><span
@@ -619,10 +619,10 @@ export default function ReviewsPage() {
                           </div>
                         </div>
                       </div>
-                    </a><a className="dropdownDetailsCard " tabindex="0" href="/home/larq-pitcher-purevis/reviews">
+                    </a><a className="dropdownDetailsCard " tabIndex="0" href="/home/larq-pitcher-purevis/reviews">
                       <div className="dropdownDetailsCard-imageContainer"><img className="dropdownDetailsCard-image"
                           src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,w_200/v1685379790/SKU/SPA/v3/PAMB190A.jpg"
-                          alt="LARQ Pitcher PureVis™" decoding="async" loading="lazy"></div>
+                          alt="LARQ Pitcher PureVis™" decoding="async" loading="lazy" /></div>
                       <div className="dropdownDetailsCard-content">
                         <div className="dropdownDetailsCard-title">LARQ Pitcher PureVis™</div>
                         <div className="dropdownDetailsCard-reviewStats"><span
@@ -668,10 +668,10 @@ export default function ReviewsPage() {
                           </div>
                         </div>
                       </div>
-                    </a><a className="dropdownDetailsCard " tabindex="0" href="/home/larq-pitcher/reviews">
+                    </a><a className="dropdownDetailsCard " tabIndex="0" href="/home/larq-pitcher/reviews">
                       <div className="dropdownDetailsCard-imageContainer"><img className="dropdownDetailsCard-image"
                           src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,w_200/v1685379790/SKU/SPA/v3/PNAMB190B.jpg"
-                          alt="LARQ Pitcher" decoding="async" loading="lazy"></div>
+                          alt="LARQ Pitcher" decoding="async" loading="lazy" /></div>
                       <div className="dropdownDetailsCard-content">
                         <div className="dropdownDetailsCard-title">LARQ Pitcher</div>
                         <div className="dropdownDetailsCard-reviewStats"><span
@@ -730,7 +730,7 @@ export default function ReviewsPage() {
             <div className="css-hrsq8v ed4ikim0">
               <div className="imageContainer"><img
                   src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto,w_800/v1685379790/SKU/SPA/v3/BDMB050A.png"
-                  alt="https://www.livelarq.com" decoding="async" loading="lazy"></div>
+                  alt="https://www.livelarq.com" decoding="async" loading="lazy" /></div>
               <div className="contentContainer">
                 <h1 className="contentContainer-title">LARQ Bottle PureVis™</h1>
                 <div className="contentContainer-productRating">4.8<span>/5</span></div>
@@ -794,8 +794,8 @@ export default function ReviewsPage() {
                         <div className="select__control css-yk16xz-control">
                           <div className="select__value-container select__value-container--has-value css-1hwfws3">
                             <div className="select__single-value css-1uccc91-singleValue">Featured</div><input
-                              id="react-select-4-input" readonly="" tabindex="0" aria-autocomplete="list"
-                              aria-label="Sort" className="css-62g3xt-dummyInput" value="">
+                              id="react-select-4-input" readOnly="" tabIndex="0" aria-autoComplete="list"
+                              aria-label="Sort" className="css-62g3xt-dummyInput" value="" />
                           </div>
                           <div className="select__indicators css-1wy0on6"><span
                               className="select__indicator-separator css-1okebmr-indicatorSeparator"></span>
@@ -865,7 +865,7 @@ export default function ReviewsPage() {
                       <div className="productReviewCommentCardUserReview_locationAndDateContainer"><span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-flag"><img title="US"
                             src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.4/flags/4x3/us.svg"
-                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;"></span>&nbsp;<span
+                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;" /></span>&nbsp;<span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-location">United
                           States</span>,&nbsp;<time
                           className="productReviewCommentCardUserReview_locationAndDateContainer-date"
@@ -934,7 +934,7 @@ export default function ReviewsPage() {
                       <div className="productReviewCommentCardUserReview_locationAndDateContainer"><span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-flag"><img title="US"
                             src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.4/flags/4x3/us.svg"
-                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;"></span>&nbsp;<span
+                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;" /></span>&nbsp;<span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-location">United
                           States</span>,&nbsp;<time
                           className="productReviewCommentCardUserReview_locationAndDateContainer-date"
@@ -953,7 +953,7 @@ export default function ReviewsPage() {
                       <div className="productReviewCommentCardContent_mediaContainer"><button type="button"
                           className="productReviewCommentCardContent_mediaContainer-image"><img
                             src="https://cdn.stamped.io/uploads/photos/95151_112_f9714656_f46a_4d70_807c_b7263e38f902.jpg?tr=w-160%2Ch-160&amp;ts=06-01-2026"
-                            alt="Great Bottle" decoding="async" loading="lazy"></button></div>
+                            alt="Great Bottle" decoding="async" loading="lazy" /></button></div>
                     </div>
                   </article>
                 </li>
@@ -1008,7 +1008,7 @@ export default function ReviewsPage() {
                       <div className="productReviewCommentCardUserReview_locationAndDateContainer"><span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-flag"><img title="US"
                             src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.4/flags/4x3/us.svg"
-                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;"></span>&nbsp;<span
+                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;" /></span>&nbsp;<span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-location">United
                           States</span>,&nbsp;<time
                           className="productReviewCommentCardUserReview_locationAndDateContainer-date"
@@ -1077,7 +1077,7 @@ export default function ReviewsPage() {
                       <div className="productReviewCommentCardUserReview_locationAndDateContainer"><span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-flag"><img title="SG"
                             src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.4/flags/4x3/sg.svg"
-                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;"></span>&nbsp;<span
+                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;" /></span>&nbsp;<span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-location">Singapore</span>,&nbsp;<time
                           className="productReviewCommentCardUserReview_locationAndDateContainer-date"
                           datetime="01/23/2021">5 years ago</time></div>
@@ -1147,7 +1147,7 @@ export default function ReviewsPage() {
                       <div className="productReviewCommentCardUserReview_locationAndDateContainer"><span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-flag"><img title="US"
                             src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.4/flags/4x3/us.svg"
-                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;"></span>&nbsp;<span
+                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;" /></span>&nbsp;<span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-location">United
                           States</span>,&nbsp;<time
                           className="productReviewCommentCardUserReview_locationAndDateContainer-date"
@@ -1220,7 +1220,7 @@ export default function ReviewsPage() {
                       <div className="productReviewCommentCardUserReview_locationAndDateContainer"><span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-flag"><img title="US"
                             src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.4/flags/4x3/us.svg"
-                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;"></span>&nbsp;<span
+                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;" /></span>&nbsp;<span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-location">United
                           States</span>,&nbsp;<time
                           className="productReviewCommentCardUserReview_locationAndDateContainer-date"
@@ -1291,7 +1291,7 @@ export default function ReviewsPage() {
                       <div className="productReviewCommentCardUserReview_locationAndDateContainer"><span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-flag"><img title="US"
                             src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.4/flags/4x3/us.svg"
-                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;"></span>&nbsp;<span
+                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;" /></span>&nbsp;<span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-location">United
                           States</span>,&nbsp;<time
                           className="productReviewCommentCardUserReview_locationAndDateContainer-date"
@@ -1366,7 +1366,7 @@ export default function ReviewsPage() {
                       <div className="productReviewCommentCardUserReview_locationAndDateContainer"><span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-flag"><img title="US"
                             src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.4/flags/4x3/us.svg"
-                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;"></span>&nbsp;<span
+                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;" /></span>&nbsp;<span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-location">United
                           States</span>,&nbsp;<time
                           className="productReviewCommentCardUserReview_locationAndDateContainer-date"
@@ -1393,7 +1393,7 @@ export default function ReviewsPage() {
                                   fill="#153A5B"></path>
                               </svg></span></span><img
                             src="https://cdn.stamped.io/uploads/videos/d464f2c8bf96cbfa483f03c89adbe4b8.jpg?tr=w-160%2Ch-160&amp;ts=06-01-2026"
-                            alt="Classy travel companion" decoding="async" loading="lazy"></button></div>
+                            alt="Classy travel companion" decoding="async" loading="lazy" /></button></div>
                     </div>
                   </article>
                 </li>
@@ -1448,7 +1448,7 @@ export default function ReviewsPage() {
                       <div className="productReviewCommentCardUserReview_locationAndDateContainer"><span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-flag"><img title="US"
                             src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.4/flags/4x3/us.svg"
-                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;"></span>&nbsp;<span
+                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;" /></span>&nbsp;<span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-location">United
                           States</span>,&nbsp;<time
                           className="productReviewCommentCardUserReview_locationAndDateContainer-date"
@@ -1527,7 +1527,7 @@ export default function ReviewsPage() {
                       <div className="productReviewCommentCardUserReview_locationAndDateContainer"><span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-flag"><img title="US"
                             src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.4/flags/4x3/us.svg"
-                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;"></span>&nbsp;<span
+                            style="display: inline-block; width: 100%; height: 1em; vertical-align: middle;" /></span>&nbsp;<span
                           className="productReviewCommentCardUserReview_locationAndDateContainer-location">United
                           States</span>,&nbsp;<time
                           className="productReviewCommentCardUserReview_locationAndDateContainer-date"
@@ -1549,7 +1549,7 @@ export default function ReviewsPage() {
                 </li>
               </ul>
               <div className="productReviewCommentListBottomToolbar"><button type="button" className="css-1jm8av edzyefi0"
-                  tabindex="0">Load more reviews</button></div>
+                  tabIndex="0">Load more reviews</button></div>
             </div>
           </div>
         </div>
@@ -1583,7 +1583,7 @@ export default function ReviewsPage() {
                     <div className="inputContainer_inner">
                       <div className="inputWrap"><input type="email" name="email" aria-invalid="false"
                           id="footerNewsletter_subscribe" value="" placeholder="Enter your email" required=""
-                          aria-label="Enter your email address to subscribe to our Newsletter"></div>
+                          aria-label="Enter your email address to subscribe to our Newsletter" /></div>
                     </div>
                   </div>
                 </div><button type="submit" className="newsletter-submit-button"
@@ -1631,7 +1631,7 @@ export default function ReviewsPage() {
               aria-label="Get a quote for corporate gifting" href="/corporate-gifting">
               <div className="mediaTextCard_media"><img className="mediaTextCard_media_asset css-0 e1nv8j4y1"
                   src="https://res.cloudinary.com/larq/image/upload/q_auto,f_auto/v1671184346/assets/spa/v2/content/promo/corporate-gifting/products/bottle-filtered_spotify.png"
-                  alt="Man holding LARQ bottle with Spotify branding" decoding="async" loading="lazy"></div>
+                  alt="Man holding LARQ bottle with Spotify branding" decoding="async" loading="lazy" /></div>
               <div className="mediaTextCard_body">
                 <div className="mediaTextCard_content">
                   <div className="mediaTextCard_content_body">
@@ -1640,7 +1640,7 @@ export default function ReviewsPage() {
                       <div className="mediaTextCard_content_body_main_text">Originality never goes out of style</div>
                     </div>
                     <div className="mediaTextCard_content_body_action"><button type="button"
-                        className="mediaTextCard_content_body_actionCta css-uumepb e10c7x3h0" tabindex="-1"
+                        className="mediaTextCard_content_body_actionCta css-uumepb e10c7x3h0" tabIndex="-1"
                         aria-hidden="true"><span className="btn_element"><span className="btn_label">Get a
                             quote</span></span></button></div>
                   </div>
@@ -1652,7 +1652,7 @@ export default function ReviewsPage() {
           <section className="css-9nsxkx euussmz0"><button className="country-switcher-button"
               aria-label="Open language and country switcher modal"><span className="flag"><img
                   src="https://res.cloudinary.com/larq/image/upload/v1702649207/v3-images/flags/us.svg"
-                  alt="country flag us"></span>United States</button></section>
+                  alt="country flag us" /></span>United States</button></section>
           <nav className="css-4h1e11 eeqemrm0">
             <ul className="footer-legal-links">
               <li className="copyright">© LARQ, {/* */}2026</li>
@@ -1811,11 +1811,11 @@ export default function ReviewsPage() {
   <div id="batBeacon383734891656" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img
       id="batBeacon722266677022" width="0" height="0" alt=""
       src="https://bat.bing.com/action/0?ti=26016814&amp;tm=gtm002&amp;Ver=2&amp;mid=markup-adapter&amp;bo=4&amp;sid=47c78630eb3811f0832b3f9b067cc81c&amp;vid=47c79620eb3811f0a6df174f6eba1918&amp;vids=0&amp;msclkid=N&amp;uach=pv%3D10.0.0&amp;pi=918639831&amp;lg=en-US&amp;sw=1366&amp;sh=768&amp;sc=24&amp;tl=LARQ%20%7C%20Not%20Found&amp;p=https%3A%2F%2Fwww.livelarq.com%2Fabout&amp;r=&amp;lt=1373&amp;evt=pageLoad&amp;sv=2&amp;asc=G&amp;cdb=AQAS&amp;rn=31993"
-      style="width: 0px; height: 0px; display: none; visibility: hidden;"></div>
+      style="width: 0px; height: 0px; display: none; visibility: hidden;" /></div>
   <script id="ze-snippet" text="" charset="" type="text/javascript"
     src="https://static.zdassets.com/ekr/snippet.js?key=markup-adapter"></script>
   
-  <iframe data-product="web_widget" title="No content" role="presentation" tabindex="-1" allow="microphone *"
+  <iframe data-product="web_widget" title="No content" role="presentation" tabIndex="-1" allow="microphone *"
     aria-hidden="true" src="about:blank"
     style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;"></iframe>
   <div style="position: relative;" id="zp-11-2-5-licdn-root-apollo_everywhere">
