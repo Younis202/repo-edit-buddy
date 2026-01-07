@@ -8,9 +8,13 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' && componentTagger(),
   ].filter(Boolean),
+  build: {
+    outDir: 'build'
+  },
   server: {
-    host: '::',
-    port: 8080,
+    port: 3000,
+    host: '0.0.0.0',
+    allowedHosts: true
   },
   resolve: {
     alias: {
