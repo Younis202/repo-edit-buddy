@@ -1,63 +1,20 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart, ShoppingBag, Minus, Plus, ArrowLeft, Share2, Ruler, Truck, RotateCcw, ChevronDown } from "lucide-react";
+import { Heart, ShoppingBag, Minus, Plus, Share2, Ruler, Truck, RotateCcw, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import FilmGrain from "@/components/FilmGrain";
 import SmoothScroll from "@/components/SmoothScroll";
-import productImg1 from "@/assets/product-detail-1.jpg";
-import productImg2 from "@/assets/product-detail-2.jpg";
-import productImg3 from "@/assets/product-detail-3.jpg";
-import productImg4 from "@/assets/product-detail-4.jpg";
-import collection1 from "@/assets/collection-1.jpg";
-import collection2 from "@/assets/collection-2.jpg";
-import collection3 from "@/assets/collection-3.jpg";
-import collection4 from "@/assets/collection-4.jpg";
-
-const productImages = [productImg1, productImg2, productImg3, productImg4];
-
-const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
-const colors = [
-  { name: "Charcoal", value: "hsl(40, 5%, 15%)" },
-  { name: "Camel", value: "hsl(35, 40%, 55%)" },
-  { name: "Navy", value: "hsl(220, 30%, 20%)" },
-  { name: "Ivory", value: "hsl(40, 30%, 88%)" },
-];
-
-const accordionData = [
-  {
-    title: "Description",
-    content: "The Overcoat is the cornerstone of the MAISON wardrobe. Cut from double-faced Italian wool sourced from Loro Piana mills, this piece is engineered for both warmth and movement. The relaxed silhouette drapes naturally, while the half-canvas construction ensures the coat maintains its shape season after season. A single back vent allows ease of stride, and the notch lapel sits perfectly without pressing.",
-  },
-  {
-    title: "Materials & Composition",
-    content: "Outer: 100% Italian Virgin Wool (Loro Piana) • Lining: 100% Cupro Bemberg • Buttons: Natural Horn • Weight: 650g/m² • Origin: Handcrafted in Florence, Italy • Each garment is individually numbered.",
-  },
-  {
-    title: "Size & Fit",
-    content: "Relaxed fit — we recommend ordering your usual size. Model is 6'1\" / 186cm and wears size M. Shoulder: 46cm (M) • Chest: 112cm (M) • Length: 105cm (M) • Sleeve: 66cm (M). For a more tailored look, consider sizing down.",
-  },
-  {
-    title: "Care Instructions",
-    content: "Dry clean only • Store on a wide wooden hanger • Use a garment bag for travel • Steam rather than iron • Allow 24 hours between wears for the fibers to recover their shape. Complimentary alterations available at any MAISON boutique.",
-  },
-  {
-    title: "Shipping & Returns",
-    content: "Complimentary express shipping on all orders • Signature packaging with dust bag included • 30-day return policy — items must be unworn with tags attached • Free pickup for returns • International duties & taxes included in price.",
-  },
-];
-
-const relatedProducts = [
-  { image: collection1, name: "The Overcoat", price: "$2,450", category: "Outerwear", slug: "the-overcoat" },
-  { image: collection2, name: "Ivory Cable Knit", price: "$890", category: "Knitwear", slug: "ivory-cable-knit" },
-  { image: collection3, name: "Midnight Suit", price: "$3,200", category: "Tailoring", slug: "midnight-suit" },
-  { image: collection4, name: "Chelsea Boots", price: "$1,150", category: "Accessories", slug: "chelsea-boots" },
-];
+import { getProductBySlug, getRelatedProducts } from "@/data/products";
 
 const ProductDetail = () => {
   const { slug } = useParams();
+  
+  const product = getProductBySlug(slug || "");
+  const relatedProducts = getRelatedProducts(slug || "");
+
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedColor, setSelectedColor] = useState(0);
@@ -66,11 +23,72 @@ const ProductDetail = () => {
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [addedToBag, setAddedToBag] = useState(false);
 
+  // Reset state when slug changes
+  useState(() => {
+    setSelectedImage(0);
+    setSelectedSize(null);
+    setSelectedColor(0);
+    setQuantity(1);
+    setOpenAccordion(0);
+    setIsWishlisted(false);
+    setAddedToBag(false);
+  });
+
+  if (!product) {
+    return (
+      <>
+        <CustomCursor />
+        <FilmGrain />
+        <SmoothScroll>
+          <main className="bg-background min-h-screen cursor-none md:cursor-none">
+            <Navbar />
+            <div className="pt-32 pb-24 px-6 md:px-12 flex flex-col items-center justify-center min-h-[60vh]">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="text-center"
+              >
+                <p className="text-[10px] tracking-ultra uppercase text-muted-foreground mb-4 font-body">Product Not Found</p>
+                <h1 className="font-display text-4xl md:text-6xl font-light text-foreground mb-6">
+                  This piece doesn't <span className="italic">exist</span>
+                </h1>
+                <p className="text-sm text-muted-foreground font-body mb-10 max-w-md mx-auto">
+                  The product you're looking for may have been removed or is no longer available.
+                </p>
+                <Link
+                  to="/shop"
+                  className="text-[10px] tracking-ultra uppercase font-body text-foreground border border-border/30 px-10 py-4 hover:border-accent hover:text-accent transition-all duration-300 inline-block"
+                >
+                  Return to Shop
+                </Link>
+              </motion.div>
+            </div>
+            <Footer />
+          </main>
+        </SmoothScroll>
+      </>
+    );
+  }
+
   const handleAddToBag = () => {
     if (!selectedSize) return;
     setAddedToBag(true);
     setTimeout(() => setAddedToBag(false), 2000);
   };
+
+  // Build display title: "The" before italic word, or split name
+  const titleParts = product.name.split(product.nameItalic);
+  const titlePrefix = titleParts[0]?.trim() || "";
+
+  const savePercent = product.originalPrice
+    ? Math.round(
+        ((parseFloat(product.originalPrice.replace(/[$,]/g, "")) -
+          parseFloat(product.price.replace(/[$,]/g, ""))) /
+          parseFloat(product.originalPrice.replace(/[$,]/g, ""))) *
+          100
+      )
+    : null;
 
   return (
     <>
@@ -90,9 +108,11 @@ const ProductDetail = () => {
             >
               <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
               <span>/</span>
-              <Link to="/" className="hover:text-foreground transition-colors">Outerwear</Link>
+              <Link to="/shop" className="hover:text-foreground transition-colors">Shop</Link>
               <span>/</span>
-              <span className="text-foreground">The Overcoat</span>
+              <Link to={`/shop?category=${product.category}`} className="hover:text-foreground transition-colors">{product.category}</Link>
+              <span>/</span>
+              <span className="text-foreground">{product.name}</span>
             </motion.nav>
           </div>
 
@@ -104,7 +124,7 @@ const ProductDetail = () => {
                 <div className="grid grid-cols-12 gap-3">
                   {/* Thumbnails */}
                   <div className="col-span-2 hidden md:flex flex-col gap-3">
-                    {productImages.map((img, i) => (
+                    {product.images.map((img, i) => (
                       <motion.button
                         key={i}
                         initial={{ opacity: 0, x: -20 }}
@@ -115,7 +135,7 @@ const ProductDetail = () => {
                           selectedImage === i ? "border-accent" : "border-transparent hover:border-foreground/20"
                         }`}
                       >
-                        <img src={img} alt={`View ${i + 1}`} className="w-full h-full object-cover" />
+                        <img src={img} alt={`${product.name} view ${i + 1}`} className="w-full h-full object-cover" />
                       </motion.button>
                     ))}
                   </div>
@@ -132,11 +152,10 @@ const ProductDetail = () => {
                         className="relative aspect-[3/4] overflow-hidden group"
                       >
                         <img
-                          src={productImages[selectedImage]}
-                          alt="The Overcoat"
+                          src={product.images[selectedImage]}
+                          alt={product.name}
                           className="w-full h-full object-cover transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                         />
-                        {/* Zoom hint */}
                         <div className="absolute bottom-4 right-4 text-[9px] tracking-ultra uppercase text-foreground/30 font-body bg-background/30 backdrop-blur-md px-3 py-1.5">
                           Hover to zoom
                         </div>
@@ -145,7 +164,7 @@ const ProductDetail = () => {
 
                     {/* Mobile thumbnail dots */}
                     <div className="flex items-center justify-center gap-2 mt-4 md:hidden">
-                      {productImages.map((_, i) => (
+                      {product.images.map((_, i) => (
                         <button
                           key={i}
                           onClick={() => setSelectedImage(i)}
@@ -167,40 +186,51 @@ const ProductDetail = () => {
                   transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                 >
                   {/* Tag */}
-                  <span className="text-[9px] tracking-ultra uppercase text-accent font-body bg-accent/10 px-3 py-1 inline-block mb-4">
-                    New — SS26
+                  <span className={`text-[9px] tracking-ultra uppercase font-body px-3 py-1 inline-block mb-4 ${
+                    product.tag === "Best Seller" ? "text-accent bg-accent/10" :
+                    product.tag === "Limited" ? "text-destructive bg-destructive/10" :
+                    "text-accent bg-accent/10"
+                  }`}>
+                    {product.tag} — {product.season}
                   </span>
 
                   <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-foreground leading-tight mb-2">
-                    The <span className="italic">Overcoat</span>
+                    {titlePrefix && <>{titlePrefix} </>}<span className="italic">{product.nameItalic}</span>
                   </h1>
 
                   <p className="text-[10px] tracking-ultra uppercase text-muted-foreground font-body mb-6">
-                    Outerwear — Italian Wool
+                    {product.category} — {product.material}
                   </p>
 
                   {/* Price */}
                   <div className="flex items-baseline gap-3 mb-8">
-                    <span className="font-display text-2xl md:text-3xl text-foreground">$2,450</span>
-                    <span className="text-sm text-muted-foreground line-through font-body">$2,900</span>
-                    <span className="text-[9px] tracking-editorial uppercase text-accent font-body bg-accent/10 px-2 py-0.5">Save 15%</span>
+                    <span className="font-display text-2xl md:text-3xl text-foreground">{product.price}</span>
+                    {product.originalPrice && (
+                      <>
+                        <span className="text-sm text-muted-foreground line-through font-body">{product.originalPrice}</span>
+                        {savePercent && (
+                          <span className="text-[9px] tracking-editorial uppercase text-accent font-body bg-accent/10 px-2 py-0.5">
+                            Save {savePercent}%
+                          </span>
+                        )}
+                      </>
+                    )}
                   </div>
 
                   {/* Short description */}
                   <p className="text-sm text-muted-foreground leading-relaxed font-body mb-8 max-w-md">
-                    Impeccably tailored from double-faced Loro Piana wool, this signature overcoat is the
-                    quiet centerpiece of every wardrobe. Built to last generations.
+                    {product.shortDescription}
                   </p>
 
                   {/* Color selector */}
                   <div className="mb-6">
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-[10px] tracking-ultra uppercase text-foreground font-body">
-                        Color — <span className="text-muted-foreground">{colors[selectedColor].name}</span>
+                        Color — <span className="text-muted-foreground">{product.colors[selectedColor]?.name}</span>
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
-                      {colors.map((color, i) => (
+                      {product.colors.map((color, i) => (
                         <button
                           key={color.name}
                           onClick={() => setSelectedColor(i)}
@@ -225,8 +255,8 @@ const ProductDetail = () => {
                         Size Guide
                       </button>
                     </div>
-                    <div className="grid grid-cols-6 gap-2">
-                      {sizes.map((size) => (
+                    <div className={`grid gap-2 ${product.sizes.length <= 6 ? "grid-cols-6" : "grid-cols-5"}`}>
+                      {product.sizes.map((size) => (
                         <button
                           key={size}
                           onClick={() => setSelectedSize(size)}
@@ -308,7 +338,7 @@ const ProductDetail = () => {
 
                   {/* Accordion */}
                   <div className="space-y-0">
-                    {accordionData.map((item, i) => (
+                    {product.accordion.map((item, i) => (
                       <div key={i} className="border-b border-border/20">
                         <button
                           onClick={() => setOpenAccordion(openAccordion === i ? null : i)}
@@ -365,7 +395,7 @@ const ProductDetail = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {relatedProducts.map((item, i) => (
                 <motion.div
-                  key={item.name}
+                  key={item.slug}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -374,7 +404,7 @@ const ProductDetail = () => {
                   <Link to={`/product/${item.slug}`} className="group cursor-pointer block">
                     <div className="relative overflow-hidden aspect-[3/4] mb-3">
                       <img
-                        src={item.image}
+                        src={item.images[0]}
                         alt={item.name}
                         className="w-full h-full object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
                       />

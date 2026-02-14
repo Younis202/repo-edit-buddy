@@ -1,42 +1,13 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { Heart, ShoppingBag, SlidersHorizontal, X, ChevronDown, Grid3X3, LayoutGrid, ArrowUpRight } from "lucide-react";
+import { Heart, ShoppingBag, SlidersHorizontal, ChevronDown, Grid3X3, LayoutGrid, ArrowUpRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import FilmGrain from "@/components/FilmGrain";
 import SmoothScroll from "@/components/SmoothScroll";
-import collection1 from "@/assets/collection-1.jpg";
-import collection2 from "@/assets/collection-2.jpg";
-import collection3 from "@/assets/collection-3.jpg";
-import collection4 from "@/assets/collection-4.jpg";
-import lookbook1 from "@/assets/lookbook-1.jpg";
-import lookbook2 from "@/assets/lookbook-2.jpg";
-import lookbook3 from "@/assets/lookbook-3.jpg";
-import productImg1 from "@/assets/product-detail-1.jpg";
-import productImg2 from "@/assets/product-detail-2.jpg";
-import productImg3 from "@/assets/product-detail-3.jpg";
-import productImg4 from "@/assets/product-detail-4.jpg";
-import craftsmanship1 from "@/assets/craftsmanship-1.jpg";
-
-const allProducts = [
-  { id: 1, image: collection1, name: "The Overcoat", price: "$2,450", originalPrice: "$2,900", category: "Outerwear", tag: "Best Seller", slug: "the-overcoat", sizes: ["S", "M", "L", "XL"] },
-  { id: 2, image: collection2, name: "Ivory Cable Knit", price: "$890", category: "Knitwear", tag: "New", slug: "ivory-cable-knit", sizes: ["XS", "S", "M", "L"] },
-  { id: 3, image: collection3, name: "Midnight Suit", price: "$3,200", category: "Tailoring", tag: "Best Seller", slug: "midnight-suit", sizes: ["S", "M", "L"] },
-  { id: 4, image: collection4, name: "Chelsea Boots", price: "$1,150", category: "Accessories", tag: "Limited", slug: "chelsea-boots", sizes: ["40", "41", "42", "43", "44"] },
-  { id: 5, image: lookbook1, name: "Charcoal Blazer", price: "$1,890", category: "Tailoring", tag: "Trending", slug: "charcoal-blazer", sizes: ["S", "M", "L", "XL"] },
-  { id: 6, image: lookbook2, name: "Slim Wool Trousers", price: "$680", category: "Tailoring", tag: "Restocked", slug: "slim-wool-trousers", sizes: ["28", "30", "32", "34", "36"] },
-  { id: 7, image: lookbook3, name: "Merino Polo", price: "$420", category: "Knitwear", tag: "New", slug: "merino-polo", sizes: ["S", "M", "L", "XL"] },
-  { id: 8, image: productImg1, name: "Double-Breasted Coat", price: "$2,890", category: "Outerwear", tag: "New", slug: "double-breasted-coat", sizes: ["M", "L", "XL"] },
-  { id: 9, image: productImg2, name: "Cashmere Scarf", price: "$340", category: "Accessories", tag: "Best Seller", slug: "cashmere-scarf", sizes: ["One Size"] },
-  { id: 10, image: productImg3, name: "Linen Shirt", price: "$520", category: "Tailoring", tag: "New", slug: "linen-shirt", sizes: ["S", "M", "L", "XL"] },
-  { id: 11, image: productImg4, name: "Suede Loafers", price: "$780", category: "Accessories", tag: "Trending", slug: "suede-loafers", sizes: ["40", "41", "42", "43", "44"] },
-  { id: 12, image: craftsmanship1, name: "Heritage Peacoat", price: "$2,100", originalPrice: "$2,600", category: "Outerwear", tag: "Limited", slug: "heritage-peacoat", sizes: ["S", "M", "L"] },
-];
-
-const categories = ["All", "Outerwear", "Knitwear", "Tailoring", "Accessories"];
-const sortOptions = ["Newest", "Price: Low to High", "Price: High to Low", "Best Sellers"];
+import { allProducts, categories, sortOptions } from "@/data/products";
 
 const ProductCard = ({ product, index, gridCols }: { product: typeof allProducts[0]; index: number; gridCols: number }) => {
   const ref = useRef(null);
@@ -54,7 +25,7 @@ const ProductCard = ({ product, index, gridCols }: { product: typeof allProducts
       <Link to={`/product/${product.slug}`} className="block">
         <div className="relative overflow-hidden aspect-[3/4] mb-4">
           <img
-            src={product.image}
+            src={product.images[0]}
             alt={product.name}
             className="w-full h-full object-cover transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
           />
