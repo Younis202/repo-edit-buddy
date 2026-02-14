@@ -6,11 +6,11 @@ import { useCart } from "@/contexts/CartContext";
 
 const navLinks = [
   { label: "Shop", href: "/shop", isRoute: true },
-  { label: "New In", href: "#collection" },
-  { label: "Collections", href: "#categories" },
-  { label: "Lookbook", href: "#lookbook" },
-  { label: "Atelier", href: "#craftsmanship" },
-  { label: "About", href: "#about" },
+  { label: "New In", href: "/new-in", isRoute: true },
+  { label: "Collections", href: "/collections", isRoute: true },
+  { label: "Lookbook", href: "/lookbook", isRoute: true },
+  { label: "Atelier", href: "/atelier", isRoute: true },
+  { label: "About", href: "/about", isRoute: true },
 ];
 
 const megaMenuData: Record<string, { title: string; items: { name: string; desc: string }[]; featured?: string }> = {
