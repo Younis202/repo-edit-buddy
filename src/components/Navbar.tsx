@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X, ShoppingBag, Search, ArrowUpRight, Globe } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 
 const navLinks = [
   { label: "Shop", href: "/shop", isRoute: true },
@@ -66,6 +67,7 @@ const Navbar = () => {
   const [activeMega, setActiveMega] = useState<string | null>(null);
   const megaTimeout = useRef<ReturnType<typeof setTimeout>>();
   const { scrollY } = useScroll();
+  const { totalItems, toggleCart } = useCart();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 100);
@@ -139,21 +141,25 @@ const Navbar = () => {
             <button className="text-foreground/60 hover:text-foreground transition-colors" aria-label="Search">
               <Search size={18} strokeWidth={1.5} />
             </button>
-            <button className="relative text-foreground/60 hover:text-foreground transition-colors" aria-label="Shopping bag">
+            <button onClick={toggleCart} className="relative text-foreground/60 hover:text-foreground transition-colors" aria-label="Shopping bag">
               <ShoppingBag size={18} strokeWidth={1.5} />
-              <span className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-accent text-accent-foreground text-[9px] flex items-center justify-center font-body font-medium">
-                2
-              </span>
+              {totalItems > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-accent text-accent-foreground text-[9px] flex items-center justify-center font-body font-medium">
+                  {totalItems}
+                </span>
+              )}
             </button>
           </div>
 
           {/* Mobile right */}
           <div className="flex items-center gap-5 lg:hidden">
-            <button className="relative text-foreground/60" aria-label="Shopping bag">
+            <button onClick={toggleCart} className="relative text-foreground/60" aria-label="Shopping bag">
               <ShoppingBag size={18} strokeWidth={1.5} />
-              <span className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-accent text-accent-foreground text-[9px] flex items-center justify-center font-body font-medium">
-                2
-              </span>
+              {totalItems > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-accent text-accent-foreground text-[9px] flex items-center justify-center font-body font-medium">
+                  {totalItems}
+                </span>
+              )}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}

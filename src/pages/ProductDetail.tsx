@@ -8,10 +8,11 @@ import CustomCursor from "@/components/CustomCursor";
 import FilmGrain from "@/components/FilmGrain";
 import SmoothScroll from "@/components/SmoothScroll";
 import { getProductBySlug, getRelatedProducts } from "@/data/products";
+import { useCart } from "@/contexts/CartContext";
 
 const ProductDetail = () => {
   const { slug } = useParams();
-  
+  const { addItem } = useCart();
   const product = getProductBySlug(slug || "");
   const relatedProducts = getRelatedProducts(slug || "");
 
@@ -72,7 +73,8 @@ const ProductDetail = () => {
   }
 
   const handleAddToBag = () => {
-    if (!selectedSize) return;
+    if (!selectedSize || !product) return;
+    addItem(product, selectedSize, product.colors[selectedColor]?.name || "", quantity);
     setAddedToBag(true);
     setTimeout(() => setAddedToBag(false), 2000);
   };

@@ -8,11 +8,14 @@ import CustomCursor from "@/components/CustomCursor";
 import FilmGrain from "@/components/FilmGrain";
 import SmoothScroll from "@/components/SmoothScroll";
 import { allProducts, categories, sortOptions } from "@/data/products";
+import { useCart } from "@/contexts/CartContext";
 
 const ProductCard = ({ product, index, gridCols }: { product: typeof allProducts[0]; index: number; gridCols: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-40px" });
   const [isWishlisted, setIsWishlisted] = useState(false);
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
+  const { addItem } = useCart();
 
   return (
     <motion.div
@@ -50,19 +53,31 @@ const ProductCard = ({ product, index, gridCols }: { product: typeof allProducts
           </button>
           {/* Hover overlay with sizes + quick add */}
           <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-600 ease-[cubic-bezier(0.16,1,0.3,1)]">
-            <div className="flex items-center gap-1.5 mb-2.5">
+             <div className="flex items-center gap-1.5 mb-2.5">
               {product.sizes.map((size) => (
-                <span key={size} className="w-8 h-7 border border-foreground/20 flex items-center justify-center text-[8px] tracking-wide font-body text-foreground/60 bg-background/60 backdrop-blur-md hover:bg-foreground hover:text-background transition-all duration-200 cursor-pointer">
+                <span
+                  key={size}
+                  onClick={(e) => { e.preventDefault(); setSelectedSize(size); }}
+                  className={`w-8 h-7 border flex items-center justify-center text-[8px] tracking-wide font-body backdrop-blur-md transition-all duration-200 cursor-pointer ${
+                    selectedSize === size
+                      ? "bg-foreground text-background border-foreground"
+                      : "border-foreground/20 text-foreground/60 bg-background/60 hover:bg-foreground hover:text-background"
+                  }`}
+                >
                   {size}
                 </span>
               ))}
             </div>
             <button
-              onClick={(e) => e.preventDefault()}
+              onClick={(e) => {
+                e.preventDefault();
+                const size = selectedSize || product.sizes[0];
+                addItem(product, size, product.colors[0]?.name || "Default");
+              }}
               className="w-full text-[9px] tracking-ultra uppercase text-background bg-foreground py-2.5 font-body hover:bg-accent hover:text-accent-foreground transition-colors duration-300 flex items-center justify-center gap-2"
             >
               <ShoppingBag size={11} strokeWidth={1.5} />
-              Add to Bag
+              {selectedSize ? `Add ${selectedSize} to Bag` : "Add to Bag"}
             </button>
           </div>
         </div>
