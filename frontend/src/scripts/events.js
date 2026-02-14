@@ -1,1 +1,0 @@
-!(function(){(function(c,e){var t="https://pixel.wetracked.io";var a=c.createElement("script");a.src="".concat(t,"/").concat(e,"/events.js?shop=").concat(e);a.async=true;c.head.append(a)})(document,"live-larq.myshopify.com");})();
