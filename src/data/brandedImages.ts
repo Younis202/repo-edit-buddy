@@ -1,7 +1,6 @@
 // Shazaya signature bottles — the visual DNA of the brand.
 // Six master bottle silhouettes, each photographed with cinematic lighting
-// against deep obsidian. Pure clean glass — branding lives on the packaging,
-// not engraved on the bottle itself.
+// against deep obsidian. The Shazaya logo is engraved (frosted) on the glass.
 
 import bottle01 from "@/assets/bottles/bottle-01-square-gold.jpg";
 import bottle02 from "@/assets/bottles/bottle-02-cylinder-black.jpg";
@@ -40,8 +39,8 @@ export interface BottleShape {
 export const bottleShapes: BottleShape[] = [
   {
     id: "square-gold",
-    name: "التاج الذهبي",
-    description: "كريستال مربع فاخر متوّج بتاج ذهبي مزخرف",
+    name: "الكلاسيك الذهبي",
+    description: "زجاج مربع فاخر بقمة كريستال ذهبية مزخرفة",
     image: bottle01,
     availableSizes: ["٥٠ مل", "١٠٠ مل"],
   },
