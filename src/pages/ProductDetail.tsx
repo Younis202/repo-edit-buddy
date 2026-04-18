@@ -70,6 +70,20 @@ const ProductDetail = () => {
     setAddedToBag(false);
   }, [slug]);
 
+  // Reset selected size whenever bottle changes (sizes differ per bottle)
+  useEffect(() => {
+    setSelectedSize(null);
+  }, [selectedBottle]);
+
+  // Sizes available for the currently selected bottle, intersected with product's own sizes
+  const availableSizes = (() => {
+    const bottleSizes = bottleTypes[selectedBottle]?.sizes || [];
+    if (!product) return bottleSizes;
+    const productSizes = product.sizes || [];
+    const intersection = bottleSizes.filter((s) => productSizes.includes(s));
+    return intersection.length > 0 ? intersection : bottleSizes;
+  })();
+
   if (!product) {
     return (
       <>
