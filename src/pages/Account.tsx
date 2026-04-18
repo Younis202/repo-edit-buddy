@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { LogOut, Package, MapPin, User as UserIcon, LayoutDashboard } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
-import { supabase } from "@/integrations/supabase/client";
+import { db as supabase } from "@/integrations/supabase/db";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";

@@ -5,7 +5,7 @@ import { Search, Package, Truck, Check, Clock, X } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FilmGrain from "@/components/FilmGrain";
-import { supabase } from "@/integrations/supabase/client";
+import { db as supabase } from "@/integrations/supabase/db";
 import { usePageSEO } from "@/hooks/usePageSEO";
 
 interface TrackedOrder {
