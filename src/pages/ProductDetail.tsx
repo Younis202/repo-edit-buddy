@@ -9,6 +9,7 @@ import CustomCursor from "@/components/CustomCursor";
 import FilmGrain from "@/components/FilmGrain";
 import SmoothScroll from "@/components/SmoothScroll";
 import { getRelatedProducts } from "@/data/products";
+import { bottleShapes, getBottleShape, type BottleShapeId } from "@/data/brandedImages";
 import { useProduct } from "@/hooks/useProducts";
 import { useCart } from "@/contexts/CartContext";
 import { useWishlist } from "@/contexts/WishlistContext";
@@ -54,6 +55,7 @@ const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedColor, setSelectedColor] = useState(0);
+  const [selectedBottle, setSelectedBottle] = useState<BottleShapeId | null>(null);
   const [quantity, setQuantity] = useState(1);
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
   const [addedToBag, setAddedToBag] = useState(false);
@@ -64,10 +66,19 @@ const ProductDetail = () => {
     setSelectedImage(0);
     setSelectedSize(null);
     setSelectedColor(0);
+    setSelectedBottle(product?.defaultBottle || null);
     setQuantity(1);
     setOpenAccordion(0);
     setAddedToBag(false);
-  }, [slug]);
+  }, [slug, product?.defaultBottle]);
+
+  // When user picks a different bottle shape, swap the hero image to that bottle.
+  const displayImages = (() => {
+    if (!product) return [] as string[];
+    const bottleImg = selectedBottle ? getBottleShape(selectedBottle)?.image : undefined;
+    if (!bottleImg) return product.images;
+    return [bottleImg, ...product.images.slice(1)];
+  })();
 
   if (!product) {
     return (
