@@ -12,13 +12,30 @@ interface WishlistContextType {
   totalItems: number;
 }
 
-const WishlistContext = createContext<WishlistContextType | undefined>(undefined);
-
-export const useWishlist = () => {
-  const ctx = useContext(WishlistContext);
-  if (!ctx) throw new Error("useWishlist must be inside WishlistProvider");
-  return ctx;
+const fallbackWishlistContext: WishlistContextType = {
+  items: [],
+  isWishlisted: () => false,
+  toggleWishlist: () => {
+    if (import.meta.env.DEV) {
+      console.warn("useWishlist called outside WishlistProvider; using fallback context.");
+    }
+  },
+  removeFromWishlist: () => {
+    if (import.meta.env.DEV) {
+      console.warn("removeFromWishlist called outside WishlistProvider; using fallback context.");
+    }
+  },
+  clearWishlist: () => {
+    if (import.meta.env.DEV) {
+      console.warn("clearWishlist called outside WishlistProvider; using fallback context.");
+    }
+  },
+  totalItems: 0,
 };
+
+const WishlistContext = createContext<WishlistContextType>(fallbackWishlistContext);
+
+export const useWishlist = () => useContext(WishlistContext);
 
 const WISHLIST_KEY = "shazaya-wishlist";
 
