@@ -1,18 +1,18 @@
-import { motion } from "framer-motion";
+
 
 const MarqueeBanner = () => {
   const items = [
-    "New Collection SS26",
+    "مجموعة ٢٠٢٦ الجديدة",
     "✦",
-    "Free Shipping Over $200",
+    "شحن مجاني فوق ١,٠٠٠ ج.م",
     "✦",
-    "Easy Returns Within 30 Days",
+    "إرجاع سهل خلال ٣٠ يوم",
     "✦",
-    "Size Guide Available",
+    "دفع آمن ومشفّر",
     "✦",
-    "Secure Checkout",
+    "تقسيط بدون فوائد",
     "✦",
-    "Pay in 4 Installments",
+    "تغليف فاخر مجاني",
     "✦",
   ];
 
@@ -20,36 +20,16 @@ const MarqueeBanner = () => {
 
   return (
     <div className="py-5 border-y border-border/50 overflow-hidden bg-secondary/20 relative">
-      {/* Forward scroll */}
-      <motion.div
-        animate={{ x: [0, -1500] }}
-        transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-        className="whitespace-nowrap flex"
-      >
-        {[...Array(6)].map((_, i) => (
-          <span
-            key={i}
-            className="text-[10px] tracking-ultra uppercase text-muted-foreground font-body inline-block"
-          >
-            {text}
-          </span>
+      <div className="whitespace-nowrap flex animate-marquee-rtl">
+        {[...Array(8)].map((_, i) => (
+          <span key={i} className="text-[11px] tracking-wide text-muted-foreground font-body inline-block">{text}</span>
         ))}
-      </motion.div>
-      {/* Reverse scroll — subtle second layer */}
-      <motion.div
-        animate={{ x: [-1500, 0] }}
-        transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
-        className="whitespace-nowrap flex mt-2 opacity-30"
-      >
-        {[...Array(6)].map((_, i) => (
-          <span
-            key={i}
-            className="text-[10px] tracking-ultra uppercase text-muted-foreground font-body inline-block"
-          >
-            {text}
-          </span>
+      </div>
+      <div className="whitespace-nowrap flex animate-marquee-ltr mt-2 opacity-30">
+        {[...Array(8)].map((_, i) => (
+          <span key={i} className="text-[11px] tracking-wide text-muted-foreground font-body inline-block">{text}</span>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };

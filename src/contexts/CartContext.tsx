@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback, type ReactNode } from "react";
+import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from "react";
 import type { Product } from "@/data/products";
 
 export interface CartItem {
@@ -15,8 +15,8 @@ interface CartContextType {
   closeCart: () => void;
   toggleCart: () => void;
   addItem: (product: Product, size: string, color: string, quantity?: number) => void;
-  removeItem: (productId: number, size: string, color: string) => void;
-  updateQuantity: (productId: number, size: string, color: string, quantity: number) => void;
+  removeItem: (productId: string | number, size: string, color: string) => void;
+  updateQuantity: (productId: string | number, size: string, color: string, quantity: number) => void;
   clearCart: () => void;
   totalItems: number;
   totalPrice: number;
@@ -30,11 +30,29 @@ export const useCart = () => {
   return ctx;
 };
 
-const parsePrice = (price: string) => parseFloat(price.replace(/[$,]/g, ""));
+const parsePrice = (price: string) => {
+  const western = price.replace(/[٠-٩]/g, (d) => String("٠١٢٣٤٥٦٧٨٩".indexOf(d)));
+  return parseFloat(western.replace(/[^0-9.]/g, "")) || 0;
+};
+
+const CART_KEY = "shazaya-cart";
+
+const loadCart = (): CartItem[] => {
+  try {
+    const raw = localStorage.getItem(CART_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+};
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [items, setItems] = useState<CartItem[]>([]);
+  const [items, setItems] = useState<CartItem[]>(() => loadCart());
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem(CART_KEY, JSON.stringify(items));
+  }, [items]);
 
   const openCart = useCallback(() => setIsOpen(true), []);
   const closeCart = useCallback(() => setIsOpen(false), []);
@@ -57,13 +75,13 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setIsOpen(true);
   }, []);
 
-  const removeItem = useCallback((productId: number, size: string, color: string) => {
+  const removeItem = useCallback((productId: string | number, size: string, color: string) => {
     setItems((prev) =>
       prev.filter((i) => !(i.product.id === productId && i.size === size && i.color === color))
     );
   }, []);
 
-  const updateQuantity = useCallback((productId: number, size: string, color: string, quantity: number) => {
+  const updateQuantity = useCallback((productId: string | number, size: string, color: string, quantity: number) => {
     if (quantity < 1) return removeItem(productId, size, color);
     setItems((prev) =>
       prev.map((i) =>

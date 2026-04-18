@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Playfair Display', 'Georgia', 'serif'],
-        body: ['DM Sans', 'system-ui', 'sans-serif'],
+        display: ['Aref Ruqaa', 'Amiri', 'Georgia', 'serif'],
+        body: ['Tajawal', 'system-ui', 'sans-serif'],
+        accent: ['Reem Kufi', 'Tajawal', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -92,13 +93,21 @@ export default {
           "0%": { transform: "translateY(100%)" },
           "100%": { transform: "translateY(0)" },
         },
-        "reveal-left": {
-          "0%": { clipPath: "inset(0 100% 0 0)" },
+        "reveal-right": {
+          "0%": { clipPath: "inset(0 0 0 100%)" },
           "100%": { clipPath: "inset(0 0 0 0)" },
         },
         "marquee": {
           "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(50%)" },
+        },
+        "marquee-rtl": {
+          "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-50%)" },
+        },
+        "marquee-ltr": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0%)" },
         },
       },
       animation: {
@@ -108,8 +117,10 @@ export default {
         "fade-in": "fade-in 1s ease forwards",
         "scale-in": "scale-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "slide-up": "slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "reveal-left": "reveal-left 1s cubic-bezier(0.77, 0, 0.175, 1) forwards",
+        "reveal-right": "reveal-right 1s cubic-bezier(0.77, 0, 0.175, 1) forwards",
         "marquee": "marquee 30s linear infinite",
+        "marquee-rtl": "marquee-rtl 25s linear infinite",
+        "marquee-ltr": "marquee-ltr 35s linear infinite",
       },
     },
   },

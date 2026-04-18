@@ -1,34 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import heroImage from "@/assets/hero-image.jpg";
-
-const SplitText = ({
-  text,
-  className,
-  delay = 0,
-}: {
-  text: string;
-  className?: string;
-  delay?: number;
-}) => (
-  <span className="inline-flex overflow-hidden">
-    {text.split("").map((char, i) => (
-      <motion.span
-        key={i}
-        initial={{ y: "110%" }}
-        animate={{ y: 0 }}
-        transition={{
-          duration: 0.8,
-          delay: delay + i * 0.03,
-          ease: [0.16, 1, 0.3, 1],
-        }}
-        className={className}
-      >
-        {char === " " ? "\u00A0" : char}
-      </motion.span>
-    ))}
-  </span>
-);
+import heroImage from "@/assets/hero-shazaya.jpg";
 
 const HeroSection = () => {
   const ref = useRef(null);
@@ -36,7 +8,6 @@ const HeroSection = () => {
     target: ref,
     offset: ["start start", "end start"],
   });
-
   const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
   const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
@@ -44,7 +15,6 @@ const HeroSection = () => {
 
   return (
     <section ref={ref} className="relative h-[120vh] w-full overflow-hidden">
-      {/* Background Image */}
       <motion.div
         initial={{ scale: 1.4, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -54,7 +24,7 @@ const HeroSection = () => {
       >
         <img
           src={heroImage}
-          alt="MAISON editorial campaign — Spring Summer 2026"
+          alt="شذايا — عطور فاخرة ٢٠٢٦"
           className="w-full h-full object-cover"
         />
         <div
@@ -66,33 +36,30 @@ const HeroSection = () => {
         />
       </motion.div>
 
-      {/* Floating season badge */}
       <motion.div
         initial={{ opacity: 0, rotate: -90 }}
         animate={{ opacity: 1, rotate: -90 }}
         transition={{ delay: 3.2, duration: 0.8 }}
         style={{ opacity: contentOpacity }}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 hidden md:block origin-center"
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 hidden md:block origin-center"
       >
-        <span className="text-[9px] tracking-ultra uppercase text-foreground/25 font-body whitespace-nowrap">
-          SS26 — The Art of Silence
+        <span className="text-[10px] tracking-wide text-foreground/25 font-body whitespace-nowrap">
+          ٢٠٢٦ — فن العطور الشرقية
         </span>
       </motion.div>
 
-      {/* Left vertical text */}
       <motion.div
         initial={{ opacity: 0, rotate: 90 }}
         animate={{ opacity: 1, rotate: 90 }}
         transition={{ delay: 3.4, duration: 0.8 }}
         style={{ opacity: contentOpacity }}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 hidden md:block origin-center"
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 hidden md:block origin-center"
       >
-        <span className="text-[9px] tracking-ultra uppercase text-foreground/15 font-body whitespace-nowrap">
-          Handcrafted in Florence
+        <span className="text-[10px] tracking-wide text-foreground/15 font-body whitespace-nowrap">
+          صُنع يدوياً بعناية
         </span>
       </motion.div>
 
-      {/* Content */}
       <motion.div
         style={{ opacity: contentOpacity, y: contentY }}
         className="relative z-10 h-full flex flex-col justify-end pb-20 md:pb-28 px-6 md:px-12"
@@ -102,26 +69,21 @@ const HeroSection = () => {
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, delay: 2.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[10px] md:text-xs tracking-ultra uppercase text-foreground/40 font-body"
+            className="text-[11px] md:text-xs tracking-[0.2em] text-foreground/40 font-accent"
           >
-            Spring / Summer 2026 Collection
+            مجموعة ٢٠٢٦ الحصرية
           </motion.p>
         </div>
 
-        <div className="mb-2">
-          <SplitText
-            text="The Art of"
-            delay={2.4}
-            className="font-display text-[3.5rem] md:text-[7rem] lg:text-[9.5rem] font-light tracking-tight text-foreground leading-[0.85] inline-block"
-          />
-        </div>
-        <div>
-          <SplitText
-            text="Silence"
-            delay={2.7}
-            className="font-display text-[3.5rem] md:text-[7rem] lg:text-[9.5rem] italic font-light tracking-tight text-foreground leading-[0.85] inline-block"
-          />
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 2.4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <h1 className="font-display text-[3.5rem] md:text-[7rem] lg:text-[9.5rem] font-bold text-foreground leading-[0.95] mb-2">
+            فن <span className="text-gold-gradient italic">العطور</span>
+          </h1>
+        </motion.div>
 
         <div className="overflow-hidden mt-12 md:mt-16">
           <motion.div
@@ -130,24 +92,23 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 3.2, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-center gap-10"
           >
-          <a
-            href="#collection"
-            className="inline-flex items-center gap-4 text-[11px] md:text-xs tracking-ultra uppercase text-background bg-foreground px-8 py-3.5 hover:bg-accent hover:text-accent-foreground transition-colors duration-500 font-body"
-          >
-            Shop Now
-          </a>
-          <a
-            href="#lookbook"
-            className="inline-flex items-center gap-4 text-[10px] md:text-xs tracking-ultra uppercase text-foreground/60 hover:text-accent transition-colors duration-500 group font-body"
-          >
-            <span>View Lookbook</span>
-            <span className="block w-12 h-px bg-foreground/20 group-hover:w-20 group-hover:bg-accent transition-all duration-700" />
-          </a>
+            <a
+              href="#collection"
+              className="inline-flex items-center gap-4 text-[12px] md:text-xs tracking-wide text-background bg-foreground px-8 py-3.5 hover:bg-accent hover:text-accent-foreground transition-colors duration-500 font-accent"
+            >
+              تسوّق الآن
+            </a>
+            <a
+              href="#lookbook"
+              className="inline-flex items-center gap-4 text-[11px] md:text-xs tracking-wide text-foreground/60 hover:text-accent transition-colors duration-500 group font-accent"
+            >
+              <span>استكشف المجموعة</span>
+              <span className="block w-12 h-px bg-foreground/20 group-hover:w-20 group-hover:bg-accent transition-all duration-700" />
+            </a>
           </motion.div>
         </div>
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -155,8 +116,8 @@ const HeroSection = () => {
         style={{ opacity: contentOpacity }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
       >
-        <span className="text-[9px] tracking-ultra uppercase text-foreground/20 font-body">
-          Scroll
+        <span className="text-[10px] tracking-wide text-foreground/20 font-body">
+          اكتشف
         </span>
         <motion.div
           animate={{ y: [0, 10, 0] }}

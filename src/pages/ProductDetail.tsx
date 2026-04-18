@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { useParams, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, ShoppingBag, Minus, Plus, Share2, Ruler, Truck, RotateCcw, ChevronDown } from "lucide-react";
@@ -7,33 +8,66 @@ import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import FilmGrain from "@/components/FilmGrain";
 import SmoothScroll from "@/components/SmoothScroll";
-import { getProductBySlug, getRelatedProducts } from "@/data/products";
+import { getRelatedProducts } from "@/data/products";
+import { useProduct } from "@/hooks/useProducts";
 import { useCart } from "@/contexts/CartContext";
+import { useWishlist } from "@/contexts/WishlistContext";
+import { useJsonLd } from "@/hooks/useJsonLd";
+import { resolveImage } from "@/data/products";
+import ProductReviewsLive from "@/components/ProductReviewsLive";
+import SizeGuideModal from "@/components/SizeGuideModal";
 
 const ProductDetail = () => {
   const { slug } = useParams();
   const { addItem } = useCart();
-  const product = getProductBySlug(slug || "");
+  const { isWishlisted: checkWishlisted, toggleWishlist } = useWishlist();
+  const { data: product } = useProduct(slug);
   const relatedProducts = getRelatedProducts(slug || "");
+  const productImage = product?.images?.[0] ? resolveImage(product.images[0]) : undefined;
+  usePageSEO({
+    title: product?.name || "المنتج",
+    description: product?.shortDescription || "عطر فاخر من شذايا — تسوق الآن.",
+    ogImage: productImage,
+  });
+  useJsonLd(
+    product
+      ? {
+          "@context": "https://schema.org/",
+          "@type": "Product",
+          name: product.name,
+          description: product.shortDescription,
+          sku: product.slug,
+          category: product.category,
+          brand: { "@type": "Brand", name: "شذايا" },
+          image: product.images?.map(resolveImage) || [],
+          offers: {
+            "@type": "Offer",
+            url: `https://shathaya.com/product/${product.slug}`,
+            priceCurrency: "EGP",
+            price: typeof product.price === "number" ? product.price : undefined,
+            availability: "https://schema.org/InStock",
+          },
+        }
+      : null
+  );
 
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedColor, setSelectedColor] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
-  const [isWishlisted, setIsWishlisted] = useState(false);
   const [addedToBag, setAddedToBag] = useState(false);
+  const [showSizeGuide, setShowSizeGuide] = useState(false);
+  const isWishlisted = product ? checkWishlisted(product.id) : false;
 
-  // Reset state when slug changes
-  useState(() => {
+  useEffect(() => {
     setSelectedImage(0);
     setSelectedSize(null);
     setSelectedColor(0);
     setQuantity(1);
     setOpenAccordion(0);
-    setIsWishlisted(false);
     setAddedToBag(false);
-  });
+  }, [slug]);
 
   if (!product) {
     return (
@@ -41,7 +75,7 @@ const ProductDetail = () => {
         <CustomCursor />
         <FilmGrain />
         <SmoothScroll>
-          <main className="bg-background min-h-screen cursor-none md:cursor-none">
+          <main className="bg-background min-h-screen md:cursor-none">
             <Navbar />
             <div className="pt-32 pb-24 px-6 md:px-12 flex flex-col items-center justify-center min-h-[60vh]">
               <motion.div
@@ -50,18 +84,18 @@ const ProductDetail = () => {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="text-center"
               >
-                <p className="text-[10px] tracking-ultra uppercase text-muted-foreground mb-4 font-body">Product Not Found</p>
+                <p className="text-[10px] tracking-wide text-muted-foreground mb-4 font-body">المنتج غير موجود</p>
                 <h1 className="font-display text-4xl md:text-6xl font-light text-foreground mb-6">
-                  This piece doesn't <span className="italic">exist</span>
+                  هذا العطر غير <span className="italic">متوفر</span>
                 </h1>
                 <p className="text-sm text-muted-foreground font-body mb-10 max-w-md mx-auto">
-                  The product you're looking for may have been removed or is no longer available.
+                  المنتج الذي تبحث عنه ربما تم حذفه أو لم يعد متوفراً.
                 </p>
                 <Link
                   to="/shop"
-                  className="text-[10px] tracking-ultra uppercase font-body text-foreground border border-border/30 px-10 py-4 hover:border-accent hover:text-accent transition-all duration-300 inline-block"
+                  className="text-[10px] tracking-wide font-body text-foreground border border-border/30 px-10 py-4 hover:border-accent hover:text-accent transition-all duration-300 inline-block"
                 >
-                  Return to Shop
+                  العودة للمتجر
                 </Link>
               </motion.div>
             </div>
@@ -79,25 +113,15 @@ const ProductDetail = () => {
     setTimeout(() => setAddedToBag(false), 2000);
   };
 
-  // Build display title: "The" before italic word, or split name
   const titleParts = product.name.split(product.nameItalic);
   const titlePrefix = titleParts[0]?.trim() || "";
-
-  const savePercent = product.originalPrice
-    ? Math.round(
-        ((parseFloat(product.originalPrice.replace(/[$,]/g, "")) -
-          parseFloat(product.price.replace(/[$,]/g, ""))) /
-          parseFloat(product.originalPrice.replace(/[$,]/g, ""))) *
-          100
-      )
-    : null;
 
   return (
     <>
       <CustomCursor />
       <FilmGrain />
       <SmoothScroll>
-        <main className="bg-background min-h-screen cursor-none md:cursor-none">
+        <main className="bg-background min-h-screen md:cursor-none">
           <Navbar />
 
           {/* Breadcrumb */}
@@ -106,11 +130,11 @@ const ProductDetail = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex items-center gap-2 text-[10px] tracking-editorial uppercase font-body text-muted-foreground"
+              className="flex items-center gap-2 text-[10px] tracking-wide font-body text-muted-foreground"
             >
-              <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
+              <Link to="/" className="hover:text-foreground transition-colors">الرئيسية</Link>
               <span>/</span>
-              <Link to="/shop" className="hover:text-foreground transition-colors">Shop</Link>
+              <Link to="/shop" className="hover:text-foreground transition-colors">المتجر</Link>
               <span>/</span>
               <Link to={`/shop?category=${product.category}`} className="hover:text-foreground transition-colors">{product.category}</Link>
               <span>/</span>
@@ -129,7 +153,7 @@ const ProductDetail = () => {
                     {product.images.map((img, i) => (
                       <motion.button
                         key={i}
-                        initial={{ opacity: 0, x: -20 }}
+                        initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.3 + i * 0.1, duration: 0.6 }}
                         onClick={() => setSelectedImage(i)}
@@ -137,7 +161,7 @@ const ProductDetail = () => {
                           selectedImage === i ? "border-accent" : "border-transparent hover:border-foreground/20"
                         }`}
                       >
-                        <img src={img} alt={`${product.name} view ${i + 1}`} className="w-full h-full object-cover" />
+                        <img src={img} alt={`${product.name} صورة ${i + 1}`} className="w-full h-full object-cover" />
                       </motion.button>
                     ))}
                   </div>
@@ -158,13 +182,12 @@ const ProductDetail = () => {
                           alt={product.name}
                           className="w-full h-full object-cover transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                         />
-                        <div className="absolute bottom-4 right-4 text-[9px] tracking-ultra uppercase text-foreground/30 font-body bg-background/30 backdrop-blur-md px-3 py-1.5">
-                          Hover to zoom
+                        <div className="absolute bottom-4 left-4 text-[9px] tracking-wide text-foreground/30 font-body bg-background/30 backdrop-blur-md px-3 py-1.5 hidden md:block">
+                          مرّر الماوس للتكبير
                         </div>
                       </motion.div>
                     </AnimatePresence>
 
-                    {/* Mobile thumbnail dots */}
                     <div className="flex items-center justify-center gap-2 mt-4 md:hidden">
                       {product.images.map((_, i) => (
                         <button
@@ -187,10 +210,9 @@ const ProductDetail = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  {/* Tag */}
-                  <span className={`text-[9px] tracking-ultra uppercase font-body px-3 py-1 inline-block mb-4 ${
-                    product.tag === "Best Seller" ? "text-accent bg-accent/10" :
-                    product.tag === "Limited" ? "text-destructive bg-destructive/10" :
+                  <span className={`text-[9px] tracking-wide font-body px-3 py-1 inline-block mb-4 ${
+                    product.tag === "الأكثر مبيعاً" ? "text-accent bg-accent/10" :
+                    product.tag === "محدود" ? "text-destructive bg-destructive/10" :
                     "text-accent bg-accent/10"
                   }`}>
                     {product.tag} — {product.season}
@@ -200,7 +222,7 @@ const ProductDetail = () => {
                     {titlePrefix && <>{titlePrefix} </>}<span className="italic">{product.nameItalic}</span>
                   </h1>
 
-                  <p className="text-[10px] tracking-ultra uppercase text-muted-foreground font-body mb-6">
+                  <p className="text-[10px] tracking-wide text-muted-foreground font-body mb-6">
                     {product.category} — {product.material}
                   </p>
 
@@ -210,16 +232,10 @@ const ProductDetail = () => {
                     {product.originalPrice && (
                       <>
                         <span className="text-sm text-muted-foreground line-through font-body">{product.originalPrice}</span>
-                        {savePercent && (
-                          <span className="text-[9px] tracking-editorial uppercase text-accent font-body bg-accent/10 px-2 py-0.5">
-                            Save {savePercent}%
-                          </span>
-                        )}
                       </>
                     )}
                   </div>
 
-                  {/* Short description */}
                   <p className="text-sm text-muted-foreground leading-relaxed font-body mb-8 max-w-md">
                     {product.shortDescription}
                   </p>
@@ -227,8 +243,8 @@ const ProductDetail = () => {
                   {/* Color selector */}
                   <div className="mb-6">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-[10px] tracking-ultra uppercase text-foreground font-body">
-                        Color — <span className="text-muted-foreground">{product.colors[selectedColor]?.name}</span>
+                      <span className="text-[10px] tracking-wide text-foreground font-body">
+                        اللون — <span className="text-muted-foreground">{product.colors[selectedColor]?.name}</span>
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -249,15 +265,15 @@ const ProductDetail = () => {
                   {/* Size selector */}
                   <div className="mb-6">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-[10px] tracking-ultra uppercase text-foreground font-body">
-                        Size {selectedSize && <span className="text-muted-foreground">— {selectedSize}</span>}
+                      <span className="text-[10px] tracking-wide text-foreground font-body">
+                        الحجم {selectedSize && <span className="text-muted-foreground">— {selectedSize}</span>}
                       </span>
-                      <button className="text-[10px] tracking-editorial uppercase text-accent font-body flex items-center gap-1 hover:underline">
+                      <button onClick={() => setShowSizeGuide(true)} className="text-[10px] tracking-wide text-accent font-body flex items-center gap-1 hover:underline">
                         <Ruler size={12} />
-                        Size Guide
+                        دليل الأحجام
                       </button>
                     </div>
-                    <div className={`grid gap-2 ${product.sizes.length <= 6 ? "grid-cols-6" : "grid-cols-5"}`}>
+                    <div className={`grid gap-2 ${product.sizes.length <= 3 ? "grid-cols-3" : "grid-cols-4"}`}>
                       {product.sizes.map((size) => (
                         <button
                           key={size}
@@ -273,24 +289,24 @@ const ProductDetail = () => {
                       ))}
                     </div>
                     {!selectedSize && (
-                      <p className="text-[10px] text-accent/70 font-body mt-2">Please select a size</p>
+                      <p className="text-[10px] text-accent/70 font-body mt-2">الرجاء اختيار الحجم</p>
                     )}
                   </div>
 
                   {/* Quantity */}
                   <div className="mb-8">
-                    <span className="text-[10px] tracking-ultra uppercase text-foreground font-body mb-3 block">Quantity</span>
+                    <span className="text-[10px] tracking-wide text-foreground font-body mb-3 block">الكمية</span>
                     <div className="flex items-center gap-0 border border-border/40 w-fit">
                       <button
                         onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                        className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-colors border-r border-border/40"
+                        className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-colors border-l border-border/40"
                       >
                         <Minus size={14} strokeWidth={1.5} />
                       </button>
                       <span className="w-14 h-11 flex items-center justify-center text-sm font-body text-foreground">{quantity}</span>
                       <button
                         onClick={() => setQuantity(quantity + 1)}
-                        className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-colors border-l border-border/40"
+                        className="w-11 h-11 flex items-center justify-center text-foreground/60 hover:text-foreground transition-colors border-r border-border/40"
                       >
                         <Plus size={14} strokeWidth={1.5} />
                       </button>
@@ -302,7 +318,7 @@ const ProductDetail = () => {
                     <motion.button
                       onClick={handleAddToBag}
                       whileTap={{ scale: 0.97 }}
-                      className={`flex-1 py-4 text-[11px] tracking-ultra uppercase font-body flex items-center justify-center gap-3 transition-all duration-500 ${
+                      className={`flex-1 py-4 text-[11px] tracking-wide font-body flex items-center justify-center gap-3 transition-all duration-500 ${
                         addedToBag
                           ? "bg-accent text-accent-foreground"
                           : selectedSize
@@ -311,17 +327,31 @@ const ProductDetail = () => {
                       }`}
                     >
                       <ShoppingBag size={16} strokeWidth={1.5} />
-                      {addedToBag ? "Added to Bag ✓" : "Add to Bag"}
+                      {addedToBag ? "تمت الإضافة ✓" : "أضف للحقيبة"}
                     </motion.button>
                     <button
-                      onClick={() => setIsWishlisted(!isWishlisted)}
+                      onClick={() => product && toggleWishlist(product)}
                       className={`w-14 h-14 border flex items-center justify-center transition-all duration-300 ${
                         isWishlisted ? "border-accent bg-accent/10 text-accent" : "border-border/40 text-foreground/40 hover:border-foreground/60"
                       }`}
                     >
                       <Heart size={18} strokeWidth={1.5} fill={isWishlisted ? "currentColor" : "none"} />
                     </button>
-                    <button className="w-14 h-14 border border-border/40 flex items-center justify-center text-foreground/40 hover:border-foreground/60 hover:text-foreground transition-all duration-300">
+                    <button
+                      onClick={() => {
+                        if (navigator.share) {
+                          navigator.share({ title: product.name, text: product.shortDescription, url: window.location.href });
+                        } else {
+                          navigator.clipboard.writeText(window.location.href);
+                          // Simple feedback
+                          const btn = document.activeElement as HTMLElement;
+                          btn?.setAttribute("data-copied", "true");
+                          setTimeout(() => btn?.removeAttribute("data-copied"), 1500);
+                        }
+                      }}
+                      className="w-14 h-14 border border-border/40 flex items-center justify-center text-foreground/40 hover:border-foreground/60 hover:text-foreground transition-all duration-300"
+                      title="مشاركة"
+                    >
                       <Share2 size={16} strokeWidth={1.5} />
                     </button>
                   </div>
@@ -330,11 +360,11 @@ const ProductDetail = () => {
                   <div className="flex items-center gap-6 py-5 border-y border-border/20 mb-8">
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Truck size={14} strokeWidth={1.5} className="text-accent" />
-                      <span className="text-[9px] tracking-editorial uppercase font-body">Free Shipping</span>
+                      <span className="text-[9px] tracking-wide font-body">شحن مجاني</span>
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <RotateCcw size={14} strokeWidth={1.5} className="text-accent" />
-                      <span className="text-[9px] tracking-editorial uppercase font-body">30-Day Returns</span>
+                      <span className="text-[9px] tracking-wide font-body">إرجاع خلال ٣٠ يوم</span>
                     </div>
                   </div>
 
@@ -346,7 +376,7 @@ const ProductDetail = () => {
                           onClick={() => setOpenAccordion(openAccordion === i ? null : i)}
                           className="w-full flex items-center justify-between py-4 group"
                         >
-                          <span className="text-[11px] tracking-editorial uppercase text-foreground font-body group-hover:text-accent transition-colors duration-300">
+                          <span className="text-[11px] tracking-wide text-foreground font-body group-hover:text-accent transition-colors duration-300">
                             {item.title}
                           </span>
                           <motion.div
@@ -365,7 +395,7 @@ const ProductDetail = () => {
                               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                               className="overflow-hidden"
                             >
-                              <p className="text-sm text-muted-foreground leading-relaxed font-body pb-5 pr-8">
+                              <p className="text-sm text-muted-foreground leading-relaxed font-body pb-5 pl-8">
                                 {item.content}
                               </p>
                             </motion.div>
@@ -379,6 +409,9 @@ const ProductDetail = () => {
             </div>
           </section>
 
+          {/* Customer Reviews */}
+          {typeof product.id === "string" && <ProductReviewsLive productId={product.id} />}
+
           {/* You May Also Like */}
           <section className="px-6 md:px-12 py-16 md:py-24 border-t border-border/20">
             <motion.div
@@ -388,9 +421,9 @@ const ProductDetail = () => {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="mb-10"
             >
-              <p className="text-[10px] tracking-ultra uppercase text-muted-foreground mb-4 font-body">Complete Your Wardrobe</p>
+              <p className="text-[10px] tracking-wide text-muted-foreground mb-4 font-body">أكمل مجموعتك</p>
               <h2 className="font-display text-3xl md:text-5xl font-light text-foreground">
-                You May Also <span className="italic">Like</span>
+                قد يعجبك <span className="italic">أيضاً</span>
               </h2>
             </motion.div>
 
@@ -411,9 +444,9 @@ const ProductDetail = () => {
                         className="w-full h-full object-cover transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
                       />
                       <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
-                        <span className="w-full text-[9px] tracking-ultra uppercase text-background bg-foreground py-2 font-body flex items-center justify-center gap-2">
+                        <span className="w-full text-[9px] tracking-wide text-background bg-foreground py-2 font-body flex items-center justify-center gap-2">
                           <ShoppingBag size={10} strokeWidth={1.5} />
-                          Quick Add
+                          إضافة سريعة
                         </span>
                       </div>
                     </div>
@@ -433,6 +466,7 @@ const ProductDetail = () => {
           <Footer />
         </main>
       </SmoothScroll>
+      <SizeGuideModal isOpen={showSizeGuide} onClose={() => setShowSizeGuide(false)} />
     </>
   );
 };

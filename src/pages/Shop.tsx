@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { usePageSEO } from "@/hooks/usePageSEO";
 import { Link } from "react-router-dom";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Heart, ShoppingBag, SlidersHorizontal, ChevronDown, Grid3X3, LayoutGrid, ArrowUpRight } from "lucide-react";
@@ -7,15 +8,18 @@ import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import FilmGrain from "@/components/FilmGrain";
 import SmoothScroll from "@/components/SmoothScroll";
-import { allProducts, categories, sortOptions } from "@/data/products";
+import { allProducts as fallbackProducts, categories, sortOptions, type Product } from "@/data/products";
+import { useProducts } from "@/hooks/useProducts";
 import { useCart } from "@/contexts/CartContext";
+import { useWishlist } from "@/contexts/WishlistContext";
 
-const ProductCard = ({ product, index, gridCols }: { product: typeof allProducts[0]; index: number; gridCols: number }) => {
+const ProductCard = ({ product, index, gridCols }: { product: Product; index: number; gridCols: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-40px" });
-  const [isWishlisted, setIsWishlisted] = useState(false);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const { addItem } = useCart();
+  const { isWishlisted: checkWishlisted, toggleWishlist } = useWishlist();
+  const wishlisted = checkWishlisted(product.id);
 
   return (
     <motion.div
@@ -32,33 +36,30 @@ const ProductCard = ({ product, index, gridCols }: { product: typeof allProducts
             alt={product.name}
             className="w-full h-full object-cover transition-transform duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
           />
-          {/* Tag */}
-          <div className="absolute top-3 left-3">
-            <span className={`text-[8px] tracking-editorial uppercase px-2.5 py-1 font-body ${
-              product.tag === "Best Seller" ? "bg-accent text-accent-foreground" :
-              product.tag === "Limited" ? "bg-destructive text-destructive-foreground" :
+          <div className="absolute top-3 right-3">
+            <span className={`text-[8px] tracking-wide px-2.5 py-1 font-body ${
+              product.tag === "الأكثر مبيعاً" ? "bg-accent text-accent-foreground" :
+              product.tag === "محدود" ? "bg-destructive text-destructive-foreground" :
               "bg-background/60 backdrop-blur-md text-foreground/70"
             }`}>
               {product.tag}
             </span>
           </div>
-          {/* Wishlist */}
           <button
-            onClick={(e) => { e.preventDefault(); setIsWishlisted(!isWishlisted); }}
-            className={`absolute top-3 right-3 w-8 h-8 backdrop-blur-md flex items-center justify-center transition-all duration-300 ${
-              isWishlisted ? "bg-accent/20 text-accent opacity-100" : "bg-background/40 text-foreground/70 opacity-0 group-hover:opacity-100"
+            onClick={(e) => { e.preventDefault(); toggleWishlist(product); }}
+            className={`absolute top-3 left-3 w-8 h-8 backdrop-blur-md flex items-center justify-center transition-all duration-300 ${
+              wishlisted ? "bg-accent/20 text-accent opacity-100" : "bg-background/40 text-foreground/70 opacity-0 group-hover:opacity-100"
             }`}
           >
-            <Heart size={13} strokeWidth={1.5} fill={isWishlisted ? "currentColor" : "none"} />
+            <Heart size={13} strokeWidth={1.5} fill={wishlisted ? "currentColor" : "none"} />
           </button>
-          {/* Hover overlay with sizes + quick add */}
           <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-600 ease-[cubic-bezier(0.16,1,0.3,1)]">
              <div className="flex items-center gap-1.5 mb-2.5">
               {product.sizes.map((size) => (
                 <span
                   key={size}
                   onClick={(e) => { e.preventDefault(); setSelectedSize(size); }}
-                  className={`w-8 h-7 border flex items-center justify-center text-[8px] tracking-wide font-body backdrop-blur-md transition-all duration-200 cursor-pointer ${
+                  className={`w-auto px-2 h-7 border flex items-center justify-center text-[8px] tracking-wide font-body backdrop-blur-md transition-all duration-200 cursor-pointer ${
                     selectedSize === size
                       ? "bg-foreground text-background border-foreground"
                       : "border-foreground/20 text-foreground/60 bg-background/60 hover:bg-foreground hover:text-background"
@@ -72,12 +73,12 @@ const ProductCard = ({ product, index, gridCols }: { product: typeof allProducts
               onClick={(e) => {
                 e.preventDefault();
                 const size = selectedSize || product.sizes[0];
-                addItem(product, size, product.colors[0]?.name || "Default");
+                addItem(product, size, product.colors[0]?.name || "افتراضي");
               }}
-              className="w-full text-[9px] tracking-ultra uppercase text-background bg-foreground py-2.5 font-body hover:bg-accent hover:text-accent-foreground transition-colors duration-300 flex items-center justify-center gap-2"
+              className="w-full text-[9px] tracking-wide text-background bg-foreground py-2.5 font-body hover:bg-accent hover:text-accent-foreground transition-colors duration-300 flex items-center justify-center gap-2"
             >
               <ShoppingBag size={11} strokeWidth={1.5} />
-              {selectedSize ? `Add ${selectedSize} to Bag` : "Add to Bag"}
+              {selectedSize ? `أضف ${selectedSize} للحقيبة` : "أضف للحقيبة"}
             </button>
           </div>
         </div>
@@ -86,7 +87,7 @@ const ProductCard = ({ product, index, gridCols }: { product: typeof allProducts
         <h3 className="font-display text-sm md:text-base font-normal text-foreground group-hover:text-accent transition-colors duration-300 mb-0.5">
           {product.name}
         </h3>
-        <p className="text-[9px] tracking-editorial uppercase text-muted-foreground font-body mb-1.5">{product.category}</p>
+        <p className="text-[9px] tracking-wide text-muted-foreground font-body mb-1.5">{product.category}</p>
         <div className="flex items-center gap-2">
           <span className="text-xs text-foreground/70 font-body">{product.price}</span>
           {product.originalPrice && (
@@ -99,22 +100,53 @@ const ProductCard = ({ product, index, gridCols }: { product: typeof allProducts
 };
 
 const Shop = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [sortBy, setSortBy] = useState("Newest");
+  usePageSEO({ title: "المتجر", description: "تصفح مجموعة شذايا الكاملة من العطور الفاخرة — عود، مسك، ورد طائفي، وبخور. اختر عطرك المثالي." });
+  const { data: products = fallbackProducts } = useProducts();
+  const [activeCategory, setActiveCategory] = useState("الكل");
+  const [sortBy, setSortBy] = useState("الأحدث");
   const [showSort, setShowSort] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
   const [gridCols, setGridCols] = useState(4);
+  const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
+  const [selectedPriceRange, setSelectedPriceRange] = useState<string | null>(null);
+  const [selectedType, setSelectedType] = useState<string | null>(null);
+  const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const headerRef = useRef(null);
   const isHeaderInView = useInView(headerRef, { once: true, margin: "-60px" });
 
-  const filteredProducts = activeCategory === "All"
-    ? allProducts
-    : allProducts.filter((p) => p.category === activeCategory);
+  const toggleSize = (size: string) => {
+    setSelectedSizes((prev) => prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size]);
+  };
+
+  const getPriceNum = (price: string) => parseFloat(price.replace(/[^\d.]/g, ""));
+
+  let filteredProducts = activeCategory === "الكل"
+    ? products
+    : products.filter((p) => p.category === activeCategory);
+
+  if (selectedSizes.length > 0) {
+    filteredProducts = filteredProducts.filter((p) => p.sizes.some((s) => selectedSizes.includes(s)));
+  }
+
+  if (selectedPriceRange) {
+    filteredProducts = filteredProducts.filter((p) => {
+      const price = getPriceNum(p.price);
+      if (selectedPriceRange === "أقل من ٢,٠٠٠ ج.م") return price < 2000;
+      if (selectedPriceRange === "٢,٠٠٠ – ٣,٥٠٠ ج.م") return price >= 2000 && price <= 3500;
+      if (selectedPriceRange === "٣,٥٠٠ – ٥,٠٠٠ ج.م") return price >= 3500 && price <= 5000;
+      if (selectedPriceRange === "أكثر من ٥,٠٠٠ ج.م") return price > 5000;
+      return true;
+    });
+  }
+
+  if (selectedColors.length > 0) {
+    filteredProducts = filteredProducts.filter((p) => p.colors.some((c) => selectedColors.includes(c.name)));
+  }
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
-    if (sortBy === "Price: Low to High") return parseFloat(a.price.replace(/[$,]/g, "")) - parseFloat(b.price.replace(/[$,]/g, ""));
-    if (sortBy === "Price: High to Low") return parseFloat(b.price.replace(/[$,]/g, "")) - parseFloat(a.price.replace(/[$,]/g, ""));
-    if (sortBy === "Best Sellers") return a.tag === "Best Seller" ? -1 : 1;
+    if (sortBy === "السعر: الأقل للأعلى") return getPriceNum(a.price) - getPriceNum(b.price);
+    if (sortBy === "السعر: الأعلى للأقل") return getPriceNum(b.price) - getPriceNum(a.price);
+    if (sortBy === "الأكثر مبيعاً") return a.tag === "الأكثر مبيعاً" ? -1 : 1;
     return 0;
   });
 
@@ -123,7 +155,7 @@ const Shop = () => {
       <CustomCursor />
       <FilmGrain />
       <SmoothScroll>
-        <main className="bg-background min-h-screen cursor-none md:cursor-none">
+        <main className="bg-background min-h-screen md:cursor-none">
           <Navbar />
 
           {/* Hero banner */}
@@ -135,30 +167,29 @@ const Shop = () => {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="relative"
             >
-              {/* Breadcrumb */}
-              <nav className="flex items-center gap-2 text-[10px] tracking-editorial uppercase font-body text-muted-foreground mb-8">
-                <Link to="/" className="hover:text-foreground transition-colors">Home</Link>
+              <nav className="flex items-center gap-2 text-[10px] tracking-wide font-body text-muted-foreground mb-8">
+                <Link to="/" className="hover:text-foreground transition-colors">الرئيسية</Link>
                 <span>/</span>
-                <span className="text-foreground">Shop All</span>
+                <span className="text-foreground">المتجر</span>
               </nav>
 
               <div className="flex flex-col md:flex-row md:items-end md:justify-between">
                 <div>
-                  <p className="text-[10px] tracking-ultra uppercase text-muted-foreground mb-4 font-body">
-                    The Collection
+                  <p className="text-[10px] tracking-wide text-muted-foreground mb-4 font-body">
+                    مجموعة العطور
                   </p>
                   <motion.div
                     initial={{ scaleX: 0 }}
                     animate={isHeaderInView ? { scaleX: 1 } : {}}
                     transition={{ duration: 0.8, delay: 0.3, ease: [0.77, 0, 0.175, 1] }}
-                    className="luxury-divider mb-5 origin-left"
+                    className="luxury-divider mb-5 origin-right"
                   />
                   <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-light text-foreground leading-[0.95]">
-                    Shop <span className="italic">All</span>
+                    تسوّق <span className="italic">الآن</span>
                   </h1>
                 </div>
                 <p className="text-sm text-muted-foreground font-body mt-6 md:mt-0 max-w-sm leading-relaxed">
-                  Explore our complete range of meticulously crafted pieces — from tailored outerwear to fine accessories.
+                  اكتشف مجموعتنا الكاملة من العطور المصنوعة بعناية فائقة — من العود الفاخر إلى المسك النادر.
                 </p>
               </div>
             </motion.div>
@@ -172,44 +203,40 @@ const Shop = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-y border-border/20 py-4"
             >
-              {/* Categories */}
               <div className="flex items-center gap-6 overflow-x-auto scrollbar-hide">
                 {categories.map((cat) => (
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`text-[10px] tracking-ultra uppercase font-body whitespace-nowrap transition-all duration-300 pb-1 border-b ${
+                    className={`text-[10px] tracking-wide font-body whitespace-nowrap transition-all duration-300 pb-1 border-b ${
                       activeCategory === cat
                         ? "text-foreground border-accent"
                         : "text-muted-foreground border-transparent hover:text-foreground hover:border-foreground/30"
                     }`}
                   >
                     {cat}
-                    <span className="ml-1.5 text-muted-foreground">
-                      ({cat === "All" ? allProducts.length : allProducts.filter(p => p.category === cat).length})
+                    <span className="mr-1.5 text-muted-foreground">
+                      ({cat === "الكل" ? products.length : products.filter(p => p.category === cat).length})
                     </span>
                   </button>
                 ))}
               </div>
 
-              {/* Right controls */}
               <div className="flex items-center gap-5">
-                {/* Filter toggle */}
                 <button
                   onClick={() => setShowFilters(!showFilters)}
-                  className="flex items-center gap-2 text-[10px] tracking-ultra uppercase font-body text-muted-foreground hover:text-foreground transition-colors"
+                  className="flex items-center gap-2 text-[10px] tracking-wide font-body text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <SlidersHorizontal size={13} strokeWidth={1.5} />
-                  Filters
+                  فلترة
                 </button>
 
-                {/* Sort dropdown */}
                 <div className="relative">
                   <button
                     onClick={() => setShowSort(!showSort)}
-                    className="flex items-center gap-2 text-[10px] tracking-ultra uppercase font-body text-muted-foreground hover:text-foreground transition-colors"
+                    className="flex items-center gap-2 text-[10px] tracking-wide font-body text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    Sort: {sortBy}
+                    ترتيب: {sortBy}
                     <ChevronDown size={12} strokeWidth={1.5} className={`transition-transform duration-300 ${showSort ? "rotate-180" : ""}`} />
                   </button>
                   <AnimatePresence>
@@ -219,13 +246,13 @@ const Shop = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -5 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute right-0 top-8 bg-card border border-border/30 backdrop-blur-2xl z-20 min-w-[180px]"
+                        className="absolute left-0 top-8 bg-card border border-border/30 backdrop-blur-2xl z-20 min-w-[180px]"
                       >
                         {sortOptions.map((opt) => (
                           <button
                             key={opt}
                             onClick={() => { setSortBy(opt); setShowSort(false); }}
-                            className={`block w-full text-left px-4 py-2.5 text-[10px] tracking-editorial uppercase font-body transition-colors ${
+                            className={`block w-full text-right px-4 py-2.5 text-[10px] tracking-wide font-body transition-colors ${
                               sortBy === opt ? "text-accent bg-accent/5" : "text-foreground/60 hover:text-foreground hover:bg-muted/30"
                             }`}
                           >
@@ -237,27 +264,25 @@ const Shop = () => {
                   </AnimatePresence>
                 </div>
 
-                {/* Grid toggle (desktop) */}
-                <div className="hidden md:flex items-center gap-1 border-l border-border/20 pl-5">
+                <div className="hidden md:flex items-center gap-1 border-r border-border/20 pr-5">
                   <button
                     onClick={() => setGridCols(3)}
                     className={`p-1.5 transition-colors ${gridCols === 3 ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
-                    aria-label="3 columns"
+                    aria-label="٣ أعمدة"
                   >
                     <LayoutGrid size={15} strokeWidth={1.5} />
                   </button>
                   <button
                     onClick={() => setGridCols(4)}
                     className={`p-1.5 transition-colors ${gridCols === 4 ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
-                    aria-label="4 columns"
+                    aria-label="٤ أعمدة"
                   >
                     <Grid3X3 size={15} strokeWidth={1.5} />
                   </button>
                 </div>
 
-                {/* Results count */}
-                <span className="text-[10px] tracking-editorial text-muted-foreground font-body hidden md:block">
-                  {sortedProducts.length} pieces
+                <span className="text-[10px] tracking-wide text-muted-foreground font-body hidden md:block">
+                  {sortedProducts.length} عطر
                 </span>
               </div>
             </motion.div>
@@ -275,10 +300,10 @@ const Shop = () => {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-b border-border/20">
                     {/* Size filter */}
                     <div>
-                      <p className="text-[10px] tracking-ultra uppercase text-foreground font-body mb-4">Size</p>
+                      <p className="text-[10px] tracking-wide text-foreground font-body mb-4">الحجم</p>
                       <div className="flex flex-wrap gap-2">
-                        {["XS", "S", "M", "L", "XL", "XXL"].map((s) => (
-                          <button key={s} className="w-9 h-8 border border-border/30 text-[9px] tracking-wide font-body text-muted-foreground hover:border-accent hover:text-accent transition-all duration-200">
+                        {["٣٠ مل", "٥٠ مل", "١٠٠ مل", "٣ مل", "٦ مل", "١٢ مل"].map((s) => (
+                          <button key={s} onClick={() => toggleSize(s)} className={`px-2 h-8 border text-[9px] tracking-wide font-body transition-all duration-200 ${selectedSizes.includes(s) ? "border-accent text-accent bg-accent/10" : "border-border/30 text-muted-foreground hover:border-accent hover:text-accent"}`}>
                             {s}
                           </button>
                         ))}
@@ -286,36 +311,42 @@ const Shop = () => {
                     </div>
                     {/* Color filter */}
                     <div>
-                      <p className="text-[10px] tracking-ultra uppercase text-foreground font-body mb-4">Color</p>
+                      <p className="text-[10px] tracking-wide text-foreground font-body mb-4">اللون</p>
                       <div className="flex flex-wrap gap-2">
                         {[
-                          { name: "Black", value: "hsl(40, 5%, 10%)" },
-                          { name: "Charcoal", value: "hsl(40, 5%, 25%)" },
-                          { name: "Camel", value: "hsl(35, 40%, 55%)" },
-                          { name: "Navy", value: "hsl(220, 30%, 20%)" },
-                          { name: "Ivory", value: "hsl(40, 30%, 88%)" },
+                          { name: "عنبر", value: "hsl(35, 40%, 35%)" },
+                          { name: "ذهبي", value: "hsl(42, 60%, 55%)" },
+                          { name: "أسود", value: "hsl(40, 5%, 8%)" },
+                          { name: "وردي", value: "hsl(340, 40%, 65%)" },
+                          { name: "كريستال", value: "hsl(0, 0%, 90%)" },
                         ].map((c) => (
-                          <button key={c.name} className="w-7 h-7 rounded-full border border-border/30 hover:border-accent transition-colors duration-200" style={{ backgroundColor: c.value }} title={c.name} />
+                          <button
+                            key={c.name}
+                            onClick={() => setSelectedColors((prev) => prev.includes(c.name) ? prev.filter((x) => x !== c.name) : [...prev, c.name])}
+                            className={`w-7 h-7 rounded-full border-2 transition-colors duration-200 ${selectedColors.includes(c.name) ? "border-accent scale-110" : "border-border/30 hover:border-accent"}`}
+                            style={{ backgroundColor: c.value }}
+                            title={c.name}
+                          />
                         ))}
                       </div>
                     </div>
                     {/* Price range */}
                     <div>
-                      <p className="text-[10px] tracking-ultra uppercase text-foreground font-body mb-4">Price</p>
+                      <p className="text-[10px] tracking-wide text-foreground font-body mb-4">السعر</p>
                       <div className="flex flex-col gap-2">
-                        {["Under $500", "$500 – $1,000", "$1,000 – $2,000", "Over $2,000"].map((r) => (
-                          <button key={r} className="text-[10px] text-muted-foreground font-body text-left hover:text-accent transition-colors duration-200">
+                        {["أقل من ٢,٠٠٠ ج.م", "٢,٠٠٠ – ٣,٥٠٠ ج.م", "٣,٥٠٠ – ٥,٠٠٠ ج.م", "أكثر من ٥,٠٠٠ ج.م"].map((r) => (
+                          <button key={r} onClick={() => setSelectedPriceRange(selectedPriceRange === r ? null : r)} className={`text-[10px] font-body text-right transition-colors duration-200 ${selectedPriceRange === r ? "text-accent" : "text-muted-foreground hover:text-accent"}`}>
                             {r}
                           </button>
                         ))}
                       </div>
                     </div>
-                    {/* Material */}
+                    {/* Type */}
                     <div>
-                      <p className="text-[10px] tracking-ultra uppercase text-foreground font-body mb-4">Material</p>
+                      <p className="text-[10px] tracking-wide text-foreground font-body mb-4">النوع</p>
                       <div className="flex flex-col gap-2">
-                        {["Wool", "Cashmere", "Linen", "Leather", "Cotton"].map((m) => (
-                          <button key={m} className="text-[10px] text-muted-foreground font-body text-left hover:text-accent transition-colors duration-200">
+                        {["أو دو بارفان", "دهن عطري", "بخور سائل", "عطر مركّز", "عطر خفيف"].map((m) => (
+                          <button key={m} onClick={() => setSelectedType(selectedType === m ? null : m)} className={`text-[10px] font-body text-right transition-colors duration-200 ${selectedType === m ? "text-accent" : "text-muted-foreground hover:text-accent"}`}>
                             {m}
                           </button>
                         ))}
@@ -346,7 +377,6 @@ const Shop = () => {
               </motion.div>
             </AnimatePresence>
 
-            {/* Load more */}
             {sortedProducts.length >= 12 && (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -354,8 +384,8 @@ const Shop = () => {
                 viewport={{ once: true }}
                 className="flex justify-center mt-16"
               >
-                <button className="text-[10px] tracking-ultra uppercase font-body text-foreground border border-border/30 px-10 py-4 hover:border-accent hover:text-accent transition-all duration-300 flex items-center gap-3 group">
-                  Load More Pieces
+                <button className="text-[10px] tracking-wide font-body text-foreground border border-border/30 px-10 py-4 hover:border-accent hover:text-accent transition-all duration-300 flex items-center gap-3 group">
+                  تحميل المزيد
                   <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </button>
               </motion.div>
