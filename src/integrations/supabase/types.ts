@@ -572,6 +572,23 @@ export type Database = {
         Returns: boolean
       }
       is_admin: { Args: never; Returns: boolean }
+      track_order_public: {
+        Args: { _order_number: string; _phone: string }
+        Returns: {
+          created_at: string
+          delivered_at: string
+          id: string
+          order_number: string
+          shipped_at: string
+          shipping_city: string
+          shipping_full_name: string
+          shipping_governorate: string
+          status: Database["public"]["Enums"]["order_status"]
+          total: number
+          tracking_number: string
+          tracking_url: string
+        }[]
+      }
     }
     Enums: {
       app_role: "admin" | "user"
