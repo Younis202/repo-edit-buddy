@@ -9,7 +9,6 @@ import CustomCursor from "@/components/CustomCursor";
 import FilmGrain from "@/components/FilmGrain";
 import SmoothScroll from "@/components/SmoothScroll";
 import { allProducts as fallbackProducts, categories, sortOptions, type Product } from "@/data/products";
-import { bottleShapes, type BottleShapeId } from "@/data/brandedImages";
 import { useProducts } from "@/hooks/useProducts";
 import { useCart } from "@/contexts/CartContext";
 import { useWishlist } from "@/contexts/WishlistContext";
@@ -111,16 +110,12 @@ const Shop = () => {
   const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
   const [selectedPriceRange, setSelectedPriceRange] = useState<string | null>(null);
   const [selectedType, setSelectedType] = useState<string | null>(null);
-  const [selectedShapes, setSelectedShapes] = useState<BottleShapeId[]>([]);
+  const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const headerRef = useRef(null);
   const isHeaderInView = useInView(headerRef, { once: true, margin: "-60px" });
 
   const toggleSize = (size: string) => {
     setSelectedSizes((prev) => prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size]);
-  };
-
-  const toggleShape = (id: BottleShapeId) => {
-    setSelectedShapes((prev) => prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id]);
   };
 
   const getPriceNum = (price: string) => parseFloat(price.replace(/[^\d.]/g, ""));
@@ -144,11 +139,8 @@ const Shop = () => {
     });
   }
 
-  if (selectedShapes.length > 0) {
-    filteredProducts = filteredProducts.filter((p) =>
-      (p.availableBottles || []).some((b) => selectedShapes.includes(b))
-      || (p.defaultBottle && selectedShapes.includes(p.defaultBottle))
-    );
+  if (selectedColors.length > 0) {
+    filteredProducts = filteredProducts.filter((p) => p.colors.some((c) => selectedColors.includes(c.name)));
   }
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
@@ -317,28 +309,25 @@ const Shop = () => {
                         ))}
                       </div>
                     </div>
-                    {/* Bottle shape filter — visual */}
+                    {/* Color filter */}
                     <div>
-                      <p className="text-[10px] tracking-wide text-foreground font-body mb-4">شكل الزجاجة</p>
-                      <div className="grid grid-cols-3 gap-2">
-                        {bottleShapes.map((shape) => {
-                          const active = selectedShapes.includes(shape.id);
-                          return (
-                            <button
-                              key={shape.id}
-                              onClick={() => toggleShape(shape.id)}
-                              title={shape.name}
-                              className={`relative aspect-[3/4] overflow-hidden border transition-all duration-300 ${
-                                active ? "border-accent ring-1 ring-accent/40" : "border-border/30 hover:border-foreground/40 opacity-70 hover:opacity-100"
-                              }`}
-                            >
-                              <img src={shape.image} alt={shape.name} className="w-full h-full object-cover" />
-                              <span className="absolute bottom-0 inset-x-0 bg-background/85 backdrop-blur-sm text-[8px] font-body text-foreground py-1 text-center">
-                                {shape.name}
-                              </span>
-                            </button>
-                          );
-                        })}
+                      <p className="text-[10px] tracking-wide text-foreground font-body mb-4">اللون</p>
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          { name: "عنبر", value: "hsl(35, 40%, 35%)" },
+                          { name: "ذهبي", value: "hsl(42, 60%, 55%)" },
+                          { name: "أسود", value: "hsl(40, 5%, 8%)" },
+                          { name: "وردي", value: "hsl(340, 40%, 65%)" },
+                          { name: "كريستال", value: "hsl(0, 0%, 90%)" },
+                        ].map((c) => (
+                          <button
+                            key={c.name}
+                            onClick={() => setSelectedColors((prev) => prev.includes(c.name) ? prev.filter((x) => x !== c.name) : [...prev, c.name])}
+                            className={`w-7 h-7 rounded-full border-2 transition-colors duration-200 ${selectedColors.includes(c.name) ? "border-accent scale-110" : "border-border/30 hover:border-accent"}`}
+                            style={{ backgroundColor: c.value }}
+                            title={c.name}
+                          />
+                        ))}
                       </div>
                     </div>
                     {/* Price range */}

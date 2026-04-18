@@ -14,23 +14,9 @@ interface WishlistContextType {
 
 const WishlistContext = createContext<WishlistContextType | undefined>(undefined);
 
-const noopWishlist: WishlistContextType = {
-  items: [],
-  isWishlisted: () => false,
-  toggleWishlist: () => {},
-  removeFromWishlist: () => {},
-  clearWishlist: () => {},
-  totalItems: 0,
-};
-
 export const useWishlist = () => {
   const ctx = useContext(WishlistContext);
-  if (!ctx) {
-    if (import.meta.env.DEV) {
-      console.warn("useWishlist called outside WishlistProvider — returning noop. Check provider tree.");
-    }
-    return noopWishlist;
-  }
+  if (!ctx) throw new Error("useWishlist must be inside WishlistProvider");
   return ctx;
 };
 

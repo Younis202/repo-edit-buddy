@@ -1,13 +1,19 @@
-// Shazaya signature bottles — the visual DNA of the brand.
-// Six master bottle silhouettes, each photographed with cinematic lighting
-// against deep obsidian. The Shazaya logo is engraved (frosted) on the glass.
+// Branded Shazaya product imagery — unified visual identity:
+// dark obsidian backdrops, cinematic gold lighting, raw natural ingredients,
+// ornate Arabian crystal bottles. Every product slug → its hero image.
 
-import bottle01 from "@/assets/bottles/bottle-01-square-gold.jpg";
-import bottle02 from "@/assets/bottles/bottle-02-cylinder-black.jpg";
-import bottle03 from "@/assets/bottles/bottle-03-dome-black.jpg";
-import bottle04 from "@/assets/bottles/bottle-04-cube-rosegold.jpg";
-import bottle05 from "@/assets/bottles/bottle-05-teardrop-blue.jpg";
-import bottle06 from "@/assets/bottles/bottle-06-slim-gold.jpg";
+import oudRoyal from "@/assets/products/oud-royal-1.jpg";
+import wardTaifi from "@/assets/products/ward-taifi-1.jpg";
+import miskAswad from "@/assets/products/misk-aswad-1.jpg";
+import amberNights from "@/assets/products/amber-nights-1.jpg";
+import bukhoorElite from "@/assets/products/bukhoor-elite-1.jpg";
+import zaafaranGold from "@/assets/products/zaafaran-gold-1.jpg";
+import jasmineBlanc from "@/assets/products/jasmine-blanc-1.jpg";
+import oudSupreme from "@/assets/products/oud-supreme-1.jpg";
+import miskTahara from "@/assets/products/misk-tahara-1.jpg";
+import sandalHind from "@/assets/products/sandal-hind-1.jpg";
+import dehnWard from "@/assets/products/dehn-ward-1.jpg";
+import layaliSharqiya from "@/assets/products/layali-sharqiya-1.jpg";
 
 import lookbookMan1 from "@/assets/lookbook-man-1.jpg";
 import lookbookMan2 from "@/assets/lookbook-man-2.jpg";
@@ -18,117 +24,23 @@ import categoryFloral from "@/assets/collection-3.jpg";
 import categoryOriental from "@/assets/category-oriental.jpg";
 import categoryGifts from "@/assets/category-gifts.jpg";
 
-/** Bottle shape identifier — the brand's six master silhouettes. */
-export type BottleShapeId =
-  | "square-gold"
-  | "cylinder-black"
-  | "dome-black"
-  | "cube-rosegold"
-  | "teardrop-blue"
-  | "slim-gold";
-
-export interface BottleShape {
-  id: BottleShapeId;
-  name: string;          // Arabic display name
-  description: string;   // short tagline
-  image: string;
-  availableSizes: string[]; // sizes this physical bottle is offered in
-}
-
-/** The six signature Shazaya bottles — every product ships in one of these. */
-export const bottleShapes: BottleShape[] = [
-  {
-    id: "square-gold",
-    name: "الكلاسيك الذهبي",
-    description: "زجاج مربع فاخر بقمة كريستال ذهبية مزخرفة",
-    image: bottle01,
-    availableSizes: ["٥٠ مل", "١٠٠ مل"],
-  },
-  {
-    id: "cylinder-black",
-    name: "الأسطوانة السوداء",
-    description: "أسطوانة كلاسيكية بغطاء أسود لامع",
-    image: bottle02,
-    availableSizes: ["٥٠ مل", "١٠٠ مل"],
-  },
-  {
-    id: "dome-black",
-    name: "القبة الأنيقة",
-    description: "تصميم قبّة مدمجة بغطاء أسود مزدوج",
-    image: bottle03,
-    availableSizes: ["٣٠ مل", "٥٠ مل"],
-  },
-  {
-    id: "cube-rosegold",
-    name: "المكعّب الوردي",
-    description: "زجاج مكعّب بكرة ذهبية وردية لامعة",
-    image: bottle04,
-    availableSizes: ["٥٠ مل"],
-  },
-  {
-    id: "teardrop-blue",
-    name: "اللؤلؤة الزرقاء",
-    description: "زجاج كوبالت أزرق بغطاء كريستال متعدد الأوجه",
-    image: bottle05,
-    availableSizes: ["٣٠ مل"],
-  },
-  {
-    id: "slim-gold",
-    name: "السفير الذهبي",
-    description: "زجاج رفيع للسفر بغطاء ذهبي مرآة",
-    image: bottle06,
-    availableSizes: ["١٠ مل", "١٢ مل"],
-  },
-];
-
-/** Quick lookup: shape id → image. */
-export const bottleImageByShape: Record<BottleShapeId, string> =
-  Object.fromEntries(bottleShapes.map((b) => [b.id, b.image])) as Record<BottleShapeId, string>;
-
-/** Quick lookup: shape id → full BottleShape. */
-export const getBottleShape = (id: BottleShapeId): BottleShape | undefined =>
-  bottleShapes.find((b) => b.id === id);
-
-/**
- * Hero product image keyed by slug.
- * Each product now points to one of the six master bottles —
- * this is the brand identity. The fragrance changes; the vessel is iconic.
- */
+/** Hero product image keyed by slug. */
 export const productHeroImages: Record<string, string> = {
-  "oud-royal": bottle01,        // square gold — flagship
-  "ward-taifi": bottle04,       // rose-gold cube — feminine floral
-  "misk-aswad": bottle02,       // black cylinder — bold musk
-  "amber-nights": bottle01,     // square gold — oriental amber
-  "bukhoor-elite": bottle03,    // black dome — incense
-  "zaafaran-gold": bottle04,    // rose-gold cube — saffron
-  "jasmine-blanc": bottle05,    // blue teardrop — white jasmine
-  "oud-supreme": bottle01,      // square gold — supreme oud
-  "misk-tahara": bottle03,      // black dome — pure musk
-  "sandal-hind": bottle02,      // black cylinder — sandalwood
-  "dehn-ward": bottle06,        // slim gold — concentrated rose oil
-  "layali-sharqiya": bottle05,  // blue teardrop — oriental nights
+  "oud-royal": oudRoyal,
+  "ward-taifi": wardTaifi,
+  "misk-aswad": miskAswad,
+  "amber-nights": amberNights,
+  "bukhoor-elite": bukhoorElite,
+  "zaafaran-gold": zaafaranGold,
+  "jasmine-blanc": jasmineBlanc,
+  "oud-supreme": oudSupreme,
+  "misk-tahara": miskTahara,
+  "sandal-hind": sandalHind,
+  "dehn-ward": dehnWard,
+  "layali-sharqiya": layaliSharqiya,
 };
 
-/** Map each product slug to its default bottle shape. */
-export const productDefaultShape: Record<string, BottleShapeId> = {
-  "oud-royal": "square-gold",
-  "ward-taifi": "cube-rosegold",
-  "misk-aswad": "cylinder-black",
-  "amber-nights": "square-gold",
-  "bukhoor-elite": "dome-black",
-  "zaafaran-gold": "cube-rosegold",
-  "jasmine-blanc": "teardrop-blue",
-  "oud-supreme": "square-gold",
-  "misk-tahara": "dome-black",
-  "sandal-hind": "cylinder-black",
-  "dehn-ward": "slim-gold",
-  "layali-sharqiya": "teardrop-blue",
-};
-
-/**
- * Detail/gallery images per slug — the bottle hero plus contextual lookbook shots.
- * The first image is always the bottle itself.
- */
+/** Detail/gallery images per slug — uses hero + a curated set of contextual shots. */
 export const productGalleryImages: Record<string, string[]> = Object.fromEntries(
   Object.entries(productHeroImages).map(([slug, hero]) => [
     slug,
