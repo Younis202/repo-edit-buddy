@@ -262,7 +262,7 @@ const ProductDetail = () => {
                         نوع العبوة — <span className="text-muted-foreground">{bottleTypes[selectedBottle]?.name}</span>
                       </span>
                     </div>
-                    <div className="grid grid-cols-5 gap-2">
+                    <div className="grid grid-cols-4 gap-2">
                       {bottleTypes.map((bottle, i) => (
                         <button
                           key={bottle.id}
@@ -295,8 +295,8 @@ const ProductDetail = () => {
                         دليل الأحجام
                       </button>
                     </div>
-                    <div className={`grid gap-2 ${product.sizes.length <= 3 ? "grid-cols-3" : "grid-cols-4"}`}>
-                      {product.sizes.map((size) => (
+                    <div className={`grid gap-2 ${availableSizes.length <= 3 ? "grid-cols-3" : "grid-cols-4"}`}>
+                      {availableSizes.map((size) => (
                         <button
                           key={size}
                           onClick={() => setSelectedSize(size)}
