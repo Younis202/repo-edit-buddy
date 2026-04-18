@@ -12,12 +12,19 @@ interface WishlistContextType {
   totalItems: number;
 }
 
-const WishlistContext = createContext<WishlistContextType | undefined>(undefined);
+const defaultWishlistContext: WishlistContextType = {
+  items: [],
+  isWishlisted: () => false,
+  toggleWishlist: () => undefined,
+  removeFromWishlist: () => undefined,
+  clearWishlist: () => undefined,
+  totalItems: 0,
+};
+
+const WishlistContext = createContext<WishlistContextType>(defaultWishlistContext);
 
 export const useWishlist = () => {
-  const ctx = useContext(WishlistContext);
-  if (!ctx) throw new Error("useWishlist must be inside WishlistProvider");
-  return ctx;
+  return useContext(WishlistContext);
 };
 
 const WISHLIST_KEY = "shazaya-wishlist";
