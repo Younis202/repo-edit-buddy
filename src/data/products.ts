@@ -10,7 +10,13 @@ import productImg2 from "@/assets/product-detail-2.jpg";
 import productImg3 from "@/assets/product-detail-3.jpg";
 import productImg4 from "@/assets/product-detail-4.jpg";
 import craftsmanship1 from "@/assets/craftsmanship-1.jpg";
-import { productHeroImages, productGalleryImages } from "./brandedImages";
+import {
+  productHeroImages,
+  productGalleryImages,
+  productDefaultShape,
+  bottleImageByShape,
+  type BottleShapeId,
+} from "./brandedImages";
 
 const brandedKeyMap: Record<string, string> = Object.fromEntries(
   Object.entries(productHeroImages).map(([slug, src]) => [`branded:${slug}`, src])
@@ -57,7 +63,17 @@ export interface Product {
   material: string;
   season: string;
   accordion: { title: string; content: string }[];
+  /** Default Shazaya bottle silhouette this fragrance ships in. */
+  defaultBottle?: BottleShapeId;
+  /** All bottle shapes this fragrance can be ordered in. */
+  availableBottles?: BottleShapeId[];
 }
+
+/** Resolve the hero image for a product, preferring a chosen bottle shape. */
+export const getBottleImage = (slug: string, shape?: BottleShapeId): string => {
+  const id = shape || productDefaultShape[slug];
+  return id ? bottleImageByShape[id] : productHeroImages[slug];
+};
 
 export const categories = ["الكل", "عود", "زهري", "مسك", "شرقي", "بخور", "خشبي"];
 export const sortOptions = ["الأحدث", "السعر: الأقل للأعلى", "السعر: الأعلى للأقل", "الأكثر مبيعاً"];
