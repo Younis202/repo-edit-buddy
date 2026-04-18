@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import categoryOud from "@/assets/category-oud.jpg";
-import categoryFloral from "@/assets/300b4a6d-cd44-45e5-b257-ec1580910e3c.png";
+import categoryFloral from "@/assets/category-floral.jpg";
 import categoryOriental from "@/assets/category-oriental.jpg";
 import categoryGifts from "@/assets/category-gifts.jpg";
 
