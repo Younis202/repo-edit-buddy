@@ -70,6 +70,20 @@ const ProductDetail = () => {
     setAddedToBag(false);
   }, [slug]);
 
+  // Reset selected size whenever bottle changes (sizes differ per bottle)
+  useEffect(() => {
+    setSelectedSize(null);
+  }, [selectedBottle]);
+
+  // Sizes available for the currently selected bottle, intersected with product's own sizes
+  const availableSizes = (() => {
+    const bottleSizes = bottleTypes[selectedBottle]?.sizes || [];
+    if (!product) return bottleSizes;
+    const productSizes = product.sizes || [];
+    const intersection = bottleSizes.filter((s) => productSizes.includes(s));
+    return intersection.length > 0 ? intersection : bottleSizes;
+  })();
+
   if (!product) {
     return (
       <>
@@ -248,7 +262,7 @@ const ProductDetail = () => {
                         نوع العبوة — <span className="text-muted-foreground">{bottleTypes[selectedBottle]?.name}</span>
                       </span>
                     </div>
-                    <div className="grid grid-cols-5 gap-2">
+                    <div className="grid grid-cols-4 gap-2">
                       {bottleTypes.map((bottle, i) => (
                         <button
                           key={bottle.id}
@@ -281,8 +295,8 @@ const ProductDetail = () => {
                         دليل الأحجام
                       </button>
                     </div>
-                    <div className={`grid gap-2 ${product.sizes.length <= 3 ? "grid-cols-3" : "grid-cols-4"}`}>
-                      {product.sizes.map((size) => (
+                    <div className={`grid gap-2 ${availableSizes.length <= 3 ? "grid-cols-3" : "grid-cols-4"}`}>
+                      {availableSizes.map((size) => (
                         <button
                           key={size}
                           onClick={() => setSelectedSize(size)}
