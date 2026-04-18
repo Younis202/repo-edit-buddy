@@ -9,6 +9,7 @@ import CustomCursor from "@/components/CustomCursor";
 import FilmGrain from "@/components/FilmGrain";
 import SmoothScroll from "@/components/SmoothScroll";
 import { getRelatedProducts } from "@/data/products";
+import { bottleTypes } from "@/data/bottleTypes";
 import { useProduct } from "@/hooks/useProducts";
 import { useCart } from "@/contexts/CartContext";
 import { useWishlist } from "@/contexts/WishlistContext";
@@ -53,7 +54,7 @@ const ProductDetail = () => {
 
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
-  const [selectedColor, setSelectedColor] = useState(0);
+  const [selectedBottle, setSelectedBottle] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
   const [addedToBag, setAddedToBag] = useState(false);
@@ -63,7 +64,7 @@ const ProductDetail = () => {
   useEffect(() => {
     setSelectedImage(0);
     setSelectedSize(null);
-    setSelectedColor(0);
+    setSelectedBottle(0);
     setQuantity(1);
     setOpenAccordion(0);
     setAddedToBag(false);
@@ -108,7 +109,7 @@ const ProductDetail = () => {
 
   const handleAddToBag = () => {
     if (!selectedSize || !product) return;
-    addItem(product, selectedSize, product.colors[selectedColor]?.name || "", quantity);
+    addItem(product, selectedSize, bottleTypes[selectedBottle]?.name || "", quantity);
     setAddedToBag(true);
     setTimeout(() => setAddedToBag(false), 2000);
   };
@@ -240,24 +241,31 @@ const ProductDetail = () => {
                     {product.shortDescription}
                   </p>
 
-                  {/* Color selector */}
+                  {/* Bottle type selector */}
                   <div className="mb-6">
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-[10px] tracking-wide text-foreground font-body">
-                        اللون — <span className="text-muted-foreground">{product.colors[selectedColor]?.name}</span>
+                        نوع العبوة — <span className="text-muted-foreground">{bottleTypes[selectedBottle]?.name}</span>
                       </span>
                     </div>
-                    <div className="flex items-center gap-3">
-                      {product.colors.map((color, i) => (
+                    <div className="grid grid-cols-5 gap-2">
+                      {bottleTypes.map((bottle, i) => (
                         <button
-                          key={color.name}
-                          onClick={() => setSelectedColor(i)}
-                          className={`w-8 h-8 rounded-full border-2 transition-all duration-300 ${
-                            selectedColor === i ? "border-accent scale-110" : "border-transparent hover:border-foreground/30"
+                          key={bottle.id}
+                          onClick={() => setSelectedBottle(i)}
+                          title={bottle.name}
+                          className={`relative aspect-[3/4] overflow-hidden border-2 transition-all duration-300 bg-secondary/20 ${
+                            selectedBottle === i
+                              ? "border-accent scale-[1.03]"
+                              : "border-border/30 hover:border-foreground/40"
                           }`}
-                          style={{ backgroundColor: color.value }}
-                          title={color.name}
-                        />
+                        >
+                          <img
+                            src={bottle.image}
+                            alt={bottle.name}
+                            className="w-full h-full object-contain p-1"
+                          />
+                        </button>
                       ))}
                     </div>
                   </div>
