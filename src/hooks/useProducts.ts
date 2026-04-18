@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
+import { db as supabase } from "@/integrations/supabase/db";
 import { resolveImage, type Product, allProducts } from "@/data/products";
 
 const mapDbProduct = (p: any): Product => ({

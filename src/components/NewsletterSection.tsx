@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { ArrowLeft, Check, Loader2 } from "lucide-react";
 import GoldenOrnament from "@/components/GoldenOrnament";
 import SmokeEffect from "@/components/SmokeEffect";
-import { supabase } from "@/integrations/supabase/client";
+import { db as supabase } from "@/integrations/supabase/db";
 
 const NewsletterSection = () => {
   const ref = useRef(null);

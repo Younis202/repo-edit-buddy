@@ -12,7 +12,7 @@ import { useCart } from "@/contexts/CartContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { useCoupon } from "@/hooks/useCoupon";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
-import { supabase } from "@/integrations/supabase/client";
+import { db as supabase } from "@/integrations/supabase/db";
 
 const Checkout = () => {
   usePageSEO({ title: "إتمام الطلب", description: "أكمل طلبك من شذايا — شحن مجاني وتغليف فاخر." });
