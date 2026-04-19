@@ -150,7 +150,7 @@ const Account = () => {
                   ) : (
                     <div className="space-y-3">
                       {orders.map((o) => (
-                        <div key={o.id} className="flex items-center justify-between border border-border/20 p-5 hover:border-accent transition-colors">
+                        <Link key={o.id} to={`/order/${o.id}`} className="flex items-center justify-between border border-border/20 p-5 hover:border-accent transition-colors">
                           <div>
                             <p className="font-display text-lg text-foreground">{o.order_number}</p>
                             <p className="text-[10px] tracking-wide text-muted-foreground font-body mt-1">
@@ -161,7 +161,7 @@ const Account = () => {
                             <p className="text-[10px] tracking-wide text-accent font-body">{statusLabels[o.status] || o.status}</p>
                             <p className="font-body text-sm text-foreground mt-1">{Number(o.total).toLocaleString("ar-EG")} ج.م</p>
                           </div>
-                        </div>
+                        </Link>
                       ))}
                     </div>
                   )}
