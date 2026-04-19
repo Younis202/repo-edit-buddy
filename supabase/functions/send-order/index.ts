@@ -25,7 +25,7 @@ serve(async (req) => {
     const itemsList = items
       .map(
         (i: any) =>
-          `• ${i.name} (${i.category}) — Size: ${i.size}, Color: ${i.color}, Qty: ${i.quantity} — ${i.price}`
+          `• ${i.name} — Bottle: ${i.bottle || i.color || "—"}, Size: ${i.size}, Qty: ${i.quantity} — ${i.price}`
       )
       .join("\n");
 

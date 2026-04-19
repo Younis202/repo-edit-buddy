@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { ArrowRight, MapPin, Phone, Mail, Gift, Truck, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
+import { getBottleByName } from "@/data/bottleTypes";
 
 const STATUS_OPTIONS = ["pending", "confirmed", "processing", "shipped", "delivered", "cancelled", "refunded"] as const;
 
@@ -111,22 +112,33 @@ const AdminOrderDetail = () => {
           <div className="border border-border/20 p-6">
             <h3 className="font-display text-lg text-foreground mb-5">المنتجات</h3>
             <div className="space-y-4">
-              {data.items.map((item: any) => (
-                <div key={item.id} className="flex gap-4 pb-4 border-b border-border/15 last:border-0 last:pb-0">
-                  {item.product_image && (
-                    <div className="w-16 h-20 flex-shrink-0 overflow-hidden bg-muted">
-                      <img src={item.product_image} alt={item.product_name} className="w-full h-full object-cover" />
+              {data.items.map((item: any) => {
+                const bottle = getBottleByName(item.color);
+                return (
+                  <div key={item.id} className="flex gap-4 pb-4 border-b border-border/15 last:border-0 last:pb-0">
+                    {item.product_image && (
+                      <div className="w-16 h-20 flex-shrink-0 overflow-hidden bg-muted">
+                        <img src={item.product_image} alt={item.product_name} className="w-full h-full object-cover" />
+                      </div>
+                    )}
+                    <div className="flex-1">
+                      <p className="font-display text-sm text-foreground">{item.product_name}</p>
+                      <div className="flex items-center gap-2 mt-1.5 flex-wrap">
+                        {bottle && (
+                          <span className="inline-flex items-center gap-1.5 text-[10px] text-muted-foreground font-body bg-secondary/30 px-2 py-0.5">
+                            <img src={bottle.image} alt={bottle.name} className="w-4 h-5 object-contain" />
+                            {bottle.name}
+                          </span>
+                        )}
+                        <span className="text-[10px] text-muted-foreground font-body">
+                          الحجم: {item.size} • الكمية: {item.quantity}
+                        </span>
+                      </div>
                     </div>
-                  )}
-                  <div className="flex-1">
-                    <p className="font-display text-sm text-foreground">{item.product_name}</p>
-                    <p className="text-[10px] text-muted-foreground font-body mt-1">
-                      {item.size} / {item.color} / الكمية: {item.quantity}
-                    </p>
+                    <p className="text-sm text-foreground font-body">{Number(item.line_total).toLocaleString("ar-EG")} ج.م</p>
                   </div>
-                  <p className="text-sm text-foreground font-body">{Number(item.line_total).toLocaleString("ar-EG")} ج.م</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
