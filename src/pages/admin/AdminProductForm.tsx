@@ -214,7 +214,11 @@ const AdminProductForm = () => {
             value={form.sizes.join(", ")}
             onChange={(e) => update("sizes", e.target.value.split(",").map((s) => s.trim()).filter(Boolean))}
             className={inputCls}
+            placeholder="٣٠ مل, ٥٠ مل, ١٠٠ مل"
           />
+          <p className="text-[10px] text-muted-foreground font-body mt-1.5 leading-relaxed">
+            استخدم نفس صياغة العبوات: <span className="text-foreground/80">٣٠ مل / ٥٠ مل / ١٠٠ مل</span>. الأحجام بتُفلتر تلقائياً حسب العبوة اللي يختارها العميل.
+          </p>
         </Field>
 
         <div className="border border-accent/20 bg-accent/5 p-4 rounded">
