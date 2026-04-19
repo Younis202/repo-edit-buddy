@@ -11,7 +11,7 @@ serve(async (req) => {
   }
 
   try {
-    const { customer, items, total } = await req.json();
+    const { orderNumber, customer, items, total, giftWrap, giftMessage } = await req.json();
     const ownerEmail = Deno.env.get("STORE_OWNER_EMAIL");
 
     if (!ownerEmail) {
@@ -25,31 +25,32 @@ serve(async (req) => {
     const itemsList = items
       .map(
         (i: any) =>
-          `• ${i.name} — Bottle: ${i.bottle || i.color || "—"}, Size: ${i.size}, Qty: ${i.quantity} — ${i.price}`
+          `• ${i.name} — العبوة: ${i.bottle || i.color || "—"}، الحجم: ${i.size}، الكمية: ${i.quantity} — ${i.price}`
       )
       .join("\n");
 
     const emailBody = `
-🛍️ NEW ORDER — MAISON
+🛍️ طلب جديد — شذايا
+${orderNumber ? `رقم الطلب: ${orderNumber}` : ""}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-CUSTOMER DETAILS
-Name: ${customer.firstName} ${customer.lastName}
-Email: ${customer.email}
-Phone: ${customer.phone}
-Address: ${customer.address}, ${customer.city}, ${customer.country} ${customer.postalCode}
-${customer.notes ? `Notes: ${customer.notes}` : ""}
+بيانات العميل
+الاسم: ${customer.firstName} ${customer.lastName}
+البريد: ${customer.email}
+الهاتف: ${customer.phone}
+العنوان: ${customer.address}, ${customer.city}, ${customer.governorate || ""} ${customer.country || ""} ${customer.postalCode || ""}
+${customer.notes ? `ملاحظات: ${customer.notes}` : ""}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-ORDER ITEMS
+الطلبات
 ${itemsList}
+${giftWrap ? `\n🎁 تغليف هدية\n${giftMessage ? `رسالة: ${giftMessage}` : ""}` : ""}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
-TOTAL: ${total}
-Shipping: Complimentary
+الإجمالي: ${total}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
     `.trim();
@@ -65,9 +66,9 @@ Shipping: Complimentary
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "MAISON <onboarding@resend.dev>",
+          from: "شذايا <onboarding@resend.dev>",
           to: [ownerEmail],
-          subject: `New Order — ${customer.firstName} ${customer.lastName} — ${total}`,
+          subject: `طلب جديد ${orderNumber ? `#${orderNumber}` : ""} — ${customer.firstName} ${customer.lastName} — ${total}`,
           text: emailBody,
         }),
       });
