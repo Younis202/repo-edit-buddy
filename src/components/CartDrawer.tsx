@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Minus, Plus, ShoppingBag, ArrowLeft, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
+import { getBottleByName } from "@/data/bottleTypes";
 
 const CartDrawer = () => {
   const { items, isOpen, closeCart, removeItem, updateQuantity, totalItems, totalPrice } = useCart();
@@ -40,9 +41,19 @@ const CartDrawer = () => {
                       <div className="flex-1 flex flex-col justify-between min-w-0">
                         <div>
                           <Link to={`/product/${item.product.slug}`} onClick={closeCart} className="font-display text-sm text-foreground hover:text-accent transition-colors block truncate">{item.product.name}</Link>
-                          <div className="flex items-center gap-3 mt-1">
-                            <span className="text-[10px] tracking-wide text-muted-foreground font-body">الحجم: {item.size}</span>
-                            <span className="text-[10px] tracking-wide text-muted-foreground font-body">اللون: {item.color}</span>
+                          <div className="flex items-center gap-2 mt-1.5">
+                            {(() => {
+                              const bottle = getBottleByName(item.color);
+                              return bottle ? (
+                                <span className="inline-flex items-center gap-1.5 text-[10px] tracking-wide text-muted-foreground font-body bg-secondary/30 px-1.5 py-0.5">
+                                  <img src={bottle.image} alt={bottle.name} className="w-4 h-5 object-contain" />
+                                  {bottle.name}
+                                </span>
+                              ) : item.color ? (
+                                <span className="text-[10px] tracking-wide text-muted-foreground font-body">العبوة: {item.color}</span>
+                              ) : null;
+                            })()}
+                            <span className="text-[10px] tracking-wide text-muted-foreground font-body">• {item.size}</span>
                           </div>
                         </div>
                         <div className="flex items-center justify-between mt-3">

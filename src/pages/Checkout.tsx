@@ -13,6 +13,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useCoupon } from "@/hooks/useCoupon";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
 import { db as supabase } from "@/integrations/supabase/db";
+import { getBottleByName } from "@/data/bottleTypes";
 
 const Checkout = () => {
   usePageSEO({ title: "إتمام الطلب", description: "أكمل طلبك من شذايا — شحن مجاني وتغليف فاخر." });
@@ -139,7 +140,7 @@ const Checkout = () => {
         body: {
           orderNumber: order.order_number,
           customer: form,
-          items: items.map((i) => ({ name: i.product.name, slug: i.product.slug, price: i.product.price, size: i.size, color: i.color, quantity: i.quantity })),
+          items: items.map((i) => ({ name: i.product.name, slug: i.product.slug, price: i.product.price, size: i.size, bottle: i.color, quantity: i.quantity })),
           giftWrap,
           giftMessage: giftWrap ? giftMessage : undefined,
           total: `${total.toLocaleString("ar-EG")} ج.م`,
@@ -443,20 +444,31 @@ const Checkout = () => {
                     <h3 className="text-[10px] tracking-wide text-foreground font-body mb-6">ملخص الطلب</h3>
 
                     <div className="space-y-0">
-                      {items.map((item) => (
-                        <div key={`${item.product.id}-${item.size}-${item.color}`} className="flex gap-3 py-4 border-b border-border/15">
-                          <div className="w-16 h-20 flex-shrink-0 overflow-hidden">
-                            <img src={item.product.images[0]} alt={item.product.name} className="w-full h-full object-cover" />
+                      {items.map((item) => {
+                        const bottle = getBottleByName(item.color);
+                        return (
+                          <div key={`${item.product.id}-${item.size}-${item.color}`} className="flex gap-3 py-4 border-b border-border/15">
+                            <div className="w-16 h-20 flex-shrink-0 overflow-hidden">
+                              <img src={item.product.images[0]} alt={item.product.name} className="w-full h-full object-cover" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <p className="font-display text-sm text-foreground truncate">{item.product.name}</p>
+                              <div className="flex items-center gap-2 mt-1">
+                                {bottle && (
+                                  <span className="inline-flex items-center gap-1 text-[9px] tracking-wide text-muted-foreground font-body bg-secondary/30 px-1.5 py-0.5">
+                                    <img src={bottle.image} alt={bottle.name} className="w-3 h-4 object-contain" />
+                                    {bottle.name}
+                                  </span>
+                                )}
+                                <p className="text-[9px] tracking-wide text-muted-foreground font-body">
+                                  {item.size} • ×{item.quantity}
+                                </p>
+                              </div>
+                              <p className="text-xs text-foreground/70 font-body mt-1">{item.product.price}</p>
+                            </div>
                           </div>
-                          <div className="flex-1 min-w-0">
-                            <p className="font-display text-sm text-foreground truncate">{item.product.name}</p>
-                            <p className="text-[9px] tracking-wide text-muted-foreground font-body mt-0.5">
-                              {item.size} / {item.color} / الكمية: {item.quantity}
-                            </p>
-                            <p className="text-xs text-foreground/70 font-body mt-1">{item.product.price}</p>
-                          </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
 
                     <div className="space-y-3 pt-5">

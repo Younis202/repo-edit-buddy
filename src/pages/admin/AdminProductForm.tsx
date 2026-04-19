@@ -214,52 +214,19 @@ const AdminProductForm = () => {
             value={form.sizes.join(", ")}
             onChange={(e) => update("sizes", e.target.value.split(",").map((s) => s.trim()).filter(Boolean))}
             className={inputCls}
+            placeholder="٣٠ مل, ٥٠ مل, ١٠٠ مل"
           />
+          <p className="text-[10px] text-muted-foreground font-body mt-1.5 leading-relaxed">
+            استخدم نفس صياغة العبوات: <span className="text-foreground/80">٣٠ مل / ٥٠ مل / ١٠٠ مل</span>. الأحجام بتُفلتر تلقائياً حسب العبوة اللي يختارها العميل.
+          </p>
         </Field>
 
-        <Field label="الألوان">
-          <div className="space-y-2">
-            {form.colors.map((c, i) => (
-              <div key={i} className="grid grid-cols-12 gap-2 items-center">
-                <input
-                  className={inputCls + " col-span-6"}
-                  placeholder="اسم اللون"
-                  value={c.name}
-                  onChange={(e) => {
-                    const next = [...form.colors];
-                    next[i] = { ...next[i], name: e.target.value };
-                    update("colors", next);
-                  }}
-                />
-                <input
-                  type="color"
-                  className="col-span-2 h-10 w-full bg-transparent border border-border/30 cursor-pointer"
-                  value={c.value}
-                  onChange={(e) => {
-                    const next = [...form.colors];
-                    next[i] = { ...next[i], value: e.target.value };
-                    update("colors", next);
-                  }}
-                />
-                <input
-                  className={inputCls + " col-span-3 text-xs font-mono"}
-                  value={c.value}
-                  onChange={(e) => {
-                    const next = [...form.colors];
-                    next[i] = { ...next[i], value: e.target.value };
-                    update("colors", next);
-                  }}
-                />
-                <button type="button" className="col-span-1 text-destructive flex items-center justify-center" onClick={() => update("colors", form.colors.filter((_, x) => x !== i))}>
-                  <X size={13} />
-                </button>
-              </div>
-            ))}
-            <button type="button" onClick={() => update("colors", [...form.colors, { name: "", value: "#D4AF37" }])} className="flex items-center gap-1 text-[10px] text-accent font-body">
-              <Plus size={11} /> إضافة لون
-            </button>
-          </div>
-        </Field>
+        <div className="border border-accent/20 bg-accent/5 p-4 rounded">
+          <p className="text-[11px] text-foreground font-body mb-1">نوع العبوة</p>
+          <p className="text-[10px] text-muted-foreground font-body leading-relaxed">
+            عبوات شذايا (كلاسيك ذهبي، أسطواني أسود، قبّة سوداء، دمعة كريستال) موحّدة لكل المنتجات ويختارها العميل من صفحة المنتج. لا تحتاج لإضافتها هنا.
+          </p>
+        </div>
 
         <Field label="صور المنتج (الأولى = الغلاف، يمكن سحب الترتيب)">
           <ImageUploader images={form.images} onChange={(imgs) => update("images", imgs)} />
