@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Truck, RotateCcw, Shield, Droplets } from "lucide-react";
+import { Truck, Gem, Droplets, Shield } from "lucide-react";
 
 const features = [
-  { icon: Truck, label: "شحن مجاني", desc: "للطلبات فوق ١,٠٠٠ ج.م" },
-  { icon: RotateCcw, label: "إرجاع سهل", desc: "خلال ٣٠ يوماً" },
+  { icon: Truck, label: "شحن متميز", desc: "لكل أنحاء مصر" },
+  { icon: Gem, label: "تغليف فاخر", desc: "بكل طلب" },
   { icon: Droplets, label: "عطور أصلية", desc: "مضمونة ١٠٠٪" },
   { icon: Shield, label: "دفع آمن", desc: "مشفّر ومحمي" },
 ];
