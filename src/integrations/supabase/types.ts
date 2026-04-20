@@ -321,6 +321,7 @@ export type Database = {
           colors: Json
           created_at: string
           display_order: number
+          gender: Database["public"]["Enums"]["product_gender"]
           id: string
           images: Json
           in_stock: boolean
@@ -347,6 +348,7 @@ export type Database = {
           colors?: Json
           created_at?: string
           display_order?: number
+          gender?: Database["public"]["Enums"]["product_gender"]
           id?: string
           images?: Json
           in_stock?: boolean
@@ -373,6 +375,7 @@ export type Database = {
           colors?: Json
           created_at?: string
           display_order?: number
+          gender?: Database["public"]["Enums"]["product_gender"]
           id?: string
           images?: Json
           in_stock?: boolean
@@ -601,6 +604,7 @@ export type Database = {
         | "delivered"
         | "cancelled"
         | "refunded"
+      product_gender: "men" | "women" | "unisex"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -739,6 +743,7 @@ export const Constants = {
         "cancelled",
         "refunded",
       ],
+      product_gender: ["men", "women", "unisex"],
     },
   },
 } as const
