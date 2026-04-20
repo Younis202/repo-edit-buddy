@@ -157,11 +157,11 @@ const AdminProductForm = () => {
           </Field>
         </div>
         <div className="grid md:grid-cols-3 gap-4">
-          <Field label="الفئة" required>
-            <select value={form.category} onChange={(e) => update("category", e.target.value)} className={inputCls}>
-              {["عود", "زهري", "مسك", "شرقي", "بخور", "خشبي"].map((c) => (
-                <option key={c} value={c}>{c}</option>
-              ))}
+          <Field label="الجنس (رجالي / حريمي / للجميع)" required>
+            <select value={form.gender} onChange={(e) => update("gender", e.target.value)} className={inputCls}>
+              <option value="men">رجالي</option>
+              <option value="women">حريمي</option>
+              <option value="unisex">للجميع</option>
             </select>
           </Field>
           <Field label="التاج (مثل: حصري)">
