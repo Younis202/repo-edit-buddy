@@ -18,7 +18,8 @@ const ImageUploader = ({ images, onChange, maxImages }: Props) => {
   const upload = async (files: FileList) => {
     setUploading(true);
     const uploaded: string[] = [];
-    for (const file of Array.from(files)) {
+    const list = Array.from(files).slice(0, remaining);
+    for (const file of list) {
       const ext = file.name.split(".").pop();
       const path = `products/${crypto.randomUUID()}.${ext}`;
       const { error } = await supabase.storage.from("product-images").upload(path, file, {
