@@ -6,16 +6,20 @@ import { toast } from "sonner";
 interface Props {
   images: string[];
   onChange: (images: string[]) => void;
+  maxImages?: number;
 }
 
-const ImageUploader = ({ images, onChange }: Props) => {
+const ImageUploader = ({ images, onChange, maxImages }: Props) => {
+  const remaining = typeof maxImages === "number" ? Math.max(0, maxImages - images.length) : Infinity;
+  const atLimit = remaining === 0;
   const [uploading, setUploading] = useState(false);
   const [dragIdx, setDragIdx] = useState<number | null>(null);
 
   const upload = async (files: FileList) => {
     setUploading(true);
     const uploaded: string[] = [];
-    for (const file of Array.from(files)) {
+    const list = Array.from(files).slice(0, remaining);
+    for (const file of list) {
       const ext = file.name.split(".").pop();
       const path = `products/${crypto.randomUUID()}.${ext}`;
       const { error } = await supabase.storage.from("product-images").upload(path, file, {
