@@ -6,9 +6,12 @@ import { toast } from "sonner";
 interface Props {
   images: string[];
   onChange: (images: string[]) => void;
+  maxImages?: number;
 }
 
-const ImageUploader = ({ images, onChange }: Props) => {
+const ImageUploader = ({ images, onChange, maxImages }: Props) => {
+  const remaining = typeof maxImages === "number" ? Math.max(0, maxImages - images.length) : Infinity;
+  const atLimit = remaining === 0;
   const [uploading, setUploading] = useState(false);
   const [dragIdx, setDragIdx] = useState<number | null>(null);
 
