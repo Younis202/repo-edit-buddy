@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import FilmGrain from "@/components/FilmGrain";
 import SmoothScroll from "@/components/SmoothScroll";
-import { allProducts as fallbackProducts, categories, sortOptions, type Product } from "@/data/products";
+import { allProducts as fallbackProducts, categories, sortOptions, genderLabels, type Product, type ProductGender } from "@/data/products";
 import { useProducts } from "@/hooks/useProducts";
 import { useCart } from "@/contexts/CartContext";
 import { useWishlist } from "@/contexts/WishlistContext";
@@ -103,6 +103,7 @@ const Shop = () => {
   usePageSEO({ title: "المتجر", description: "تصفح مجموعة شذايا الكاملة من العطور الفاخرة — عود، مسك، ورد طائفي، وبخور. اختر عطرك المثالي." });
   const { data: products = fallbackProducts } = useProducts();
   const [activeCategory, setActiveCategory] = useState("الكل");
+  const [activeGender, setActiveGender] = useState<"all" | ProductGender>("all");
   const [sortBy, setSortBy] = useState("الأحدث");
   const [showSort, setShowSort] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
@@ -123,6 +124,10 @@ const Shop = () => {
   let filteredProducts = activeCategory === "الكل"
     ? products
     : products.filter((p) => p.category === activeCategory);
+
+  if (activeGender !== "all") {
+    filteredProducts = filteredProducts.filter((p) => p.gender === activeGender);
+  }
 
   if (selectedSizes.length > 0) {
     filteredProducts = filteredProducts.filter((p) => p.sizes.some((s) => selectedSizes.includes(s)));
