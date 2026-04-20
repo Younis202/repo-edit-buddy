@@ -230,8 +230,8 @@ const AdminProductForm = () => {
           </p>
         </div>
 
-        <Field label="صور المنتج (الأولى = الغلاف، يمكن سحب الترتيب)">
-          <ImageUploader images={form.images} onChange={(imgs) => update("images", imgs)} />
+        <Field label="صور المنتج (الأولى = الغلاف، حد أقصى 3 صور)">
+          <ImageUploader images={form.images} onChange={(imgs) => update("images", imgs)} maxImages={3} />
         </Field>
 
         <Field label="أقسام التفاصيل">
