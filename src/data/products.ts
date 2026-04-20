@@ -41,6 +41,8 @@ export const resolveImage = (img: string): string => {
 export const getBrandedGallery = (slug: string): string[] | undefined =>
   productGalleryImages[slug];
 
+export type ProductGender = "men" | "women" | "unisex";
+
 export interface Product {
   id: string | number;
   slug: string;
@@ -49,6 +51,7 @@ export interface Product {
   price: string;
   originalPrice?: string;
   category: string;
+  gender: ProductGender;
   tag: string;
   sizes: string[];
   images: string[];
@@ -58,6 +61,12 @@ export interface Product {
   season: string;
   accordion: { title: string; content: string }[];
 }
+
+export const genderLabels: Record<ProductGender, string> = {
+  men: "رجالي",
+  women: "حريمي",
+  unisex: "للجميع",
+};
 
 export const categories = ["الكل", "عود", "زهري", "مسك", "شرقي", "بخور", "خشبي"];
 export const sortOptions = ["الأحدث", "السعر: الأقل للأعلى", "السعر: الأعلى للأقل", "الأكثر مبيعاً"];
