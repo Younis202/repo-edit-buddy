@@ -11,6 +11,7 @@ const empty = {
   name_italic: "",
   slug: "",
   category: "عود",
+  gender: "unisex" as "men" | "women" | "unisex",
   tag: "",
   short_description: "",
   material: "",
@@ -70,6 +71,7 @@ const AdminProductForm = () => {
       name_italic: form.name_italic || null,
       slug: form.slug,
       category: form.category,
+      gender: form.gender,
       tag: form.tag || null,
       short_description: form.short_description || null,
       material: form.material || null,
@@ -85,7 +87,7 @@ const AdminProductForm = () => {
       low_stock_threshold: Number(form.low_stock_threshold),
       sizes: form.sizes,
       colors: form.colors,
-      images: form.images,
+      images: form.images.slice(0, 3),
       accordion: form.accordion,
     };
 
@@ -155,11 +157,11 @@ const AdminProductForm = () => {
           </Field>
         </div>
         <div className="grid md:grid-cols-3 gap-4">
-          <Field label="الفئة" required>
-            <select value={form.category} onChange={(e) => update("category", e.target.value)} className={inputCls}>
-              {["عود", "زهري", "مسك", "شرقي", "بخور", "خشبي"].map((c) => (
-                <option key={c} value={c}>{c}</option>
-              ))}
+          <Field label="الجنس (رجالي / حريمي / للجميع)" required>
+            <select value={form.gender} onChange={(e) => update("gender", e.target.value)} className={inputCls}>
+              <option value="men">رجالي</option>
+              <option value="women">حريمي</option>
+              <option value="unisex">للجميع</option>
             </select>
           </Field>
           <Field label="التاج (مثل: حصري)">
@@ -228,8 +230,8 @@ const AdminProductForm = () => {
           </p>
         </div>
 
-        <Field label="صور المنتج (الأولى = الغلاف، يمكن سحب الترتيب)">
-          <ImageUploader images={form.images} onChange={(imgs) => update("images", imgs)} />
+        <Field label="صور المنتج (الأولى = الغلاف، حد أقصى 3 صور)">
+          <ImageUploader images={form.images} onChange={(imgs) => update("images", imgs)} maxImages={3} />
         </Field>
 
         <Field label="أقسام التفاصيل">

@@ -10,6 +10,7 @@ const mapDbProduct = (p: any): Product => ({
   price: p.price_display,
   originalPrice: p.original_price_display || undefined,
   category: p.category,
+  gender: (p.gender as Product["gender"]) || "unisex",
   tag: p.tag || "",
   sizes: Array.isArray(p.sizes) ? p.sizes : [],
   images: (Array.isArray(p.images) ? p.images : []).map(resolveImage),
