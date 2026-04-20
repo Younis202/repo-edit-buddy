@@ -21,6 +21,7 @@ import ShippingReturns from "./pages/ShippingReturns";
 import NewIn from "./pages/NewIn";
 import Collections from "./pages/Collections";
 import Lookbook from "./pages/Lookbook";
+import Discovery from "./pages/Discovery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
@@ -66,6 +67,7 @@ const App = () => (
                 <Route path="/new-in" element={<NewIn />} />
                 <Route path="/collections" element={<Collections />} />
                 <Route path="/lookbook" element={<Lookbook />} />
+                <Route path="/discovery" element={<Discovery />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/faq" element={<FAQ />} />

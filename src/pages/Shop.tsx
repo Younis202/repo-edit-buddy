@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import FilmGrain from "@/components/FilmGrain";
 import SmoothScroll from "@/components/SmoothScroll";
-import { allProducts as fallbackProducts, categories, sortOptions, type Product } from "@/data/products";
+import { allProducts as fallbackProducts, categories, sortOptions, genderLabels, type Product, type ProductGender } from "@/data/products";
 import { useProducts } from "@/hooks/useProducts";
 import { useCart } from "@/contexts/CartContext";
 import { useWishlist } from "@/contexts/WishlistContext";
@@ -103,6 +103,7 @@ const Shop = () => {
   usePageSEO({ title: "المتجر", description: "تصفح مجموعة شذايا الكاملة من العطور الفاخرة — عود، مسك، ورد طائفي، وبخور. اختر عطرك المثالي." });
   const { data: products = fallbackProducts } = useProducts();
   const [activeCategory, setActiveCategory] = useState("الكل");
+  const [activeGender, setActiveGender] = useState<"all" | ProductGender>("all");
   const [sortBy, setSortBy] = useState("الأحدث");
   const [showSort, setShowSort] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
@@ -123,6 +124,10 @@ const Shop = () => {
   let filteredProducts = activeCategory === "الكل"
     ? products
     : products.filter((p) => p.category === activeCategory);
+
+  if (activeGender !== "all") {
+    filteredProducts = filteredProducts.filter((p) => p.gender === activeGender);
+  }
 
   if (selectedSizes.length > 0) {
     filteredProducts = filteredProducts.filter((p) => p.sizes.some((s) => selectedSizes.includes(s)));
@@ -192,6 +197,45 @@ const Shop = () => {
                   اكتشف مجموعتنا الكاملة من العطور المصنوعة بعناية فائقة — من العود الفاخر إلى المسك النادر.
                 </p>
               </div>
+            </motion.div>
+          </section>
+
+          {/* Gender pills */}
+          <section className="px-6 md:px-12 pb-6">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex items-center gap-3 flex-wrap"
+            >
+              <span className="text-[10px] tracking-[0.2em] text-muted-foreground font-body uppercase">
+                Shop by
+              </span>
+              {([
+                { key: "all" as const, label: "الكل" },
+                { key: "men" as const, label: genderLabels.men },
+                { key: "women" as const, label: genderLabels.women },
+                { key: "unisex" as const, label: genderLabels.unisex },
+              ]).map((g) => {
+                const count = g.key === "all"
+                  ? products.length
+                  : products.filter((p) => p.gender === g.key).length;
+                const active = activeGender === g.key;
+                return (
+                  <button
+                    key={g.key}
+                    onClick={() => setActiveGender(g.key)}
+                    className={`text-[11px] tracking-wide font-body px-4 py-2 border transition-all duration-300 ${
+                      active
+                        ? "border-accent text-accent-foreground bg-accent"
+                        : "border-border/30 text-muted-foreground hover:border-accent hover:text-accent"
+                    }`}
+                  >
+                    {g.label}
+                    <span className="opacity-60 mr-1.5">({count})</span>
+                  </button>
+                );
+              })}
             </motion.div>
           </section>
 

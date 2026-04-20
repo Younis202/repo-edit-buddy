@@ -24,6 +24,7 @@ import SearchOverlay from "@/components/SearchOverlay";
 const navLinks = [
   { label: "المتجر", href: "/shop", isRoute: true },
   { label: "جديدنا", href: "/new-in", isRoute: true },
+  { label: "Discovery", href: "/discovery", isRoute: true },
   { label: "المجموعات", href: "/collections", isRoute: true },
   { label: "الكتالوج", href: "/lookbook", isRoute: true },
   { label: "من نحن", href: "/about", isRoute: true },
