@@ -200,6 +200,45 @@ const Shop = () => {
             </motion.div>
           </section>
 
+          {/* Gender pills */}
+          <section className="px-6 md:px-12 pb-6">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex items-center gap-3 flex-wrap"
+            >
+              <span className="text-[10px] tracking-[0.2em] text-muted-foreground font-body uppercase">
+                Shop by
+              </span>
+              {([
+                { key: "all" as const, label: "الكل" },
+                { key: "men" as const, label: genderLabels.men },
+                { key: "women" as const, label: genderLabels.women },
+                { key: "unisex" as const, label: genderLabels.unisex },
+              ]).map((g) => {
+                const count = g.key === "all"
+                  ? products.length
+                  : products.filter((p) => p.gender === g.key).length;
+                const active = activeGender === g.key;
+                return (
+                  <button
+                    key={g.key}
+                    onClick={() => setActiveGender(g.key)}
+                    className={`text-[11px] tracking-wide font-body px-4 py-2 border transition-all duration-300 ${
+                      active
+                        ? "border-accent text-accent-foreground bg-accent"
+                        : "border-border/30 text-muted-foreground hover:border-accent hover:text-accent"
+                    }`}
+                  >
+                    {g.label}
+                    <span className="opacity-60 mr-1.5">({count})</span>
+                  </button>
+                );
+              })}
+            </motion.div>
+          </section>
+
           {/* Filter / Sort bar */}
           <section className="px-6 md:px-12 pb-8">
             <motion.div
