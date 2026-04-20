@@ -11,6 +11,7 @@ const empty = {
   name_italic: "",
   slug: "",
   category: "عود",
+  gender: "unisex" as "men" | "women" | "unisex",
   tag: "",
   short_description: "",
   material: "",
@@ -70,6 +71,7 @@ const AdminProductForm = () => {
       name_italic: form.name_italic || null,
       slug: form.slug,
       category: form.category,
+      gender: form.gender,
       tag: form.tag || null,
       short_description: form.short_description || null,
       material: form.material || null,
@@ -85,7 +87,7 @@ const AdminProductForm = () => {
       low_stock_threshold: Number(form.low_stock_threshold),
       sizes: form.sizes,
       colors: form.colors,
-      images: form.images,
+      images: form.images.slice(0, 3),
       accordion: form.accordion,
     };
 
