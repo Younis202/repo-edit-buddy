@@ -10,78 +10,137 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "14.1"
+    PostgrestVersion: "14.5"
   }
   public: {
     Tables: {
-      admin_notifications: {
+      asset_assignments: {
         Row: {
+          asset_id: string
+          assigned_date: string
           created_at: string
+          employee_id: string
           id: string
-          is_read: boolean
-          link: string | null
-          message: string | null
-          title: string
-          type: string
+          notes: string | null
+          returned_date: string | null
         }
         Insert: {
+          asset_id: string
+          assigned_date?: string
           created_at?: string
+          employee_id: string
           id?: string
-          is_read?: boolean
-          link?: string | null
-          message?: string | null
-          title: string
-          type?: string
+          notes?: string | null
+          returned_date?: string | null
         }
         Update: {
+          asset_id?: string
+          assigned_date?: string
           created_at?: string
+          employee_id?: string
           id?: string
-          is_read?: boolean
-          link?: string | null
-          message?: string | null
-          title?: string
-          type?: string
-        }
-        Relationships: []
-      }
-      coupon_redemptions: {
-        Row: {
-          coupon_id: string
-          created_at: string
-          discount_applied: number
-          id: string
-          order_id: string | null
-          user_id: string | null
-        }
-        Insert: {
-          coupon_id: string
-          created_at?: string
-          discount_applied?: number
-          id?: string
-          order_id?: string | null
-          user_id?: string | null
-        }
-        Update: {
-          coupon_id?: string
-          created_at?: string
-          discount_applied?: number
-          id?: string
-          order_id?: string | null
-          user_id?: string | null
+          notes?: string | null
+          returned_date?: string | null
         }
         Relationships: [
           {
-            foreignKeyName: "coupon_redemptions_coupon_id_fkey"
-            columns: ["coupon_id"]
+            foreignKeyName: "asset_assignments_asset_id_fkey"
+            columns: ["asset_id"]
             isOneToOne: false
-            referencedRelation: "coupons"
+            referencedRelation: "assets"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "coupon_redemptions_order_id_fkey"
-            columns: ["order_id"]
+            foreignKeyName: "asset_assignments_employee_id_fkey"
+            columns: ["employee_id"]
             isOneToOne: false
-            referencedRelation: "orders"
+            referencedRelation: "employees"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      asset_categories: {
+        Row: {
+          created_at: string
+          default_useful_life_years: number
+          id: string
+          name: string
+          residual_value_percent: number
+        }
+        Insert: {
+          created_at?: string
+          default_useful_life_years?: number
+          id?: string
+          name: string
+          residual_value_percent?: number
+        }
+        Update: {
+          created_at?: string
+          default_useful_life_years?: number
+          id?: string
+          name?: string
+          residual_value_percent?: number
+        }
+        Relationships: []
+      }
+      assets: {
+        Row: {
+          category_id: string | null
+          condition: Database["public"]["Enums"]["asset_condition"]
+          created_at: string
+          created_by: string | null
+          id: string
+          is_archived: boolean
+          location: string | null
+          name: string
+          notes: string | null
+          purchase_cost: number
+          purchase_date: string
+          residual_value_percent: number
+          serial_number: string | null
+          updated_at: string
+          useful_life_years: number
+        }
+        Insert: {
+          category_id?: string | null
+          condition?: Database["public"]["Enums"]["asset_condition"]
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          is_archived?: boolean
+          location?: string | null
+          name: string
+          notes?: string | null
+          purchase_cost?: number
+          purchase_date: string
+          residual_value_percent?: number
+          serial_number?: string | null
+          updated_at?: string
+          useful_life_years?: number
+        }
+        Update: {
+          category_id?: string | null
+          condition?: Database["public"]["Enums"]["asset_condition"]
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          is_archived?: boolean
+          location?: string | null
+          name?: string
+          notes?: string | null
+          purchase_cost?: number
+          purchase_date?: string
+          residual_value_percent?: number
+          serial_number?: string | null
+          updated_at?: string
+          useful_life_years?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "assets_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "asset_categories"
             referencedColumns: ["id"]
           },
         ]
@@ -96,10 +155,10 @@ export type Database = {
           expires_at: string | null
           id: string
           is_active: boolean
-          max_uses: number | null
+          max_uses: number
           min_order_amount: number
           updated_at: string
-          uses_count: number
+          used_count: number
         }
         Insert: {
           code: string
@@ -110,10 +169,10 @@ export type Database = {
           expires_at?: string | null
           id?: string
           is_active?: boolean
-          max_uses?: number | null
+          max_uses?: number
           min_order_amount?: number
           updated_at?: string
-          uses_count?: number
+          used_count?: number
         }
         Update: {
           code?: string
@@ -124,31 +183,34 @@ export type Database = {
           expires_at?: string | null
           id?: string
           is_active?: boolean
-          max_uses?: number | null
+          max_uses?: number
           min_order_amount?: number
           updated_at?: string
-          uses_count?: number
+          used_count?: number
         }
         Relationships: []
       }
-      newsletter_subscribers: {
+      employees: {
         Row: {
           created_at: string
-          email: string
+          department: string | null
+          email: string | null
           id: string
-          is_active: boolean
+          name: string
         }
         Insert: {
           created_at?: string
-          email: string
+          department?: string | null
+          email?: string | null
           id?: string
-          is_active?: boolean
+          name: string
         }
         Update: {
           created_at?: string
-          email?: string
+          department?: string | null
+          email?: string | null
           id?: string
-          is_active?: boolean
+          name?: string
         }
         Relationships: []
       }
@@ -158,45 +220,45 @@ export type Database = {
           created_at: string
           id: string
           line_total: number
+          meta: Json | null
           order_id: string
           product_id: string | null
           product_image: string | null
           product_name: string
-          product_slug: string
+          product_slug: string | null
           quantity: number
           size: string | null
           unit_price: number
-          unit_price_display: string
         }
         Insert: {
           color?: string | null
           created_at?: string
           id?: string
           line_total?: number
+          meta?: Json | null
           order_id: string
           product_id?: string | null
           product_image?: string | null
           product_name: string
-          product_slug: string
+          product_slug?: string | null
           quantity?: number
           size?: string | null
           unit_price?: number
-          unit_price_display: string
         }
         Update: {
           color?: string | null
           created_at?: string
           id?: string
           line_total?: number
+          meta?: Json | null
           order_id?: string
           product_id?: string | null
           product_image?: string | null
           product_name?: string
-          product_slug?: string
+          product_slug?: string | null
           quantity?: number
           size?: string | null
           unit_price?: number
-          unit_price_display?: string
         }
         Relationships: [
           {
@@ -217,98 +279,71 @@ export type Database = {
       }
       orders: {
         Row: {
-          cancellation_reason: string | null
+          admin_notes: string | null
           coupon_code: string | null
-          coupon_discount: number
           created_at: string
-          delivered_at: string | null
           discount: number
-          gift_message: string | null
-          gift_wrap: boolean
           guest_email: string | null
-          guest_phone: string | null
           id: string
-          notes: string | null
           order_number: string
-          payment_method: string
-          shipped_at: string | null
-          shipping_city: string
+          payment_method: Database["public"]["Enums"]["payment_method"]
+          shipping_address: string
+          shipping_city: string | null
           shipping_cost: number
-          shipping_country: string
           shipping_full_name: string
-          shipping_governorate: string
+          shipping_governorate: string | null
+          shipping_notes: string | null
           shipping_phone: string
-          shipping_postal_code: string | null
-          shipping_street: string
           status: Database["public"]["Enums"]["order_status"]
           subtotal: number
           total: number
           tracking_number: string | null
-          tracking_url: string | null
           updated_at: string
           user_id: string | null
         }
         Insert: {
-          cancellation_reason?: string | null
+          admin_notes?: string | null
           coupon_code?: string | null
-          coupon_discount?: number
           created_at?: string
-          delivered_at?: string | null
           discount?: number
-          gift_message?: string | null
-          gift_wrap?: boolean
           guest_email?: string | null
-          guest_phone?: string | null
           id?: string
-          notes?: string | null
-          order_number: string
-          payment_method?: string
-          shipped_at?: string | null
-          shipping_city: string
+          order_number?: string
+          payment_method?: Database["public"]["Enums"]["payment_method"]
+          shipping_address: string
+          shipping_city?: string | null
           shipping_cost?: number
-          shipping_country?: string
           shipping_full_name: string
-          shipping_governorate: string
+          shipping_governorate?: string | null
+          shipping_notes?: string | null
           shipping_phone: string
-          shipping_postal_code?: string | null
-          shipping_street: string
           status?: Database["public"]["Enums"]["order_status"]
           subtotal?: number
           total?: number
           tracking_number?: string | null
-          tracking_url?: string | null
           updated_at?: string
           user_id?: string | null
         }
         Update: {
-          cancellation_reason?: string | null
+          admin_notes?: string | null
           coupon_code?: string | null
-          coupon_discount?: number
           created_at?: string
-          delivered_at?: string | null
           discount?: number
-          gift_message?: string | null
-          gift_wrap?: boolean
           guest_email?: string | null
-          guest_phone?: string | null
           id?: string
-          notes?: string | null
           order_number?: string
-          payment_method?: string
-          shipped_at?: string | null
-          shipping_city?: string
+          payment_method?: Database["public"]["Enums"]["payment_method"]
+          shipping_address?: string
+          shipping_city?: string | null
           shipping_cost?: number
-          shipping_country?: string
           shipping_full_name?: string
-          shipping_governorate?: string
+          shipping_governorate?: string | null
+          shipping_notes?: string | null
           shipping_phone?: string
-          shipping_postal_code?: string | null
-          shipping_street?: string
           status?: Database["public"]["Enums"]["order_status"]
           subtotal?: number
           total?: number
           tracking_number?: string | null
-          tracking_url?: string | null
           updated_at?: string
           user_id?: string | null
         }
@@ -317,7 +352,7 @@ export type Database = {
       products: {
         Row: {
           accordion: Json
-          category: string
+          category: string | null
           colors: Json
           created_at: string
           display_order: number
@@ -330,10 +365,9 @@ export type Database = {
           material: string | null
           name: string
           name_italic: string | null
-          original_price: number | null
           original_price_display: string | null
-          price: number
           price_display: string
+          price_numeric: number
           season: string | null
           short_description: string | null
           sizes: Json
@@ -344,7 +378,7 @@ export type Database = {
         }
         Insert: {
           accordion?: Json
-          category: string
+          category?: string | null
           colors?: Json
           created_at?: string
           display_order?: number
@@ -357,10 +391,9 @@ export type Database = {
           material?: string | null
           name: string
           name_italic?: string | null
-          original_price?: number | null
           original_price_display?: string | null
-          price?: number
           price_display: string
+          price_numeric?: number
           season?: string | null
           short_description?: string | null
           sizes?: Json
@@ -371,7 +404,7 @@ export type Database = {
         }
         Update: {
           accordion?: Json
-          category?: string
+          category?: string | null
           colors?: Json
           created_at?: string
           display_order?: number
@@ -384,10 +417,9 @@ export type Database = {
           material?: string | null
           name?: string
           name_italic?: string | null
-          original_price?: number | null
           original_price_display?: string | null
-          price?: number
           price_display?: string
+          price_numeric?: number
           season?: string | null
           short_description?: string | null
           sizes?: Json
@@ -401,27 +433,24 @@ export type Database = {
       profiles: {
         Row: {
           created_at: string
-          first_name: string | null
+          full_name: string | null
           id: string
-          last_name: string | null
           phone: string | null
           updated_at: string
           user_id: string
         }
         Insert: {
           created_at?: string
-          first_name?: string | null
+          full_name?: string | null
           id?: string
-          last_name?: string | null
           phone?: string | null
           updated_at?: string
           user_id: string
         }
         Update: {
           created_at?: string
-          first_name?: string | null
+          full_name?: string | null
           id?: string
-          last_name?: string | null
           phone?: string | null
           updated_at?: string
           user_id?: string
@@ -430,40 +459,37 @@ export type Database = {
       }
       reviews: {
         Row: {
+          author_name: string | null
           comment: string | null
           created_at: string
           id: string
           is_approved: boolean
-          is_verified_purchase: boolean
           product_id: string
           rating: number
           title: string | null
-          updated_at: string
-          user_id: string
+          user_id: string | null
         }
         Insert: {
+          author_name?: string | null
           comment?: string | null
           created_at?: string
           id?: string
           is_approved?: boolean
-          is_verified_purchase?: boolean
           product_id: string
           rating: number
           title?: string | null
-          updated_at?: string
-          user_id: string
+          user_id?: string | null
         }
         Update: {
+          author_name?: string | null
           comment?: string | null
           created_at?: string
           id?: string
           is_approved?: boolean
-          is_verified_purchase?: boolean
           product_id?: string
           rating?: number
           title?: string | null
-          updated_at?: string
-          user_id?: string
+          user_id?: string | null
         }
         Relationships: [
           {
@@ -477,22 +503,16 @@ export type Database = {
       }
       site_settings: {
         Row: {
-          created_at: string
-          id: string
           key: string
           updated_at: string
           value: Json
         }
         Insert: {
-          created_at?: string
-          id?: string
           key: string
           updated_at?: string
           value?: Json
         }
         Update: {
-          created_at?: string
-          id?: string
           key?: string
           updated_at?: string
           value?: Json
@@ -501,53 +521,24 @@ export type Database = {
       }
       user_roles: {
         Row: {
-          created_at: string
+          created_at: string | null
           id: string
           role: Database["public"]["Enums"]["app_role"]
           user_id: string
         }
         Insert: {
-          created_at?: string
+          created_at?: string | null
           id?: string
           role: Database["public"]["Enums"]["app_role"]
           user_id: string
         }
         Update: {
-          created_at?: string
+          created_at?: string | null
           id?: string
           role?: Database["public"]["Enums"]["app_role"]
           user_id?: string
         }
         Relationships: []
-      }
-      wishlist_items: {
-        Row: {
-          created_at: string
-          id: string
-          product_id: string
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          product_id: string
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          product_id?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "wishlist_items_product_id_fkey"
-            columns: ["product_id"]
-            isOneToOne: false
-            referencedRelation: "products"
-            referencedColumns: ["id"]
-          },
-        ]
       }
     }
     Views: {
@@ -567,6 +558,7 @@ export type Database = {
           user_id: string
         }[]
       }
+      generate_order_number: { Args: never; Returns: string }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -574,28 +566,11 @@ export type Database = {
         }
         Returns: boolean
       }
-      is_admin: { Args: never; Returns: boolean }
-      track_order_public: {
-        Args: { _order_number: string; _phone: string }
-        Returns: {
-          created_at: string
-          delivered_at: string
-          id: string
-          order_number: string
-          shipped_at: string
-          shipping_city: string
-          shipping_full_name: string
-          shipping_governorate: string
-          status: Database["public"]["Enums"]["order_status"]
-          total: number
-          tracking_number: string
-          tracking_url: string
-        }[]
-      }
     }
     Enums: {
-      app_role: "admin" | "user"
-      discount_type: "percent" | "fixed"
+      app_role: "admin" | "moderator" | "user"
+      asset_condition: "excellent" | "good" | "fair" | "poor" | "retired"
+      discount_type: "fixed" | "percent"
       order_status:
         | "pending"
         | "confirmed"
@@ -604,6 +579,7 @@ export type Database = {
         | "delivered"
         | "cancelled"
         | "refunded"
+      payment_method: "cod" | "card" | "wallet" | "transfer"
       product_gender: "men" | "women" | "unisex"
     }
     CompositeTypes: {
@@ -732,8 +708,9 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      app_role: ["admin", "user"],
-      discount_type: ["percent", "fixed"],
+      app_role: ["admin", "moderator", "user"],
+      asset_condition: ["excellent", "good", "fair", "poor", "retired"],
+      discount_type: ["fixed", "percent"],
       order_status: [
         "pending",
         "confirmed",
@@ -743,6 +720,7 @@ export const Constants = {
         "cancelled",
         "refunded",
       ],
+      payment_method: ["cod", "card", "wallet", "transfer"],
       product_gender: ["men", "women", "unisex"],
     },
   },

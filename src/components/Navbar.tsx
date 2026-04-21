@@ -24,7 +24,7 @@ import SearchOverlay from "@/components/SearchOverlay";
 const navLinks = [
   { label: "المتجر", href: "/shop", isRoute: true },
   { label: "جديدنا", href: "/new-in", isRoute: true },
-  { label: "Discovery", href: "/discovery", isRoute: true },
+  { label: "الاكتشاف", href: "/discovery", isRoute: true },
   { label: "المجموعات", href: "/collections", isRoute: true },
   { label: "الكتالوج", href: "/lookbook", isRoute: true },
   { label: "من نحن", href: "/about", isRoute: true },
@@ -59,10 +59,10 @@ const megaMenuData: Record<
   المجموعات: {
     title: "تسوّق حسب العالم",
     items: [
-      { name: "عود", desc: "٣ عطور", href: "/shop" },
-      { name: "زهري", desc: "٣ عطور", href: "/shop" },
-      { name: "شرقي", desc: "٣ عطور", href: "/shop" },
-      { name: "مسك", desc: "٣ عطور", href: "/shop" },
+      { name: "رجالي", desc: "عطور بحضور قوي", href: "/shop?g=men" },
+      { name: "حريمي", desc: "نفحات أنثوية ساحرة", href: "/shop?g=women" },
+      { name: "للجميع", desc: "تركيبات تجمع الكل", href: "/shop?g=unisex" },
+      { name: "صندوق الاكتشاف", desc: "٥ عينات بسعر واحد", href: "/discovery" },
     ],
   },
 };

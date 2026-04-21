@@ -10,6 +10,12 @@ import productImg2 from "@/assets/product-detail-2.jpg";
 import productImg3 from "@/assets/product-detail-3.jpg";
 import productImg4 from "@/assets/product-detail-4.jpg";
 import craftsmanship1 from "@/assets/craftsmanship-1.jpg";
+import essentialPocket from "@/assets/essentials/essential-pocket-hero.jpg";
+import essentialTrio from "@/assets/essentials/essential-trio-hero.jpg";
+import essentialsBanner from "@/assets/essentials/essentials-banner.jpg";
+import productPocketOil from "@/assets/essentials/product-pocket-oil.jpg";
+import productSprayClassic from "@/assets/essentials/product-spray-classic.jpg";
+import productSpraySignature from "@/assets/essentials/product-spray-signature.jpg";
 import { productHeroImages, productGalleryImages } from "./brandedImages";
 
 const brandedKeyMap: Record<string, string> = Object.fromEntries(
@@ -29,6 +35,12 @@ export const imageMap: Record<string, string> = {
   "product-detail-3": productImg3,
   "product-detail-4": productImg4,
   "craftsmanship-1": craftsmanship1,
+  "essential-pocket": essentialPocket,
+  "essential-trio": essentialTrio,
+  "essentials-banner": essentialsBanner,
+  "product-pocket-oil": productPocketOil,
+  "product-spray-classic": productSprayClassic,
+  "product-spray-signature": productSpraySignature,
   ...brandedKeyMap,
 };
 

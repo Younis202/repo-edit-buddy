@@ -22,8 +22,8 @@ const TESTER_SIZE_LABEL = "١٠ مل — تستر";
 
 const Discovery = () => {
   usePageSEO({
-    title: "Discovery Set — جرّب قبل ما تقرر",
-    description: "صندوق Discovery من شذايا — اختر ٥ عينات (١٠ مل) من عطورنا الفاخرة بسعر واحد. استكشف عالمك العطري قبل ما تختار قنينتك الكاملة.",
+    title: "صندوق الاكتشاف — جرّب قبل ما تقرر",
+    description: "صندوق الاكتشاف من شذايا — اختر ٥ عينات (١٠ مل) من عطورنا الفاخرة بسعر واحد. استكشف عالمك العطري قبل ما تختار قنينتك الكاملة.",
   });
   const { data: products = fallback } = useProducts();
   const [selected, setSelected] = useState<string[]>([]);
@@ -54,10 +54,10 @@ const Discovery = () => {
     const packProduct: Product = {
       id: `discovery-${Date.now()}`,
       slug: "discovery-set",
-      name: "Discovery Set — صندوق العينات",
-      nameItalic: "Discovery",
+      name: "صندوق الاكتشاف — ٥ عينات",
+      nameItalic: "الاكتشاف",
       price: PACK_PRICE_DISPLAY,
-      category: "Discovery",
+      category: "اكتشاف",
       gender: "unisex",
       tag: "محدود",
       sizes: [TESTER_SIZE_LABEL],
@@ -93,7 +93,7 @@ const Discovery = () => {
             <div className="absolute inset-0 z-0">
               <img
                 src={packHero}
-                alt="Discovery Set — تشكيلة العطور"
+                alt="صندوق الاكتشاف — تشكيلة العطور"
                 className="w-full h-full object-cover opacity-40"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40" />
@@ -104,7 +104,7 @@ const Discovery = () => {
               <nav className="flex items-center gap-2 text-[10px] tracking-wide font-body text-muted-foreground mb-10">
                 <Link to="/" className="hover:text-foreground transition-colors">الرئيسية</Link>
                 <span>/</span>
-                <span className="text-foreground">Discovery</span>
+                <span className="text-foreground">صندوق الاكتشاف</span>
               </nav>
 
               <motion.div
@@ -115,8 +115,8 @@ const Discovery = () => {
               >
                 <div className="flex items-center gap-3 mb-6">
                   <Sparkles size={14} strokeWidth={1.5} className="text-accent" />
-                  <p className="text-[10px] tracking-[0.3em] text-accent font-body uppercase">
-                    Discovery Collection
+                  <p className="text-[10px] tracking-[0.3em] text-accent font-body">
+                    صندوق الاكتشاف
                   </p>
                 </div>
                 <motion.div
@@ -158,7 +158,7 @@ const Discovery = () => {
               </div>
               <div className="md:col-span-7">
                 <p className="text-[10px] tracking-[0.3em] text-muted-foreground font-body mb-4">
-                  HOW IT WORKS
+                  كيف تشتغل التجربة
                 </p>
                 <div className="luxury-divider mb-8 max-w-[120px] origin-right" />
                 <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight mb-10">
@@ -195,7 +195,7 @@ const Discovery = () => {
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
               <div>
                 <p className="text-[10px] tracking-[0.3em] text-muted-foreground font-body mb-4">
-                  SELECT YOUR FIVE
+                  اختر خمستك
                 </p>
                 <h2 className="font-display text-3xl md:text-5xl font-light text-foreground leading-tight">
                   اختار <span className="italic text-accent">{PACK_SIZE}</span> من مجموعتنا

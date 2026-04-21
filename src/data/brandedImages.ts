@@ -14,6 +14,9 @@ import miskTahara from "@/assets/products/misk-tahara-1.jpg";
 import sandalHind from "@/assets/products/sandal-hind-1.jpg";
 import dehnWard from "@/assets/products/dehn-ward-1.jpg";
 import layaliSharqiya from "@/assets/products/layali-sharqiya-1.jpg";
+import discoverySet from "@/assets/discovery/discovery-pack-hero.jpg";
+import discoveryVial from "@/assets/discovery/discovery-vial.jpg";
+import discoveryLifestyle from "@/assets/discovery/discovery-lifestyle.jpg";
 
 import lookbookMan1 from "@/assets/lookbook-man-1.jpg";
 import lookbookMan2 from "@/assets/lookbook-man-2.jpg";
@@ -38,6 +41,9 @@ export const productHeroImages: Record<string, string> = {
   "sandal-hind": sandalHind,
   "dehn-ward": dehnWard,
   "layali-sharqiya": layaliSharqiya,
+  "discovery-set": discoverySet,
+  "discovery-vial": discoveryVial,
+  "discovery-lifestyle": discoveryLifestyle,
 };
 
 /** Detail/gallery images per slug — uses hero + a curated set of contextual shots. */

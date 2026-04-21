@@ -7,7 +7,7 @@ interface SEOOptions {
 }
 
 const BRAND = "شذايا — عطور فاخرة";
-const DEFAULT_DESC = "شذايا — براند عطور فاخرة مصري. أجود أنواع العود والمسك والورد الطائفي. تسوق الآن واستمتع بشحن مجاني.";
+const DEFAULT_DESC = "شذايا — براند عطور فاخرة مصري. أجود أنواع العود والمسك والورد الطائفي. تجربة سينمائية بتغليف فاخر وشحن متميز لكل مصر.";
 const SITE_URL = "https://shathaya.com";
 
 function setMeta(name: string, content: string, attr = "name") {

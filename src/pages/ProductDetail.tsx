@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { usePageSEO } from "@/hooks/usePageSEO";
 import { useParams, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart, ShoppingBag, Minus, Plus, Share2, Ruler, Truck, RotateCcw, ChevronDown } from "lucide-react";
+import { Heart, ShoppingBag, Minus, Plus, Share2, Ruler, Truck, RotateCcw, ChevronDown, Gift, X } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
@@ -13,6 +13,7 @@ import { bottleTypes } from "@/data/bottleTypes";
 import { useProduct } from "@/hooks/useProducts";
 import { useCart } from "@/contexts/CartContext";
 import { useWishlist } from "@/contexts/WishlistContext";
+import { useEssentials } from "@/contexts/EssentialsContext";
 import { useJsonLd } from "@/hooks/useJsonLd";
 import { resolveImage } from "@/data/products";
 import ProductReviewsLive from "@/components/ProductReviewsLive";
@@ -22,8 +23,10 @@ const ProductDetail = () => {
   const { slug } = useParams();
   const { addItem } = useCart();
   const { isWishlisted: checkWishlisted, toggleWishlist } = useWishlist();
+  const { selected: essentialsSelected, clearSelection } = useEssentials();
   const { data: product } = useProduct(slug);
   const relatedProducts = getRelatedProducts(slug || "");
+  const isEssentialsMode = !!essentialsSelected;
   const productImage = product?.images?.[0] ? resolveImage(product.images[0]) : undefined;
   usePageSEO({
     title: product?.name || "المنتج",
@@ -122,7 +125,27 @@ const ProductDetail = () => {
   }
 
   const handleAddToBag = () => {
-    if (!selectedSize || !product) return;
+    if (!product) return;
+
+    // === Essentials mode ===
+    if (isEssentialsMode && essentialsSelected) {
+      const { pkg, variant } = essentialsSelected;
+      const cartProduct = {
+        ...product,
+        price: `${variant.priceDisplay} ج.م`,
+        sizes: [variant.label],
+      };
+      const packagingLabel = `${pkg.name} (${variant.label})`;
+      const minQty = variant.minQty;
+      const finalQty = Math.max(quantity, minQty);
+      addItem(cartProduct, variant.label, packagingLabel, finalQty);
+      setAddedToBag(true);
+      setTimeout(() => setAddedToBag(false), 2000);
+      return;
+    }
+
+    // === Standard luxury bottle mode ===
+    if (!selectedSize) return;
     addItem(product, selectedSize, bottleTypes[selectedBottle]?.name || "", quantity);
     setAddedToBag(true);
     setTimeout(() => setAddedToBag(false), 2000);
@@ -138,6 +161,34 @@ const ProductDetail = () => {
       <SmoothScroll>
         <main className="bg-background min-h-screen md:cursor-none">
           <Navbar />
+
+          {/* === Essentials Mode Banner === */}
+          {isEssentialsMode && essentialsSelected && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="sticky top-20 z-40 bg-gradient-to-r from-accent/95 via-accent to-accent/95 text-background"
+              style={{ boxShadow: "0 4px 24px -8px hsla(38,60%,55%,0.5)" }}
+            >
+              <div className="max-w-7xl mx-auto px-6 md:px-12 py-3 flex items-center justify-between gap-4 flex-wrap">
+                <div className="flex items-center gap-3">
+                  <Gift className="w-4 h-4" strokeWidth={1.6} />
+                  <p className="text-[11px] md:text-xs tracking-[0.12em] font-accent">
+                    أنت في وضع <span className="font-bold">العبوة الاقتصادية</span> ·
+                    {" "}{essentialsSelected.pkg.name} ({essentialsSelected.variant.label}) · {essentialsSelected.variant.priceDisplay} ج.م
+                  </p>
+                </div>
+                <button
+                  onClick={clearSelection}
+                  className="inline-flex items-center gap-2 text-[10px] tracking-[0.18em] bg-background/20 hover:bg-background/30 px-3 py-1.5 transition-colors font-accent"
+                >
+                  <X className="w-3 h-3" />
+                  <span>إلغاء الوضع الاقتصادي</span>
+                </button>
+              </div>
+            </motion.div>
+          )}
 
           {/* Breadcrumb */}
           <div className="pt-24 md:pt-28 px-6 md:px-12">
@@ -241,12 +292,20 @@ const ProductDetail = () => {
                     {product.category} — {product.material}
                   </p>
 
-                  {/* Price */}
+                  {/* Price — overridden in essentials mode */}
                   <div className="flex items-baseline gap-3 mb-8">
-                    <span className="font-display text-2xl md:text-3xl text-foreground">{product.price}</span>
-                    {product.originalPrice && (
+                    {isEssentialsMode && essentialsSelected ? (
                       <>
-                        <span className="text-sm text-muted-foreground line-through font-body">{product.originalPrice}</span>
+                        <span className="font-display text-2xl md:text-3xl text-accent">{essentialsSelected.variant.priceDisplay} ج.م</span>
+                        <span className="text-sm text-muted-foreground line-through font-body">{product.price}</span>
+                        <span className="text-[10px] tracking-wide text-accent/80 font-accent">سعر العبوة الاقتصادية</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="font-display text-2xl md:text-3xl text-foreground">{product.price}</span>
+                        {product.originalPrice && (
+                          <span className="text-sm text-muted-foreground line-through font-body">{product.originalPrice}</span>
+                        )}
                       </>
                     )}
                   </div>
@@ -255,7 +314,8 @@ const ProductDetail = () => {
                     {product.shortDescription}
                   </p>
 
-                  {/* Bottle type selector */}
+                  {/* Bottle type selector — hidden in essentials mode */}
+                  {!isEssentialsMode && (
                   <div className="mb-6">
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-[10px] tracking-wide text-foreground font-body">
@@ -283,8 +343,19 @@ const ProductDetail = () => {
                       ))}
                     </div>
                   </div>
+                  )}
 
-                  {/* Size selector */}
+                  {/* Size selector — fixed to package size in essentials mode */}
+                  {isEssentialsMode && essentialsSelected ? (
+                    <div className="mb-6">
+                      <span className="text-[10px] tracking-wide text-foreground font-body block mb-3">
+                        الحجم — <span className="text-accent">{essentialsSelected.variant.label}</span>
+                      </span>
+                      <div className="border border-accent bg-accent/10 px-4 py-3 text-sm font-body text-foreground text-center">
+                        {essentialsSelected.pkg.name} · {essentialsSelected.variant.label}
+                      </div>
+                    </div>
+                  ) : (
                   <div className="mb-6">
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-[10px] tracking-wide text-foreground font-body">
@@ -314,6 +385,7 @@ const ProductDetail = () => {
                       <p className="text-[10px] text-accent/70 font-body mt-2">الرجاء اختيار الحجم</p>
                     )}
                   </div>
+                  )}
 
                   {/* Quantity */}
                   <div className="mb-8">
@@ -382,7 +454,7 @@ const ProductDetail = () => {
                   <div className="flex items-center gap-6 py-5 border-y border-border/20 mb-8">
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <Truck size={14} strokeWidth={1.5} className="text-accent" />
-                      <span className="text-[9px] tracking-wide font-body">شحن مجاني</span>
+                      <span className="text-[9px] tracking-wide font-body">شحن متميز</span>
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <RotateCcw size={14} strokeWidth={1.5} className="text-accent" />

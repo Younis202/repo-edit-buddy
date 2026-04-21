@@ -6,8 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "@/contexts/CartContext";
 import { WishlistProvider } from "@/contexts/WishlistContext";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { EssentialsProvider } from "@/contexts/EssentialsContext";
 import CartDrawer from "@/components/CartDrawer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import GlobalSalePopup from "@/components/GlobalSalePopup";
 import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import Shop from "./pages/Shop";
@@ -22,6 +24,7 @@ import NewIn from "./pages/NewIn";
 import Collections from "./pages/Collections";
 import Lookbook from "./pages/Lookbook";
 import Discovery from "./pages/Discovery";
+import Essentials from "./pages/Essentials";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
@@ -53,10 +56,12 @@ const App = () => (
         <AuthProvider>
           <CartProvider>
             <WishlistProvider>
+              <EssentialsProvider>
               <Toaster />
               <Sonner />
               <CartDrawer />
               <WhatsAppButton />
+              <GlobalSalePopup />
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/shop" element={<Shop />} />
@@ -68,6 +73,7 @@ const App = () => (
                 <Route path="/collections" element={<Collections />} />
                 <Route path="/lookbook" element={<Lookbook />} />
                 <Route path="/discovery" element={<Discovery />} />
+                <Route path="/essentials" element={<Essentials />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/faq" element={<FAQ />} />
@@ -94,6 +100,7 @@ const App = () => (
                 </Route>
                 <Route path="*" element={<NotFound />} />
               </Routes>
+              </EssentialsProvider>
             </WishlistProvider>
           </CartProvider>
         </AuthProvider>

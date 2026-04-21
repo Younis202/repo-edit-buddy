@@ -12,7 +12,9 @@ const mapDbProduct = (p: any): Product => ({
   category: p.category,
   gender: (p.gender as Product["gender"]) || "unisex",
   tag: p.tag || "",
-  sizes: Array.isArray(p.sizes) ? p.sizes : [],
+  sizes: Array.isArray(p.sizes)
+    ? p.sizes.map((s: any) => (typeof s === "string" ? s : s?.label ?? String(s)))
+    : [],
   images: (Array.isArray(p.images) ? p.images : []).map(resolveImage),
   colors: Array.isArray(p.colors) ? p.colors : [],
   shortDescription: p.short_description || "",

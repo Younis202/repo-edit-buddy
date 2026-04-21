@@ -26,10 +26,10 @@ const Footer = () => {
           <h4 className="text-[11px] tracking-wide text-muted-foreground mb-6 font-body">المتجر</h4>
           <ul className="space-y-3">
             <li><Link to="/new-in" className="text-sm text-foreground/40 hover:text-foreground transition-colors duration-300 font-body">جديدنا</Link></li>
-            <li><Link to="/shop" className="text-sm text-foreground/40 hover:text-foreground transition-colors duration-300 font-body">عود</Link></li>
-            <li><Link to="/shop" className="text-sm text-foreground/40 hover:text-foreground transition-colors duration-300 font-body">زهري</Link></li>
-            <li><Link to="/shop" className="text-sm text-foreground/40 hover:text-foreground transition-colors duration-300 font-body">شرقي</Link></li>
-            <li><Link to="/shop" className="text-sm text-foreground/40 hover:text-foreground transition-colors duration-300 font-body">مسك</Link></li>
+            <li><Link to="/discovery" className="text-sm text-foreground/40 hover:text-foreground transition-colors duration-300 font-body">صندوق الاكتشاف</Link></li>
+            <li><Link to="/shop?g=men" className="text-sm text-foreground/40 hover:text-foreground transition-colors duration-300 font-body">رجالي</Link></li>
+            <li><Link to="/shop?g=women" className="text-sm text-foreground/40 hover:text-foreground transition-colors duration-300 font-body">حريمي</Link></li>
+            <li><Link to="/shop" className="text-sm text-foreground/40 hover:text-foreground transition-colors duration-300 font-body">المجموعة كاملة</Link></li>
           </ul>
         </div>
 

@@ -1,6 +1,6 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { usePageSEO } from "@/hooks/usePageSEO";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { Heart, ShoppingBag, SlidersHorizontal, ChevronDown, Grid3X3, LayoutGrid, ArrowUpRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -102,8 +102,12 @@ const ProductCard = ({ product, index, gridCols }: { product: Product; index: nu
 const Shop = () => {
   usePageSEO({ title: "المتجر", description: "تصفح مجموعة شذايا الكاملة من العطور الفاخرة — عود، مسك، ورد طائفي، وبخور. اختر عطرك المثالي." });
   const { data: products = fallbackProducts } = useProducts();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [activeCategory, setActiveCategory] = useState("الكل");
-  const [activeGender, setActiveGender] = useState<"all" | ProductGender>("all");
+  const initialGender = (searchParams.get("g") as ProductGender | null) || "all";
+  const [activeGender, setActiveGender] = useState<"all" | ProductGender>(
+    ["men", "women", "unisex"].includes(initialGender as string) ? (initialGender as ProductGender) : "all"
+  );
   const [sortBy, setSortBy] = useState("الأحدث");
   const [showSort, setShowSort] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
@@ -114,6 +118,17 @@ const Shop = () => {
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const headerRef = useRef(null);
   const isHeaderInView = useInView(headerRef, { once: true, margin: "-60px" });
+
+  // Sync URL ?g= with state (so footer/navbar deep links work and refresh keeps state)
+  useEffect(() => {
+    const next = new URLSearchParams(searchParams);
+    if (activeGender === "all") next.delete("g");
+    else next.set("g", activeGender);
+    if (next.toString() !== searchParams.toString()) {
+      setSearchParams(next, { replace: true });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeGender]);
 
   const toggleSize = (size: string) => {
     setSelectedSizes((prev) => prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size]);
@@ -208,8 +223,8 @@ const Shop = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex items-center gap-3 flex-wrap"
             >
-              <span className="text-[10px] tracking-[0.2em] text-muted-foreground font-body uppercase">
-                Shop by
+              <span className="text-[10px] tracking-[0.2em] text-muted-foreground font-body">
+                تسوّق حسب
               </span>
               {([
                 { key: "all" as const, label: "الكل" },

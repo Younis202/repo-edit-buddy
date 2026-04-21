@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useParams, Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
-import { ArrowRight, MapPin, Phone, Mail, Gift, Truck, AlertCircle } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Mail, Truck, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
 import { getBottleByName } from "@/data/bottleTypes";
 
@@ -13,10 +13,18 @@ const statusLabel = (s: string) => ({
   shipped: "تم الشحن", delivered: "تم التسليم", cancelled: "ملغي", refunded: "مسترد",
 }[s] || s);
 
+const paymentLabel = (p: string) => ({
+  cod: "الدفع عند الاستلام",
+  card: "بطاقة ائتمان",
+  wallet: "محفظة إلكترونية",
+  transfer: "تحويل بنكي",
+}[p] || p);
+
 const AdminOrderDetail = () => {
   const { id } = useParams();
   const qc = useQueryClient();
-  const [tracking, setTracking] = useState({ number: "", url: "" });
+  const [tracking, setTracking] = useState("");
+  const [adminNotes, setAdminNotes] = useState("");
   const [cancelReason, setCancelReason] = useState("");
   const [showCancel, setShowCancel] = useState(false);
 
@@ -34,15 +42,13 @@ const AdminOrderDetail = () => {
 
   useEffect(() => {
     if (data?.order) {
-      setTracking({ number: data.order.tracking_number || "", url: data.order.tracking_url || "" });
+      setTracking(data.order.tracking_number || "");
+      setAdminNotes(data.order.admin_notes || "");
     }
   }, [data?.order]);
 
   const updateStatus = async (status: string) => {
-    const patch: any = { status };
-    if (status === "shipped") patch.shipped_at = new Date().toISOString();
-    if (status === "delivered") patch.delivered_at = new Date().toISOString();
-    const { error } = await supabase.from("orders").update(patch).eq("id", id!);
+    const { error } = await supabase.from("orders").update({ status: status as any }).eq("id", id!);
     if (error) toast.error("فشل التحديث");
     else {
       toast.success("تم تحديث الحالة");
@@ -53,7 +59,7 @@ const AdminOrderDetail = () => {
   const saveTracking = async () => {
     const { error } = await supabase
       .from("orders")
-      .update({ tracking_number: tracking.number || null, tracking_url: tracking.url || null })
+      .update({ tracking_number: tracking || null, admin_notes: adminNotes || null })
       .eq("id", id!);
     if (error) toast.error("فشل الحفظ");
     else {
@@ -66,7 +72,7 @@ const AdminOrderDetail = () => {
     if (!cancelReason.trim()) return toast.error("اكتب سبب الإلغاء");
     const { error } = await supabase
       .from("orders")
-      .update({ status: "cancelled", cancellation_reason: cancelReason })
+      .update({ status: "cancelled", admin_notes: `[إلغاء] ${cancelReason}` })
       .eq("id", id!);
     if (error) toast.error("فشل الإلغاء");
     else {
@@ -142,49 +148,37 @@ const AdminOrderDetail = () => {
             </div>
           </div>
 
-          {o.notes && (
+          {o.shipping_notes && (
             <div className="border border-border/20 p-6">
               <h3 className="font-display text-sm text-foreground mb-3">ملاحظات العميل</h3>
-              <p className="text-sm text-foreground/70 font-body">{o.notes}</p>
+              <p className="text-sm text-foreground/70 font-body">{o.shipping_notes}</p>
             </div>
           )}
 
-          {o.gift_wrap && (
-            <div className="border border-accent/30 bg-accent/5 p-6">
-              <h3 className="font-display text-sm text-accent mb-3 flex items-center gap-2">
-                <Gift size={14} strokeWidth={1.5} />
-                طلب تغليف هدية
-              </h3>
-              {o.gift_message && <p className="text-sm text-foreground/80 font-body italic">"{o.gift_message}"</p>}
-            </div>
-          )}
-
-          {/* Tracking */}
+          {/* Tracking & admin notes */}
           <div className="border border-border/20 p-6">
             <h3 className="font-display text-sm text-foreground mb-4 flex items-center gap-2">
               <Truck size={14} strokeWidth={1.5} className="text-accent" />
-              معلومات الشحن والتتبع
+              بيانات الشحن والتتبع
             </h3>
-            <div className="grid md:grid-cols-2 gap-3 mb-3">
+            <div className="space-y-3 mb-3">
               <input
-                value={tracking.number}
-                onChange={(e) => setTracking({ ...tracking, number: e.target.value })}
+                value={tracking}
+                onChange={(e) => setTracking(e.target.value)}
                 placeholder="رقم البوليصة"
-                className="bg-transparent border border-border/30 focus:border-accent px-3 py-2 text-sm font-body outline-none"
+                className="w-full bg-transparent border border-border/30 focus:border-accent px-3 py-2 text-sm font-body outline-none"
               />
-              <input
-                value={tracking.url}
-                onChange={(e) => setTracking({ ...tracking, url: e.target.value })}
-                placeholder="رابط التتبع (اختياري)"
-                dir="ltr"
-                className="bg-transparent border border-border/30 focus:border-accent px-3 py-2 text-sm font-body outline-none"
+              <textarea
+                value={adminNotes}
+                onChange={(e) => setAdminNotes(e.target.value)}
+                placeholder="ملاحظات داخلية (للأدمن فقط)"
+                rows={2}
+                className="w-full bg-transparent border border-border/30 focus:border-accent px-3 py-2 text-sm font-body outline-none"
               />
             </div>
             <button onClick={saveTracking} className="text-[10px] tracking-wide bg-foreground text-background px-4 py-1.5 hover:bg-accent hover:text-accent-foreground transition-all font-body">
-              حفظ بيانات الشحن
+              حفظ
             </button>
-            {o.shipped_at && <p className="text-[10px] text-muted-foreground font-body mt-3">تم الشحن: {new Date(o.shipped_at).toLocaleString("ar-EG")}</p>}
-            {o.delivered_at && <p className="text-[10px] text-accent font-body mt-1">تم التسليم: {new Date(o.delivered_at).toLocaleString("ar-EG")}</p>}
           </div>
 
           {/* Cancel */}
@@ -206,15 +200,6 @@ const AdminOrderDetail = () => {
               )}
             </div>
           )}
-
-          {o.status === "cancelled" && o.cancellation_reason && (
-            <div className="border border-destructive/30 bg-destructive/5 p-6">
-              <h3 className="font-display text-sm text-destructive mb-2 flex items-center gap-2">
-                <AlertCircle size={14} /> الطلب ملغي
-              </h3>
-              <p className="text-sm text-foreground/80 font-body">{o.cancellation_reason}</p>
-            </div>
-          )}
         </div>
 
         <div className="space-y-6">
@@ -223,7 +208,7 @@ const AdminOrderDetail = () => {
             <p className="text-sm text-foreground font-body mb-3">{o.shipping_full_name}</p>
             <div className="flex items-start gap-2 text-xs text-muted-foreground font-body mb-2">
               <MapPin size={12} strokeWidth={1.5} className="mt-0.5 flex-shrink-0" />
-              <span>{o.shipping_street}, {o.shipping_city}, {o.shipping_governorate}, {o.shipping_country}</span>
+              <span>{[o.shipping_address, o.shipping_city, o.shipping_governorate].filter(Boolean).join("، ")}</span>
             </div>
             <div className="flex items-center gap-2 text-xs text-muted-foreground font-body mb-2" dir="ltr">
               <Phone size={12} strokeWidth={1.5} />
@@ -241,15 +226,15 @@ const AdminOrderDetail = () => {
             <h3 className="font-display text-sm text-foreground mb-4">الملخص المالي</h3>
             <Row label="المجموع الفرعي" value={`${Number(o.subtotal).toLocaleString("ar-EG")} ج.م`} />
             <Row label="الشحن" value={`${Number(o.shipping_cost).toLocaleString("ar-EG")} ج.م`} />
-            {Number(o.coupon_discount) > 0 && (
-              <Row label={`خصم (${o.coupon_code})`} value={`-${Number(o.coupon_discount).toLocaleString("ar-EG")} ج.م`} accent />
+            {Number(o.discount) > 0 && (
+              <Row label={`خصم (${o.coupon_code || ""})`} value={`-${Number(o.discount).toLocaleString("ar-EG")} ج.م`} accent />
             )}
             <div className="border-t border-border/20 pt-2 mt-2 flex justify-between">
               <span className="text-[10px] tracking-wide text-foreground font-body">الإجمالي</span>
               <span className="font-display text-xl text-foreground">{Number(o.total).toLocaleString("ar-EG")} ج.م</span>
             </div>
             <p className="text-[10px] text-muted-foreground font-body pt-3">
-              طريقة الدفع: {o.payment_method === "cash_on_delivery" ? "الدفع عند الاستلام" : o.payment_method}
+              طريقة الدفع: {paymentLabel(o.payment_method)}
             </p>
           </div>
         </div>

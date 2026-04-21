@@ -16,6 +16,7 @@ import AboutSection from "@/components/AboutSection";
 import PressSection from "@/components/PressSection";
 import SocialFeedSection from "@/components/SocialFeedSection";
 import NewsletterSection from "@/components/NewsletterSection";
+import EssentialsSection from "@/components/EssentialsSection";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
 import CustomCursor from "@/components/CustomCursor";
@@ -24,7 +25,7 @@ import FilmGrain from "@/components/FilmGrain";
 import WaveDivider from "@/components/WaveDivider";
 
 const Index = () => {
-  usePageSEO({ title: "", description: "شذايا — براند عطور فاخرة مصري. أجود أنواع العود والمسك والورد الطائفي. تسوق الآن واستمتع بشحن مجاني." });
+  usePageSEO({ title: "", description: "شذايا — براند عطور فاخرة مصري. أجود أنواع العود والمسك والورد الطائفي. تجربة سينمائية بتغليف فاخر وشحن متميز لكل مصر." });
   useJsonLd({
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -56,6 +57,8 @@ const Index = () => {
           <CollectionGrid />
           <BestSellersStrip />
           <WaveDivider variant="subtle" />
+          <EssentialsSection />
+          <WaveDivider variant="subtle" flip />
           <CategoryScroll />
           <ShopTheLook />
           <WaveDivider variant="gold" />

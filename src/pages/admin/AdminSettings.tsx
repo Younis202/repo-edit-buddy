@@ -82,7 +82,7 @@ const AdminSettings = () => {
           <Field label="تكلفة الشحن الافتراضية (ج.م)">
             <input type="number" className={input} value={shipping.default_cost} onChange={(e) => setShipping({ ...shipping, default_cost: Number(e.target.value) })} />
           </Field>
-          <Field label="شحن مجاني للطلبات أكثر من (ج.م)">
+          <Field label="حد الشحن المجاني الداخلي (اختياري — اتركها 0 لتعطيله)">
             <input type="number" className={input} value={shipping.free_threshold} onChange={(e) => setShipping({ ...shipping, free_threshold: Number(e.target.value) })} />
           </Field>
         </div>
