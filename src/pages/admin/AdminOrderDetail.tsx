@@ -59,7 +59,7 @@ const AdminOrderDetail = () => {
   const saveTracking = async () => {
     const { error } = await supabase
       .from("orders")
-      .update({ tracking_number: tracking || null, admin_notes: adminNotes || null })
+      .update({ tracking_number: tracking || null, notes: adminNotes || null })
       .eq("id", id!);
     if (error) toast.error("فشل الحفظ");
     else {
@@ -72,7 +72,7 @@ const AdminOrderDetail = () => {
     if (!cancelReason.trim()) return toast.error("اكتب سبب الإلغاء");
     const { error } = await supabase
       .from("orders")
-      .update({ status: "cancelled", admin_notes: `[إلغاء] ${cancelReason}` })
+      .update({ status: "cancelled", cancellation_reason: cancelReason || null })
       .eq("id", id!);
     if (error) toast.error("فشل الإلغاء");
     else {
