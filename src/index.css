@@ -147,4 +147,43 @@
   .tracking-ultra {
     letter-spacing: 0.25em;
   }
+
+  /* Hide scrollbar utility (used in horizontal pill rows) */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* === Premium global scrollbar === */
+/* Thin, gold, refined — replaces the ugly default browser scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--accent) / 0.35) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(var(--accent) / 0.45), hsl(var(--accent) / 0.25));
+  border-radius: 0;
+  transition: background 0.3s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(var(--accent) / 0.7), hsl(var(--accent) / 0.5));
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
 }
