@@ -422,11 +422,15 @@ const EssentialsPage = () => {
   const handleSelectVariant = (pkgId: EssentialsPackage["id"], variantId: string) => {
     setSelectedPkgId(pkgId);
     setSelectedVariantId(variantId);
-    // Scroll to picker after a small delay
-    setTimeout(() => {
-      document.getElementById("perfume-picker")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 100);
     setShowPerfumePicker(true);
+    // Wait for AnimatePresence + DOM to mount the picker, then scroll
+    setTimeout(() => {
+      const el = document.getElementById("perfume-picker");
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }, 450);
   };
 
   const handleConfirmAdd = (product: Product, qty: number) => {
