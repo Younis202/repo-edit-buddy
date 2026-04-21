@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, Gift, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useEssentials } from "@/contexts/EssentialsContext";
 import essentialPocket from "@/assets/essentials/essential-pocket-hero.jpg";
 
 const STORAGE_KEY = "shazaya_essentials_drawer_v4";
@@ -10,6 +10,7 @@ const AUTO_OPEN_TRIGGER = 0.28;
 const SalePopup = () => {
   const [open, setOpen] = useState(false);
   const [autoOpenEnabled, setAutoOpenEnabled] = useState(true);
+  const { openPicker } = useEssentials();
   const { scrollY } = useScroll();
   const ribbonY = useTransform(scrollY, [0, 1200], [0, 180]);
   const ribbonRotate = useTransform(scrollY, [0, 1000], [0, -2]);
@@ -147,14 +148,16 @@ const SalePopup = () => {
                   </div>
 
                   <div className="flex items-end justify-between gap-5 border-t border-border/40 pt-4">
-                    <Link
-                      to="/essentials"
-                      onClick={close}
+                    <button
+                      onClick={() => {
+                        close();
+                        openPicker();
+                      }}
                       className="group inline-flex items-center gap-3 text-[10px] tracking-[0.18em] text-background bg-foreground px-5 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-500 font-accent"
                     >
-                      <span>اكتشف المجموعة</span>
+                      <span>اختر هديتك</span>
                       <ArrowLeft className="w-3 h-3 group-hover:-translate-x-1 transition-transform duration-300" />
-                    </Link>
+                    </button>
                     <div className="text-left">
                       <p className="text-[10px] text-muted-foreground/55 line-through font-body">٣٥٠ ج.م</p>
                       <p className="font-display text-2xl text-accent">١٩٩</p>
