@@ -2,7 +2,7 @@
 // بيتفتح من شنطة الهدية أو من أي مكان عبر useEssentials().openPicker()
 // 3 خطوات: اختر عبوة → اختر حجم → اختر عطر → أضف للسلة
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { X, Check, Search, ShoppingBag, Plus, Minus, ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
 import { useEssentials } from "@/contexts/EssentialsContext";
 import { useCart } from "@/contexts/CartContext";
@@ -31,6 +31,7 @@ const EssentialsQuickPicker = () => {
   const [perfume, setPerfume] = useState<Product | null>(null);
   const [qty, setQty] = useState(1);
   const [search, setSearch] = useState("");
+  const bodyRef = useRef<HTMLDivElement>(null);
 
   // Reset on open/close
   useEffect(() => {
@@ -43,6 +44,14 @@ const EssentialsQuickPicker = () => {
       setSearch("");
     }
   }, [isPickerOpen]);
+
+  // Auto-scroll drawer body to top whenever step changes
+  useEffect(() => {
+    if (!isPickerOpen) return;
+    requestAnimationFrame(() => {
+      bodyRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }, [step, isPickerOpen]);
 
   // Auto-advance step when selection completes
   const handlePickPackage = (p: EssentialsPackage) => {
@@ -164,7 +173,7 @@ const EssentialsQuickPicker = () => {
             </div>
 
             {/* Body — scrollable */}
-            <div className="flex-1 overflow-y-auto px-6 md:px-8 py-6">
+            <div ref={bodyRef} className="flex-1 overflow-y-auto px-6 md:px-8 py-6">
               {/* === Step 1: Pick Package === */}
               {step === 1 && (
                 <motion.div
