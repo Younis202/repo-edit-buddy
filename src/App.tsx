@@ -10,6 +10,7 @@ import { EssentialsProvider } from "@/contexts/EssentialsContext";
 import CartDrawer from "@/components/CartDrawer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import GlobalSalePopup from "@/components/GlobalSalePopup";
+import EssentialsQuickPicker from "@/components/EssentialsQuickPicker";
 import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import Shop from "./pages/Shop";
@@ -62,6 +63,7 @@ const App = () => (
               <CartDrawer />
               <WhatsAppButton />
               <GlobalSalePopup />
+              <EssentialsQuickPicker />
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/shop" element={<Shop />} />
