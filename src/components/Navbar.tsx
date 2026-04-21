@@ -25,6 +25,7 @@ const navLinks = [
   { label: "المتجر", href: "/shop", isRoute: true },
   { label: "جديدنا", href: "/new-in", isRoute: true },
   { label: "الاكتشاف", href: "/discovery", isRoute: true },
+  { label: "في المتناول", href: "/essentials", isRoute: true },
   { label: "المجموعات", href: "/collections", isRoute: true },
   { label: "الكتالوج", href: "/lookbook", isRoute: true },
   { label: "من نحن", href: "/about", isRoute: true },
