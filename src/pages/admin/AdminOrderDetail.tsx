@@ -43,7 +43,7 @@ const AdminOrderDetail = () => {
   useEffect(() => {
     if (data?.order) {
       setTracking(data.order.tracking_number || "");
-      setAdminNotes(data.order.admin_notes || "");
+      setAdminNotes(data.order.notes || "");
     }
   }, [data?.order]);
 
@@ -148,10 +148,10 @@ const AdminOrderDetail = () => {
             </div>
           </div>
 
-          {o.shipping_notes && (
+          {o.notes && (
             <div className="border border-border/20 p-6">
               <h3 className="font-display text-sm text-foreground mb-3">ملاحظات العميل</h3>
-              <p className="text-sm text-foreground/70 font-body">{o.shipping_notes}</p>
+              <p className="text-sm text-foreground/70 font-body">{o.notes}</p>
             </div>
           )}
 
@@ -208,7 +208,7 @@ const AdminOrderDetail = () => {
             <p className="text-sm text-foreground font-body mb-3">{o.shipping_full_name}</p>
             <div className="flex items-start gap-2 text-xs text-muted-foreground font-body mb-2">
               <MapPin size={12} strokeWidth={1.5} className="mt-0.5 flex-shrink-0" />
-              <span>{[o.shipping_address, o.shipping_city, o.shipping_governorate].filter(Boolean).join("، ")}</span>
+              <span>{[o.shipping_street, o.shipping_city, o.shipping_governorate].filter(Boolean).join("، ")}</span>
             </div>
             <div className="flex items-center gap-2 text-xs text-muted-foreground font-body mb-2" dir="ltr">
               <Phone size={12} strokeWidth={1.5} />
