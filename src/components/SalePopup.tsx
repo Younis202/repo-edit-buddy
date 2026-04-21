@@ -54,11 +54,13 @@ const SalePopup = () => {
       style={{ y: ribbonY, rotate: ribbonRotate }}
       className="fixed top-28 left-3 md:left-5 z-[70] group flex items-center gap-2.5"
     >
-      <button
-        type="button"
+      <div
+        role="button"
+        tabIndex={0}
         onClick={handleOpen}
+        onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") handleOpen(); }}
         aria-label="افتح هدية شذايا — أسعار في المتناول"
-        className="flex items-center gap-2.5"
+        className="flex items-center gap-2.5 cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-accent"
       >
         {/* Gift bow icon */}
         <div className="relative flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-foreground border border-accent/40 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.5)]">
@@ -87,7 +89,7 @@ const SalePopup = () => {
             من ١٩٩ ج.م
           </span>
         </div>
-      </button>
+      </div>
 
       {/* Dismiss button */}
       <button

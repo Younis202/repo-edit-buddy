@@ -41,17 +41,27 @@ const CartDrawer = () => {
                       <div className="flex-1 flex flex-col justify-between min-w-0">
                         <div>
                           <Link to={`/product/${item.product.slug}`} onClick={closeCart} className="font-display text-sm text-foreground hover:text-accent transition-colors block truncate">{item.product.name}</Link>
-                          <div className="flex items-center gap-2 mt-1.5">
+                          <div className="flex flex-wrap items-center gap-1.5 mt-1.5">
                             {(() => {
                               const bottle = getBottleByName(item.color);
-                              return bottle ? (
-                                <span className="inline-flex items-center gap-1.5 text-[10px] tracking-wide text-muted-foreground font-body bg-secondary/30 px-1.5 py-0.5">
-                                  <img src={bottle.image} alt={bottle.name} className="w-4 h-5 object-contain" />
-                                  {bottle.name}
-                                </span>
-                              ) : item.color ? (
-                                <span className="text-[10px] tracking-wide text-muted-foreground font-body">العبوة: {item.color}</span>
-                              ) : null;
+                              if (bottle) {
+                                return (
+                                  <span className="inline-flex items-center gap-1.5 text-[10px] tracking-wide text-muted-foreground font-body bg-secondary/30 px-1.5 py-0.5">
+                                    <img src={bottle.image} alt={bottle.name} className="w-4 h-5 object-contain" />
+                                    {bottle.name}
+                                  </span>
+                                );
+                              }
+                              if (item.color) {
+                                const isEssentials = /بلية|رشاش|كلاسيكي|توقيع|الزيت/.test(item.color);
+                                return (
+                                  <span className={`inline-flex items-center gap-1 text-[10px] tracking-wide font-body px-1.5 py-0.5 ${isEssentials ? "bg-accent/15 text-accent border border-accent/30" : "text-muted-foreground bg-secondary/30"}`}>
+                                    {isEssentials && <span className="text-[8px]">✦</span>}
+                                    {item.color}
+                                  </span>
+                                );
+                              }
+                              return null;
                             })()}
                             <span className="text-[10px] tracking-wide text-muted-foreground font-body">• {item.size}</span>
                           </div>
